@@ -45,14 +45,14 @@
   header{position:sticky; top:3px; z-index:30; background:rgba(10,14,39,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--navy-line); transition:background .3s,box-shadow .3s;}
   [data-theme="light"] header{background:rgba(245,243,238,.92);}
   header.scrolled{background:rgba(10,14,39,.98); box-shadow:0 6px 24px rgba(0,0,0,.35);}
-  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 32px; max-width:var(--max); margin:0 auto; transition:padding .3s; gap:16px; position:relative; z-index:2;}
+  .nav{display:flex; align-items:center; padding:16px 32px; max-width:var(--max); margin:0 auto; transition:padding .3s; gap:16px; position:relative; z-index:2;}
   header.scrolled .nav{padding-top:10px; padding-bottom:10px;}
-  .nav-mark{font-family:'Poppins',sans-serif; font-weight:700; font-size:1.05rem; white-space:nowrap;}
+  .nav-mark{font-family:'Poppins',sans-serif; font-weight:700; font-size:1.05rem; white-space:nowrap; flex:1;}
   .nav-mark span{color:var(--gold);}
-  .nav-links{display:flex; gap:18px; list-style:none; margin:0; padding:0; font-size:0.88rem;}
+  .nav-links{display:flex; gap:22px; list-style:none; margin:0; padding:0; font-size:0.88rem;}
   .nav-links a{text-decoration:none; color:var(--white); font-weight:600; transition:color .2s; position:relative; white-space:nowrap;}
   .nav-links a:hover{color:var(--gold);}
-  .nav-right{display:flex; align-items:center; gap:8px;}
+  .nav-right{display:flex; align-items:center; gap:8px; margin-left:22px;}
   .icon-btn{background:transparent; border:1.5px solid var(--navy-line); color:var(--white); width:38px; height:38px; border-radius:50%; cursor:pointer; display:grid; place-items:center; transition:all .2s; font-size:.85rem; font-weight:700; font-family:'Poppins',sans-serif; flex-shrink:0;}
   .icon-btn:hover{border-color:var(--gold); color:var(--gold); transform:translateY(-2px);}
   .icon-btn svg{width:17px; height:17px; display:block;}
@@ -82,64 +82,42 @@
   .rk-badge img{width:100%; height:100%; object-fit:contain; display:block; filter:drop-shadow(0 0 40px rgba(242,169,0,.5));}
   .rk-badge .rk-fallback{font-family:'Poppins',sans-serif; font-weight:800; font-size:5rem; color:#0A0E27; width:100%; height:100%; display:none; place-items:center; letter-spacing:-.05em; border-radius:50%; background:linear-gradient(135deg,var(--gold),var(--gold-light));}
   @keyframes badgePulse{0%,100%{transform:scale(1);}50%{transform:scale(1.02);}}
-  .scroll-cue{display:flex; justify-content:center; margin:0 0 12px; position:relative; z-index:2;}
+  .scroll-cue{display:flex; justify-content:center; margin:-10px 0 0; position:relative; z-index:2;}
   .scroll-cue span{width:48px; height:48px; border-radius:50%; background:var(--navy-raised); display:flex; align-items:center; justify-content:center; color:var(--gold); animation:bob 2.2s ease-in-out infinite; font-size:1.2rem; box-shadow:0 0 20px rgba(242,169,0,.2);}
   @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
 
-  /* ===== TOOLS LINE (static) ===== */
   .tools-marquee{
     position:relative; z-index:2;
-    padding:18px 0;
-    background:var(--navy-raised);
-    border-top:1px solid var(--navy-line);
-    border-bottom:1px solid var(--navy-line);
+    padding:26px 0;
+    background:transparent;
+    border:none;
     overflow:hidden;
   }
-  .tools-line{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:14px 26px;
-    max-width:var(--max);
-    margin:0 auto;
-    padding:0 32px;
-  }
-  .tools-line span{
-    font-family:'Poppins',sans-serif;
-    font-weight:700;
-    font-size:1.05rem;
-    letter-spacing:.12em;
-    color:var(--gold);
-    text-transform:uppercase;
-    position:relative;
-    transition:all .25s;
-  }
-  .tools-line span:hover{
-    color:var(--gold-light);
-    text-shadow:0 0 12px rgba(242,169,0,.6);
-    transform:translateY(-2px);
-  }
-  .tools-line .dot{
-    color:var(--ink-dim);
-    font-size:.55rem;
-    opacity:.55;
-    font-weight:400;
-    letter-spacing:0;
-    user-select:none;
-    transform:translateY(-2px);
-  }
-  .tools-line .dot:hover{transform:translateY(-2px);}
+  .tools-line{display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:14px 26px; max-width:var(--max); margin:0 auto; padding:0 32px;}
+  .tools-line span{font-family:'Poppins',sans-serif; font-weight:700; font-size:1rem; letter-spacing:.12em; color:var(--gold); text-transform:uppercase; transition:all .25s;}
+  .tools-line span:hover{color:var(--gold-light); text-shadow:0 0 12px rgba(242,169,0,.6); transform:translateY(-2px);}
+  .tools-line .dot{color:var(--ink-dim); font-size:.55rem; opacity:.55; font-weight:400; letter-spacing:0; user-select:none; transform:translateY(-2px);}
 
-  .quote-bar{padding:20px; text-align:center; background:var(--navy-raised); border-top:1px solid var(--navy-line); border-bottom:1px solid var(--navy-line); font-family:'Poppins',sans-serif; font-style:italic; font-size:.92rem; color:var(--ink-dim); position:relative; z-index:2;}
+  .quote-bar{
+    padding:26px 0;
+    text-align:center;
+    background:transparent;
+    border:none;
+    font-family:'Poppins',sans-serif;
+    font-style:italic;
+    font-size:.95rem;
+    color:var(--ink-dim);
+    position:relative; z-index:2;
+  }
   .quote-bar b{color:var(--gold); font-style:normal; font-weight:600;}
+
   section{padding:80px 0; position:relative; z-index:2;}
   .divider{border:none; border-top:1px solid var(--navy-line); margin:0; position:relative; z-index:2;}
   .divider::after{content:""; position:absolute; left:50%; top:-1px; width:80px; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); transform:translateX(-50%); box-shadow:0 0 12px var(--gold);}
   .about-grid{display:grid; grid-template-columns:0.7fr 1.6fr; gap:60px; align-items:start;}
-  .about-hello{font-family:'Poppins',sans-serif; font-weight:800; font-size:clamp(2rem,4.5vw,3rem); line-height:1.15; letter-spacing:-.02em;}
+  .about-hello{font-family:'Poppins',sans-serif; font-weight:800; font-size:clamp(2rem,4vw,2.75rem); line-height:1.15; letter-spacing:-.02em;}
   .about-hello .accent{color:var(--gold);}
-  .about-copy p{color:var(--ink-dim); font-size:1.02rem; margin:0; line-height:1.85;}
+  .about-copy p{color:var(--ink-dim); font-size:1rem; margin:0; line-height:1.8;}
   .about-copy b{color:var(--gold); font-weight:600;}
   .about-copy b.white{color:var(--white); font-weight:700;}
   .about-actions{display:flex; align-items:center; gap:14px; margin-top:32px; flex-wrap:wrap;}
@@ -151,19 +129,19 @@
   .btn-gold:hover{background:var(--gold); color:var(--navy);}
   .btn-ghost:hover{border-color:var(--gold); color:var(--gold);}
   .btn-sm{padding:11px 26px; font-size:.88rem;}
-  .skills-cats{display:grid; grid-template-columns:repeat(2,1fr); gap:30px;}
-  .skill-cat h4{font-size:1.05rem; color:var(--gold); margin-bottom:14px; font-weight:600;}
+  .skills-cats{display:grid; grid-template-columns:repeat(2,1fr); gap:32px;}
+  .skill-cat h4{font-size:1.15rem; color:var(--gold); margin-bottom:16px; font-weight:600; font-family:'Poppins',sans-serif;}
   .tag-list{display:flex; flex-wrap:wrap; gap:8px;}
-  .tag{border:1.5px solid var(--navy-line); background:var(--navy-raised); color:var(--white); padding:8px 16px; border-radius:999px; font-size:0.88rem; font-weight:500; transition:all .25s;}
+  .tag{border:1.5px solid var(--navy-line); background:var(--navy-raised); color:var(--white); padding:9px 18px; border-radius:999px; font-size:0.9rem; font-weight:500; transition:all .25s;}
   .tag:hover{border-color:var(--gold); transform:translateY(-2px);}
   .bg-grid{display:grid; grid-template-columns:1fr 1fr; gap:50px;}
-  .bg-col h3{color:var(--gold); font-size:1.1rem; margin-bottom:24px; font-weight:600;}
+  .bg-col h3{color:var(--gold); font-size:1.15rem; margin-bottom:24px; font-weight:600; font-family:'Poppins',sans-serif;}
   .bg-item{border-left:2px solid var(--navy-line); padding-left:18px; margin-bottom:26px; position:relative;}
   .bg-item::before{content:""; position:absolute; left:-7px; top:4px; width:12px; height:12px; border-radius:50%; background:var(--gold); z-index:2; box-shadow:0 0 12px var(--gold);}
-  .bg-item .dates{color:var(--gold); font-size:.82rem; font-weight:600; margin-bottom:4px;}
-  .bg-item h4{font-size:1.02rem; margin-bottom:2px;}
-  .bg-item .org{color:var(--ink-dim); font-size:.88rem; margin-bottom:8px;}
-  .bg-item p{color:var(--ink-dim); font-size:.88rem; margin:0; max-width:52ch;}
+  .bg-item .dates{color:var(--gold); font-size:.85rem; font-weight:600; margin-bottom:4px; letter-spacing:.01em;}
+  .bg-item h4{font-size:1.05rem; margin-bottom:4px; font-weight:700; font-family:'Poppins',sans-serif;}
+  .bg-item .org{color:var(--ink-dim); font-size:.9rem; margin-bottom:10px;}
+  .bg-item p{color:var(--ink-dim); font-size:.95rem; margin:0; max-width:52ch; line-height:1.7;}
   .project-filters{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:32px;}
   .filter-btn{background:transparent; border:1.5px solid var(--navy-line); color:var(--ink-dim); padding:8px 18px; border-radius:999px; font-family:'Poppins',sans-serif; font-weight:600; font-size:.82rem; cursor:pointer; transition:all .2s;}
   .filter-btn:hover{color:var(--white); border-color:var(--gold);}
@@ -179,57 +157,64 @@
   .project-links{display:flex; gap:12px; flex-wrap:wrap;}
   .link-pill{border:2px solid var(--gold); color:var(--gold); border-radius:999px; padding:9px 20px; text-decoration:none; font-weight:600; font-size:.85rem; font-family:'Poppins',sans-serif; transition:all .2s; display:inline-block; cursor:pointer; background:transparent;}
   .link-pill:hover{background:var(--gold); color:var(--navy);}
-  .cert-grid,.testi-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px;}
-  .cert-card,.testi-card{background:var(--navy-raised); border:1px solid var(--navy-line); border-radius:14px; padding:22px; transition:all .25s; display:flex; flex-direction:column;}
-  .cert-card:hover,.testi-card:hover{transform:translateY(-4px); border-color:var(--gold);}
+  .cert-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px;}
+  .cert-card{background:var(--navy-raised); border:1px solid var(--navy-line); border-radius:14px; padding:22px; transition:all .25s; display:flex; flex-direction:column;}
+  .cert-card:hover{transform:translateY(-4px); border-color:var(--gold);}
   .cert-badge{width:42px; height:42px; border-radius:12px; display:grid; place-items:center; background:rgba(242,169,0,.12); border:1px solid rgba(242,169,0,.3); color:var(--gold); font-size:1.2rem; margin-bottom:12px;}
-  .cert-card h4{font-size:.95rem; margin-bottom:.3em;}
-  .cert-card .cert-org{color:var(--gold); font-size:.8rem; font-weight:600;}
-  .cert-card .cert-year{color:var(--ink-dim); font-size:.75rem;}
+  .cert-card h4{font-size:1rem; margin-bottom:.35em; font-weight:700;}
+  .cert-card .cert-org{color:var(--gold); font-size:.85rem; font-weight:600;}
+  .testi-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px;}
+  .testi-card{background:var(--navy-raised); border:1px solid var(--navy-line); border-radius:14px; padding:22px; transition:all .25s; display:flex; flex-direction:column;}
+  .testi-card:hover{transform:translateY(-4px); border-color:var(--gold);}
   .testi-quote{font-size:2.5rem; color:var(--gold); opacity:.3; line-height:1; font-family:'Poppins',sans-serif; font-weight:800;}
-  .testi-card p{color:var(--ink-dim); font-size:.9rem; margin:8px 0 18px;}
+  .testi-card p{color:var(--ink-dim); font-size:.92rem; margin:8px 0 18px; line-height:1.65;}
   .testi-person{display:flex; align-items:center; gap:10px;}
   .testi-avatar{width:40px; height:40px; border-radius:50%; display:grid; place-items:center; background:var(--gold); color:var(--navy); font-weight:700; font-family:'Poppins',sans-serif; font-size:.82rem;}
-  .testi-name{font-weight:600; font-size:.88rem;}
-  .testi-role{color:var(--ink-dim); font-size:.75rem;}
+  .testi-name{font-weight:600; font-size:.9rem;}
+  .testi-role{color:var(--ink-dim); font-size:.78rem;}
   .faq-list{max-width:820px; margin:0 auto; display:grid; gap:10px;}
   .faq-item{background:var(--navy-raised); border:1px solid var(--navy-line); border-radius:12px; overflow:hidden; transition:all .2s;}
   .faq-item.open{border-color:var(--gold);}
   .faq-q{padding:16px 22px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:12px; font-weight:600; font-size:.95rem; font-family:'Poppins',sans-serif; user-select:none;}
   .faq-q::after{content:"+"; color:var(--gold); font-size:1.4rem; font-weight:400; transition:transform .25s;}
   .faq-item.open .faq-q::after{transform:rotate(45deg);}
-  .faq-a{max-height:0; overflow:hidden; transition:max-height .35s ease, padding .3s ease; padding:0 22px; color:var(--ink-dim); font-size:.9rem; line-height:1.65;}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .35s ease, padding .3s ease; padding:0 22px; color:var(--ink-dim); font-size:.92rem; line-height:1.7;}
   .faq-item.open .faq-a{max-height:300px; padding:0 22px 18px;}
   .faq-a b{color:var(--gold);}
   .contact-split{display:grid; grid-template-columns:1fr 1.1fr; gap:50px; align-items:start;}
-  .contact-inner h2{font-size:clamp(1.9rem,4.2vw,2.8rem); font-weight:700; line-height:1.2; margin-bottom:24px; max-width:16ch;}
+  .contact-inner h2{font-size:clamp(2rem,4vw,2.75rem); font-weight:800; line-height:1.15; margin-bottom:32px; max-width:16ch; font-family:'Poppins',sans-serif; letter-spacing:-.02em;}
   .contact-inner h2 .accent{color:var(--gold);}
-  .contact-list{display:flex; flex-direction:column; gap:20px;}
+  .contact-list{display:flex; flex-direction:column; gap:22px;}
   .contact-row{display:flex; align-items:center; gap:16px;}
-  .contact-row .label{color:var(--gold); font-size:.85rem; margin-bottom:2px;}
+  .contact-row .label{color:var(--gold); font-size:.85rem; margin-bottom:2px; font-weight:600;}
   .contact-row a.value{color:var(--white); text-decoration:none; font-size:1rem; font-weight:500;}
   .contact-row a.value:hover{color:var(--gold);}
   .contact-form{background:var(--navy-raised); border:1px solid var(--navy-line); border-radius:16px; padding:28px;}
-  .contact-form h4{font-size:1.1rem; margin-bottom:6px;}
-  .contact-form .form-sub{color:var(--ink-dim); font-size:.85rem; margin:0 0 20px;}
+  .contact-form h4{font-size:1.15rem; margin-bottom:6px; font-weight:700;}
+  .contact-form .form-sub{color:var(--ink-dim); font-size:.9rem; margin:0 0 20px;}
   .form-row{margin-bottom:14px;}
-  .form-row label{display:block; font-size:.78rem; color:var(--ink-dim); font-weight:600; margin-bottom:5px;}
+  .form-row label{display:block; font-size:.8rem; color:var(--ink-dim); font-weight:600; margin-bottom:5px;}
   .form-row input,.form-row textarea{width:100%; background:var(--navy); border:1.5px solid var(--navy-line); color:var(--white); padding:11px 14px; border-radius:9px; font-family:inherit; font-size:.9rem; transition:all .2s; resize:vertical;}
   .form-row input:focus,.form-row textarea:focus{outline:none; border-color:var(--gold);}
   .form-row textarea{min-height:110px;}
-  .form-submit{width:100%; border:none; cursor:pointer; background:var(--gold); color:var(--navy); padding:13px; border-radius:9px; font-family:'Poppins',sans-serif; font-weight:700; font-size:.92rem; transition:all .15s;}
+  .form-submit{width:100%; border:none; cursor:pointer; background:var(--gold); color:var(--navy); padding:13px; border-radius:9px; font-family:'Poppins',sans-serif; font-weight:700; font-size:.95rem; transition:all .15s;}
   .form-submit:hover{transform:translateY(-2px); background:var(--gold-light);}
   .form-submit:disabled{opacity:.7; cursor:wait;}
-  .form-status{margin-top:12px; font-size:.85rem; padding:9px 13px; border-radius:8px; display:none;}
+  .form-status{margin-top:12px; font-size:.88rem; padding:9px 13px; border-radius:8px; display:none;}
   .form-status.show{display:block;}
   .form-status.success{background:rgba(61,220,151,.12); color:var(--green); border:1px solid rgba(61,220,151,.3);}
   .form-status.error{background:rgba(255,90,90,.12); color:var(--red); border:1px solid rgba(255,90,90,.3);}
   footer{padding:24px 0; color:var(--ink-dim); font-size:.82rem; border-top:1px solid var(--navy-line); text-align:center; position:relative; z-index:2;}
-  footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px; align-items:center;}
+  footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px; align-items:center;}
+
+  /* ===== VISITOR COUNTER BADGE ===== */
+  .visit-badge{display:inline-flex; align-items:center; gap:7px; padding:6px 14px; background:rgba(242,169,0,.08); border:1px solid rgba(242,169,0,.25); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--ink-dim);}
+  .visit-badge .visit-dot{width:6px; height:6px; border-radius:50%; background:var(--green); box-shadow:0 0 8px var(--green); animation:visitPulse 2s ease-in-out infinite; flex-shrink:0;}
+  @keyframes visitPulse{0%,100%{opacity:1; transform:scale(1);}50%{opacity:.5; transform:scale(.85);}}
+  .visit-badge .visit-count{color:var(--gold); font-weight:700; font-size:.85rem;}
+
   .back-to-top{position:fixed; right:24px; bottom:100px; width:48px; height:48px; border-radius:50%; border:none; background:var(--gold); color:var(--navy); font-size:1.3rem; font-weight:700; display:grid; place-items:center; cursor:pointer; z-index:900; opacity:0; visibility:hidden; transform:translateY(14px); transition:all .3s;}
   .back-to-top.show{opacity:1; visibility:visible; transform:translateY(0);}
-
-  /* SIRI */
   .siri-fab{position:fixed; right:24px; bottom:24px; width:64px; height:64px; border-radius:50%; background:linear-gradient(135deg,var(--gold),var(--gold-light)); display:grid; place-items:center; cursor:pointer; z-index:960; border:none; box-shadow:0 10px 30px rgba(242,169,0,.5), 0 0 0 0 rgba(242,169,0,.7); animation:siriPulse 2.5s ease-in-out infinite; transition:transform .25s;}
   .siri-fab:hover{transform:scale(1.08);}
   .siri-fab svg{width:32px; height:32px; color:var(--navy);}
@@ -272,21 +257,17 @@
   .siri-send{background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:var(--navy); border:none; width:40px; height:40px; border-radius:50%; cursor:pointer; display:grid; place-items:center; transition:all .2s; flex-shrink:0;}
   .siri-send:hover{transform:scale(1.06);}
   .siri-send svg{width:18px; height:18px;}
-
-  /* MODAL */
   .modal-overlay{position:fixed; inset:0; background:rgba(10,14,39,.85); backdrop-filter:blur(8px); z-index:9998; display:flex; align-items:center; justify-content:center; padding:32px; opacity:0; visibility:hidden; transition:opacity .3s, visibility .3s; pointer-events:none;}
   .modal-overlay.open{opacity:1; visibility:visible; pointer-events:auto;}
   .modal{background:var(--navy-raised); border:1px solid var(--navy-line); border-radius:18px; padding:32px; max-width:720px; width:100%; max-height:85vh; overflow-y:auto; transform:translateY(20px) scale(.97); transition:transform .35s; position:relative;}
   .modal-overlay.open .modal{transform:translateY(0) scale(1);}
   .modal h3{font-size:1.4rem; margin-bottom:6px;}
-  .modal .modal-tag{color:var(--gold); font-size:.8rem; font-weight:600; margin-bottom:18px;}
-  .modal p{color:var(--ink-dim); font-size:.92rem; margin-bottom:12px;}
-  .modal h4{color:var(--gold); font-size:.95rem; margin:16px 0 8px;}
+  .modal .modal-tag{color:var(--gold); font-size:.85rem; font-weight:600; margin-bottom:18px;}
+  .modal p{color:var(--ink-dim); font-size:.95rem; margin-bottom:12px;}
+  .modal h4{color:var(--gold); font-size:1rem; margin:16px 0 8px;}
   .modal-close{position:absolute; top:14px; right:14px; width:36px; height:36px; border-radius:50%; background:var(--navy); border:1px solid var(--navy-line); color:var(--white); cursor:pointer; font-size:1.1rem; display:grid; place-items:center;}
   .modal-iframe{width:100%; height:70vh; border:0; border-radius:12px; background:#fff;}
   .modal-actions{display:flex; gap:10px; margin-top:20px; flex-wrap:wrap;}
-
-  /* INTRO */
   #vkIntro{position:fixed; inset:0; z-index:99999; background:#0A0E27; display:flex; align-items:center; justify-content:center; flex-direction:column; font-family:'JetBrains Mono',monospace; color:#AEB5D1; overflow:hidden; transition:transform 1s cubic-bezier(.77,0,.175,1), opacity .6s;}
   #vkIntro.done{transform:translateY(-100%); opacity:0; pointer-events:none;}
   #vkIntro .vk-photo{width:clamp(200px,36vw,280px); height:clamp(200px,36vw,280px); object-fit:contain; filter: drop-shadow(0 0 40px rgba(242,169,0,.6)) drop-shadow(0 0 90px rgba(242,169,0,.3)); opacity:0; transform:translateY(40px) scale(.8); animation:vkLetter 1s .15s cubic-bezier(.22,1,.36,1) forwards;}
@@ -301,7 +282,6 @@
   @keyframes vkLoad{to{width:100%;}}
   #vkSkip{position:absolute; top:24px; right:24px; background:transparent; border:1px solid rgba(242,169,0,.4); color:#F2A900; padding:6px 16px; border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:.68rem; cursor:pointer; opacity:0; animation:vkFade .4s 1s forwards; letter-spacing:.12em;}
   #vkSkip:hover{background:rgba(242,169,0,.12);}
-
   @media (max-width:960px){.contact-split,.about-grid,.bg-grid{grid-template-columns:1fr;} }
   @media (max-width:860px){
     .nav-links{display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; gap:0; background:rgba(10,14,39,0.98); border-bottom:1px solid var(--navy-line); padding:10px 32px 18px;}
@@ -309,30 +289,46 @@
     .nav-links li{width:100%;}
     .nav-links a{display:block; padding:12px 0; border-bottom:1px solid var(--navy-line);}
     .nav-toggle{display:flex;}
+    .nav-right{margin-left:auto;}
     .hero-inner{grid-template-columns:1fr;}
     .hero-photo-wrap{order:-1; margin-bottom:20px;}
     .rk-badge{width:240px;}
     .skills-cats{grid-template-columns:1fr;}
     .back-to-top{right:14px; bottom:96px;}
     .tools-line{gap:10px 18px;}
-    .tools-line span{font-size:.9rem;}
+    .tools-line span{font-size:.88rem;}
     .about-actions{gap:10px;}
     .icon-circle{width:46px; height:46px;}
     .siri-fab{right:14px; bottom:14px; width:58px; height:58px;}
     .siri-panel{right:14px; left:14px; bottom:84px; width:auto; height:calc(100vh - 110px); max-height:calc(100vh - 110px);}
   }
+  @media (max-width:600px){
+    .nav{padding:14px 16px; gap:10px;}
+    .nav-mark{font-size:0.98rem;}
+    .nav-right{gap:6px; margin-left:10px;}
+  }
   @media (max-width:480px){
     .wrap{padding:0 20px;}
+    .nav{padding:12px 14px; gap:8px;}
+    .nav-mark{font-size:0.92rem;}
+    .nav-right{gap:6px; margin-left:8px;}
+    .lang-select{height:34px; padding:0 24px 0 10px; font-size:.72rem; border-radius:999px;}
+    .lang-chevron{width:9px; height:9px; right:8px;}
     .icon-btn{width:34px; height:34px;}
+    .icon-btn svg{width:15px; height:15px;}
     .rk-badge{width:200px;}
     .tools-line span{font-size:.78rem;}
     .tools-line{gap:8px 14px;}
     .tools-line .dot{font-size:.45rem;}
     .about-hello{font-size:1.9rem;}
+    .contact-inner h2{font-size:1.9rem;}
+    .bg-item h4{font-size:1rem;}
+    .skill-cat h4, .bg-col h3{font-size:1.05rem;}
+    footer .wrap{justify-content:center; text-align:center;}
   }
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
-    .scroll-cue span,.rk-badge,.siri-fab{animation:none;}
+    .scroll-cue span,.rk-badge,.siri-fab,.visit-badge .visit-dot{animation:none;}
     .reveal{opacity:1; transform:none;}
     .scan-lines{display:none !important;}
     .glitch::before,.glitch::after{display:none;}
@@ -345,7 +341,6 @@
 <div class="scan-lines"></div>
 <div class="read-progress" id="readProgress"></div>
 
-<!-- INTRO OVERLAY -->
 <div id="vkIntro">
   <img class="vk-photo" src="hero-photo.png" alt="Rushikesh Kilche" onerror="this.style.display='none'">
   <div class="vk-sub">Data Analyst &amp; Business Analyst</div>
@@ -402,10 +397,8 @@
       </div>
     </div>
   </div>
-  <div class="scroll-cue"><span>&#8964;</span></div>
 </section>
 
-<!-- STATIC TOOLS LINE -->
 <div class="tools-marquee">
   <div class="tools-line">
     <span>SQL</span>
@@ -423,6 +416,8 @@
 <div class="quote-bar">
   <div class="wrap">"In God we trust — all others must bring <b>data</b>." — W. Edwards Deming</div>
 </div>
+
+<div class="scroll-cue"><span>&#8964;</span></div>
 
 <hr class="divider">
 
@@ -451,10 +446,10 @@
   <div class="wrap">
     <span class="pill">Technical <b>Skills</b></span>
     <div class="skills-cats">
-      <div class="skill-cat reveal"><h4>Analytics tools</h4><div class="tag-list"><span class="tag">SQL</span><span class="tag">Power BI &amp; DAX</span><span class="tag">Python</span><span class="tag">MS Excel</span><span class="tag">Tableau</span></div></div>
-      <div class="skill-cat reveal"><h4>Data skills</h4><div class="tag-list"><span class="tag">Data cleaning &amp; ETL</span><span class="tag">Validation</span><span class="tag">Statistics</span><span class="tag">KPI reporting</span></div></div>
-      <div class="skill-cat reveal"><h4>Business analysis</h4><div class="tag-list"><span class="tag">Requirements</span><span class="tag">BRD / FRD</span><span class="tag">Gap analysis</span><span class="tag">Agile</span></div></div>
-      <div class="skill-cat reveal"><h4>Collaboration</h4><div class="tag-list"><span class="tag">CRM</span><span class="tag">JIRA</span><span class="tag">MS Teams</span><span class="tag">PowerPoint</span></div></div>
+      <div class="skill-cat reveal"><h4>Analytics tools</h4><div class="tag-list"><span class="tag">SQL</span><span class="tag">Power BI &amp; DAX</span><span class="tag">Python (pandas, scikit-learn)</span><span class="tag">MS Excel (advanced)</span><span class="tag">Tableau</span></div></div>
+      <div class="skill-cat reveal"><h4>Data skills</h4><div class="tag-list"><span class="tag">Data cleaning &amp; ETL</span><span class="tag">Data validation</span><span class="tag">Statistical &amp; trend analysis</span><span class="tag">KPI reporting</span></div></div>
+      <div class="skill-cat reveal"><h4>Business analysis</h4><div class="tag-list"><span class="tag">Requirements gathering</span><span class="tag">BRD / FRD</span><span class="tag">Gap analysis</span><span class="tag">UAT support</span><span class="tag">Agile / Scrum</span></div></div>
+      <div class="skill-cat reveal"><h4>Collaboration</h4><div class="tag-list"><span class="tag">CRM tools</span><span class="tag">JIRA</span><span class="tag">MS Teams</span><span class="tag">PowerPoint</span></div></div>
     </div>
   </div>
 </section>
@@ -467,14 +462,14 @@
     <div class="bg-grid">
       <div class="bg-col reveal">
         <h3>Experience</h3>
-        <div class="bg-item"><div class="dates">Apr 2025 – Aug 2025</div><h4>Data &amp; Reporting Analyst (Internship)</h4><div class="org">Square Yards, Pune</div><p>Built recurring KPI trackers for leadership; queried client and deal-pipeline data in CRM and Excel.</p></div>
-        <div class="bg-item"><div class="dates">Jun 2024</div><h4>Industrial Trainee — Data &amp; Ops</h4><div class="org">Lords Pharmaceuticals</div><p>Resolved data inconsistencies across 500+ operational records and built structured Excel reports.</p></div>
-        <div class="bg-item"><div class="dates">Feb 2025 – Present</div><h4>VP, Placement Department</h4><div class="org">ASM IBMR, Pune</div><p>Screened 300+ student placement records, maintaining 98%+ data accuracy.</p></div>
+        <div class="bg-item"><div class="dates">Apr 2026 – Aug 2026</div><h4>Data &amp; Reporting Analyst (Investment Operations)</h4><div class="org">Square Yards, Pune</div><p>Built recurring KPI trackers for leadership; queried client and deal-pipeline data in CRM and Excel to keep transaction records accurate.</p></div>
+        <div class="bg-item"><div class="dates">Jun 2025</div><h4>Industrial Trainee — Data &amp; Ops Support</h4><div class="org">Lords Pharmaceuticals, Ch. Sambhajinagar</div><p>Resolved data inconsistencies across 500+ operational records and built structured Excel reports for management.</p></div>
+        <div class="bg-item"><div class="dates">Feb 2026 – Present</div><h4>Vice President, Placement Department</h4><div class="org">ASM IBMR, Pune</div><p>Screened 300+ student placement records in Excel, maintaining 98%+ data accuracy for leadership review.</p></div>
       </div>
       <div class="bg-col reveal">
         <h3>Education</h3>
-        <div class="bg-item"><div class="dates">2024 – 2026</div><h4>MBA, Business Analytics</h4><div class="org">ASM IBMR, SPPU University</div><p>Coursework in business analytics, statistics, operations management, and database management.</p></div>
-        <div class="bg-item"><div class="dates">2021 – 2024 · CGPA 7.86</div><h4>Bachelor of Pharmacy</h4><div class="org">Dr. VPPC, Ch. Sambhajinagar</div><p>Analytical foundation through statistics, research methodology, and pharmaceutical data analysis.</p></div>
+        <div class="bg-item"><div class="dates">2025 – 2027</div><h4>MBA, Business Analytics</h4><div class="org">ASM IBMR, SPPU University</div><p>Coursework in business analytics, statistics for decision-making, operations management, and database management — applied directly through live SQL/Python/Power BI projects.</p></div>
+        <div class="bg-item"><div class="dates">2021 – 2025 · CGPA 7.86</div><h4>Bachelor of Pharmacy (B.Pharm)</h4><div class="org">Dr. VPPC, Ch. Sambhajinagar</div><p>Built an analytical foundation through statistics, research methodology, and pharmaceutical data analysis, including an implant training placement in manufacturing operations.</p></div>
         <div class="bg-item"><div class="dates">Certifications</div><h4>Excel · Power BI · Data Analytics</h4><div class="org">Coursera &amp; Google</div><p>English, Hindi, and Marathi spoken.</p></div>
       </div>
     </div>
@@ -519,10 +514,10 @@
   <div class="wrap">
     <span class="pill">Certifi<b>cations</b></span>
     <div class="cert-grid">
-      <div class="cert-card reveal"><div class="cert-badge">📊</div><h4>Google Data Analytics</h4><div class="cert-org">Google · Coursera</div><div class="cert-year">2024</div></div>
-      <div class="cert-card reveal"><div class="cert-badge">📈</div><h4>Power BI for Business</h4><div class="cert-org">Microsoft · Coursera</div><div class="cert-year">2024</div></div>
-      <div class="cert-card reveal"><div class="cert-badge">🐍</div><h4>Python for Data Science</h4><div class="cert-org">IBM · Coursera</div><div class="cert-year">2023</div></div>
-      <div class="cert-card reveal"><div class="cert-badge">📗</div><h4>Advanced Excel Specialist</h4><div class="cert-org">Microsoft</div><div class="cert-year">2023</div></div>
+      <div class="cert-card reveal"><div class="cert-badge">📊</div><h4>Google Data Analytics</h4><div class="cert-org">Google · Coursera</div></div>
+      <div class="cert-card reveal"><div class="cert-badge">📈</div><h4>Power BI for Business</h4><div class="cert-org">Microsoft · Coursera</div></div>
+      <div class="cert-card reveal"><div class="cert-badge">🐍</div><h4>Python for Data Science</h4><div class="cert-org">IBM · Coursera</div></div>
+      <div class="cert-card reveal"><div class="cert-badge">📗</div><h4>Advanced Excel Specialist</h4><div class="cert-org">Microsoft</div></div>
     </div>
   </div>
 </section>
@@ -561,7 +556,7 @@
 <section id="contact">
   <div class="wrap contact-split reveal">
     <div class="contact-inner">
-      <h2>Let's <span class="accent">connect</span> — I'm <span class="accent">ready to join</span>!</h2>
+      <h2>Let's <span class="accent">connect</span> and work <span class="accent">together</span>!</h2>
       <div class="contact-list">
         <div class="contact-row"><span class="icon-circle"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg></span><div><div class="label">Phone (WhatsApp)</div><a class="value" href="tel:+919172774866">+91 91727 74866</a></div></div>
         <div class="contact-row"><span class="icon-circle"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm2 2v.01L12 12l8-5.99V6H4zm16 2.24-7.4 5.55a1 1 0 0 1-1.2 0L4 8.24V18h16V8.24z" fill="currentColor"/></svg></span><div><div class="label">E-mail</div><a class="value" href="mailto:kilcherushikesh@gmail.com">kilcherushikesh@gmail.com</a></div></div>
@@ -587,12 +582,16 @@
 <footer>
   <div class="wrap">
     <span>Rushikesh Kilche · Pune · © <span id="year"></span> · Available immediately</span>
+    <div class="visit-badge" title="Total portfolio views">
+      <span class="visit-dot"></span>
+      <span>Visitors:</span>
+      <span class="visit-count" id="visitCount">—</span>
+    </div>
   </div>
 </footer>
 
 <button class="back-to-top ripple-host" id="backToTop" aria-label="Back to top">↑</button>
 
-<!-- SIRI -->
 <button class="siri-fab" id="siriFab" aria-label="Chat with Siri">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-3 12H7a1 1 0 1 1 0-2h10a1 1 0 1 1 0 2zm0-3H7a1 1 0 1 1 0-2h10a1 1 0 1 1 0 2zm0-3H7a1 1 0 1 1 0-2h10a1 1 0 1 1 0 2z"/></svg>
   <span class="siri-dot"></span>
@@ -625,7 +624,6 @@
   </div>
 </div>
 
-<!-- MODALS -->
 <div class="modal-overlay" id="modal-1"><div class="modal"><button class="modal-close">×</button><h3>Cricbuzz LiveStats</h3><div class="modal-tag">Python · Streamlit · SQLite · REST API</div><h4>Problem</h4><p>No easy way to explore cricket data with custom SQL queries.</p><h4>Approach</h4><p>Built an ETL pipeline that pulls Cricbuzz API data into SQLite, layered with a Streamlit UI for CRUD operations and 25 practice queries.</p><h4>Result</h4><p>22,596 matches, 13,507 players, 401 teams tracked.</p><div class="modal-actions"><a class="link-pill" href="https://github.com/kilcherushikesh-gif/cricbuzz-livestats" target="_blank" rel="noopener">View on GitHub</a></div></div></div>
 
 <div class="modal-overlay" id="modal-2"><div class="modal"><button class="modal-close">×</button><h3>Employee Attrition Analysis</h3><div class="modal-tag">SQL · Python · pandas · scikit-learn</div><h4>Problem</h4><p>HR couldn't identify why employees were leaving.</p><h4>Approach</h4><p>Segmented employee data by department, tenure, salary band. Trained logistic regression.</p><h4>Result</h4><p>Top 3 attrition drivers identified, retention focus list created.</p></div></div>
@@ -645,7 +643,6 @@ if(yearEl) yearEl.textContent = new Date().getFullYear();
 
 var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* INTRO OVERLAY */
 (function(){
   var el = document.getElementById('vkIntro');
   if(!el) return;
@@ -678,6 +675,36 @@ var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   document.addEventListener('keydown', function(e){
     if(e.key === 'Enter' || e.key === 'Escape') close();
   }, { once:true });
+})();
+
+/* ================= VISITOR COUNTER ================= */
+(function(){
+  var badge = document.getElementById('visitCount');
+  if(!badge) return;
+  
+  var NS = 'rushikeshkilche-portfolio-2026';
+  var KEY = 'total-visits';
+  var alreadyVisited = localStorage.getItem('rk-visit-logged');
+  
+  var url = alreadyVisited
+    ? 'https://api.counterapi.dev/v1/' + NS + '/' + KEY
+    : 'https://api.counterapi.dev/v1/' + NS + '/' + KEY + '/up';
+  
+  fetch(url)
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      if(data && typeof data.count === 'number'){
+        badge.textContent = data.count.toLocaleString('en-IN');
+        if(!alreadyVisited){
+          localStorage.setItem('rk-visit-logged', 'yes');
+        }
+      } else {
+        badge.textContent = '—';
+      }
+    })
+    .catch(function(){
+      badge.textContent = '—';
+    });
 })();
 
 var navToggle = document.getElementById('navToggle'), navLinksEl = document.getElementById('navLinks');
@@ -768,7 +795,6 @@ document.querySelectorAll('.faq-q').forEach(function(q){
   });
 });
 
-/* CONTACT FORM */
 (function(){
   var form = document.getElementById('contactForm');
   var status = document.getElementById('formStatus');
@@ -811,7 +837,6 @@ document.querySelectorAll('.faq-q').forEach(function(q){
   });
 })();
 
-/* SIRI */
 (function(){
   var fab = document.getElementById('siriFab');
   var panel = document.getElementById('siriPanel');
@@ -827,16 +852,16 @@ document.querySelectorAll('.faq-q').forEach(function(q){
     { keywords: ['thank','thanks','thx'], response: 'You\'re welcome! 😊 Feel free to reach out to Rushi directly at <b>kilcherushikesh@gmail.com</b>.' },
     { keywords: ['skill','tech','know','expertise','tools','stack'], response: 'Rushi is skilled in:<br>• <b>SQL</b><br>• <b>Python</b> (pandas, scikit-learn)<br>• <b>Power BI</b> &amp; DAX<br>• <b>MS Excel</b><br>• <b>Tableau</b><br>• <b>Statistics</b> &amp; data cleaning' },
     { keywords: ['project','work','portfolio','built','made'], response: 'Rushi has built <b>3 live projects</b>:<br>1️⃣ <b>Cricbuzz LiveStats</b><br>2️⃣ <b>Employee Attrition Analysis</b><br>3️⃣ <b>Retail Sales Insights</b>' },
-    { keywords: ['experience','intern','company','work history','job'], response: 'Experience:<br>• <b>Square Yards</b> — Data &amp; Reporting Analyst (Apr-Aug 2025)<br>• <b>Lords Pharmaceuticals</b> — Industrial Trainee (Jun 2024)<br>• <b>ASM IBMR</b> — VP, Placement Department' },
+    { keywords: ['experience','intern','company','work history','job'], response: 'Experience:<br>• <b>Square Yards</b> — Data &amp; Reporting Analyst (Apr-Aug 2026)<br>• <b>Lords Pharmaceuticals</b> — Industrial Trainee (Jun 2025)<br>• <b>ASM IBMR</b> — VP, Placement Department' },
     { keywords: ['notice','join','start','available','when'], response: '<b>Zero notice period.</b> Rushi can join <b>immediately</b> — within 24 hours.' },
     { keywords: ['hire','recruit','contact','email','reach','call'], response: 'To hire Rushi:<br>📧 <b>kilcherushikesh@gmail.com</b><br>📱 <b>+91 91727 74866</b><br>💼 <a href="https://www.linkedin.com/in/rushikesh-kilche" target="_blank">LinkedIn</a>' },
-    { keywords: ['education','mba','degree','study','college'], response: 'Education:<br>• <b>MBA, Business Analytics</b> — ASM IBMR (2024-2026)<br>• <b>Bachelor of Pharmacy</b> — Dr. VPPC (2021-2024, CGPA 7.86)' },
+    { keywords: ['education','mba','degree','study','college'], response: 'Education:<br>• <b>MBA, Business Analytics</b> — ASM IBMR (2025-2027)<br>• <b>Bachelor of Pharmacy</b> — Dr. VPPC (2021-2025, CGPA 7.86)' },
     { keywords: ['salary','pay','ctc','compensation'], response: 'Rushi is flexible and looking for a fair market rate. Open to discussion.' },
     { keywords: ['location','where','based','city','pune','relocate'], response: 'Rushi is based in <b>Pune, India</b> 🇮🇳 and is open to relocating to <b>Mumbai, Bangalore, Hyderabad, or Delhi NCR</b>.' },
     { keywords: ['resume','cv','pdf'], response: 'You can download Rushi\'s CV from the <b>About section</b>. Or <a href="Rushikesh_Kilche_CV.pdf" download>click here</a>.' },
     { keywords: ['role','looking for','position','job type'], response: 'Rushi is looking for entry-level roles:<br>• Data Analyst<br>• Business Analyst<br>• MIS Executive<br>• Reporting Analyst<br>• Power BI Developer' },
     { keywords: ['language','speak','hindi','marathi','english'], response: 'Rushi speaks <b>English, Hindi, and Marathi</b> fluently.' },
-    { keywords: ['certification','course','certificate'], response: 'Certifications:<br>• Google Data Analytics (2024)<br>• Power BI for Business (2024)<br>• Python for Data Science (2023)<br>• Advanced Excel Specialist (2023)' },
+    { keywords: ['certification','course','certificate'], response: 'Certifications:<br>• Google Data Analytics<br>• Power BI for Business<br>• Python for Data Science<br>• Advanced Excel Specialist' },
     { keywords: ['who','about','yourself','rushi'], response: 'Rushi is a <b>Data Analyst</b> and <b>MBA Business Analytics candidate</b> with hands-on experience across retail, HR, and investment data.' }
   ];
 
