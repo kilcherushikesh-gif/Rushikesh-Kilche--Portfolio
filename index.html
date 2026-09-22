@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rushikesh Kilche — Data Analyst | Fresher | Immediate Joiner</title>
-<meta name="description" content="Rushikesh Kilche — Data Analyst (Fresher, MBA Business Analytics). Immediate joiner.">
+<title>Rushikesh Kilche — Data Analyst | Immediate Joiner</title>
+<meta name="description" content="Rushikesh Kilche — Data Analyst (MBA Business Analytics). Immediate joiner.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
 <style>
   :root{
     --navy:#0A0E27; --navy-raised:#111634; --navy-line:#232a52;
@@ -61,12 +60,6 @@
   @keyframes rippleOut{to{transform:translate(-50%,-50%) scale(1); opacity:0;}}
   .holo{position:relative; background:linear-gradient(var(--navy-raised),var(--navy-raised)) padding-box,linear-gradient(120deg,var(--gold),#5c6cff,var(--gold-light),#3ddc97,var(--gold)) border-box; background-size:100% 100%,400% 400%; border:1.5px solid transparent; animation:holoShift 8s ease infinite;}
   @keyframes holoShift{0%,100%{background-position:0% 0%,0% 50%;}50%{background-position:0% 0%,100% 50%;}}
-  .wave-text .wave-letter{display:inline-block; animation:waveAnim 2s ease-in-out infinite;}
-  @keyframes waveAnim{0%,60%,100%{transform:translateY(0);}30%{transform:translateY(-8px);}}
-  .rgb-split{animation:rgbSplitAnim 3s ease-in-out infinite;}
-  @keyframes rgbSplitAnim{0%,90%,100%{text-shadow:none;}92%{text-shadow:-2px 0 #ff0040, 2px 0 #00d0ff;}94%{text-shadow:2px 0 #ff0040, -2px 0 #00d0ff;}96%{text-shadow:-1px 0 #ff0040, 1px 0 #00d0ff;}}
-  .tilt-card{transition:transform .3s cubic-bezier(.22,1,.36,1); transform-style:preserve-3d;}
-  .tilt-card.tilting{transition:transform .08s ease-out;}
   .holo-scan{position:relative; overflow:hidden;}
   .holo-scan::after{content:""; position:absolute; left:0; right:0; height:3px; background:linear-gradient(90deg, transparent, var(--gold), transparent); box-shadow:0 0 20px var(--gold); top:-10%; opacity:0; pointer-events:none;}
   .holo-scan:hover::after{opacity:1; animation:scanLine 1.5s ease-in-out;}
@@ -104,47 +97,79 @@
   .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
   .nav-toggle.open span:nth-child(2){opacity:0;}
   .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-  .hero{padding:70px 0 40px; position:relative; overflow:hidden;}
+  .hero{padding:70px 0 0; position:relative; overflow:hidden;}
   #particleCanvas{position:absolute; inset:0; width:100%; height:100%; z-index:1; pointer-events:none;}
   .blob{position:absolute; border-radius:50%; filter:blur(90px); pointer-events:none; z-index:1; opacity:.7;}
   .blob-1{width:520px; height:520px; background:var(--hero-glow); top:-160px; right:-120px; animation:blobFloat 12s ease-in-out infinite;}
   .blob-2{width:420px; height:420px; background:rgba(92,108,255,.18); bottom:-180px; left:-100px; animation:blobFloat 14s ease-in-out infinite reverse;}
   @keyframes blobFloat{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(30px,-25px) scale(1.08);}}
-  .hero-inner{position:relative; z-index:2; display:grid; grid-template-columns:1.4fr 1fr; gap:40px; align-items:center;}
+  .hero-inner{position:relative; z-index:2; display:grid; grid-template-columns:1.4fr 1fr; gap:40px; align-items:center; padding-bottom:60px;}
   .hero h1{font-size:clamp(2.4rem,5vw,4rem); line-height:1.06; font-weight:800; letter-spacing:.01em;}
   .hero h1 .last{color:var(--gold); text-shadow:0 0 20px rgba(242,169,0,.4);}
-  .hero .fresher-tag{display:inline-flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:20px; font-size:.82rem; color:var(--ink-dim);}
-  .fresher-chip{display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:rgba(61,220,151,.1); border:1px solid rgba(61,220,151,.35); color:var(--green); font-weight:600; border-radius:999px; font-size:.75rem;}
   .hero p.role{font-size:1.15rem; color:var(--white); margin-top:20px; max-width:46ch; font-weight:500;}
   .hero p.role b{color:var(--gold); font-weight:600;}
-  .hero p.hero-tools{font-family:'Poppins',sans-serif; font-weight:700; letter-spacing:.03em; color:var(--gold); font-size:.95rem; margin-top:14px;}
-  .hero p.hero-copy{color:var(--white); font-size:1.05rem; font-weight:500; max-width:46ch; margin-top:10px;}
+  .hero p.hero-copy{color:var(--white); font-size:1.05rem; font-weight:500; max-width:46ch; margin-top:14px;}
   .hero p.hero-copy b{color:var(--gold); font-weight:600;}
-  .hero p.hero-copy-sub{color:var(--ink-dim); font-size:.95rem; max-width:52ch; margin-top:8px;}
-  .hero-actions{display:flex; align-items:center; gap:14px; margin-top:26px; flex-wrap:wrap;}
-  .crypto-ticker{display:inline-flex; align-items:center; gap:16px; margin-top:20px; padding:10px 18px; background:var(--navy-raised); border:1px solid var(--navy-line); border-radius:12px; font-family:'JetBrains Mono',monospace; font-size:.78rem; flex-wrap:wrap;}
-  .crypto-ticker .ticker-label{color:var(--ink-dim); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase;}
-  .crypto-ticker .coin{display:inline-flex; align-items:center; gap:6px;}
-  .crypto-ticker .coin .sym{color:var(--gold); font-weight:700;}
-  .crypto-ticker .coin .chg.up{color:var(--green);} .crypto-ticker .coin .chg.down{color:var(--red);}
   .hero-photo-wrap{display:flex; justify-content:center; padding:10px; position:relative; z-index:2;}
-  .rk-badge{width:min(100%,340px); aspect-ratio:1; border-radius:50%; background:linear-gradient(135deg,var(--gold),var(--gold-light)); display:grid; place-items:center; position:relative; animation:badgePulse 4s ease-in-out infinite; overflow:hidden; box-shadow:0 0 60px rgba(242,169,0,.45), 0 0 120px rgba(242,169,0,.2);}
-  .rk-badge img{width:100%; height:100%; border-radius:50%; object-fit:cover; object-position:center 15%;}
-  .rk-badge::after{content:""; position:absolute; inset:-12px; border-radius:50%; border:2px solid var(--gold); opacity:.4; animation:badgeRing 3s ease-out infinite; pointer-events:none;}
+  .rk-badge{width:min(100%,340px); aspect-ratio:1; border-radius:50%; display:grid; place-items:center; position:relative; animation:badgePulse 4s ease-in-out infinite; background:transparent;}
+  .rk-badge img{width:100%; height:100%; object-fit:contain; display:block; filter:drop-shadow(0 0 40px rgba(242,169,0,.5));}
+  .rk-badge .rk-fallback{font-family:'Poppins',sans-serif; font-weight:800; font-size:5rem; color:#0A0E27; width:100%; height:100%; display:none; place-items:center; letter-spacing:-.05em; border-radius:50%; background:linear-gradient(135deg,var(--gold),var(--gold-light));}
   @keyframes badgePulse{0%,100%{transform:scale(1);}50%{transform:scale(1.02);}}
-  @keyframes badgeRing{0%{inset:-12px; opacity:.5;}100%{inset:-40px; opacity:0;}}
-  .scroll-cue{display:flex; justify-content:center; margin-top:40px; position:relative; z-index:2;}
+  .scroll-cue{display:flex; justify-content:center; margin-top:20px; margin-bottom:20px; position:relative; z-index:2;}
   .scroll-cue span{width:48px; height:48px; border-radius:50%; background:var(--navy-raised); display:flex; align-items:center; justify-content:center; color:var(--gold); animation:bob 2.2s ease-in-out infinite; font-size:1.2rem; box-shadow:0 0 20px rgba(242,169,0,.2);}
   @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
+
+  /* ===== TOOLS MARQUEE ===== */
+  .tools-marquee{
+    position:relative;
+    z-index:2;
+    padding:20px 0;
+    background:var(--navy-raised);
+    border-top:1px solid var(--navy-line);
+    border-bottom:1px solid var(--navy-line);
+    overflow:hidden;
+    -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    mask-image:linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  }
+  .tools-track{
+    display:flex;
+    gap:48px;
+    white-space:nowrap;
+    width:max-content;
+    animation:toolsScroll 22s linear infinite;
+    will-change:transform;
+  }
+  .tools-track span{
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    font-size:1.15rem;
+    letter-spacing:.08em;
+    color:var(--gold);
+    display:inline-flex;
+    align-items:center;
+    gap:48px;
+  }
+  .tools-track span::after{
+    content:"◆";
+    color:var(--ink-dim);
+    font-size:.65rem;
+    opacity:.6;
+  }
+  @keyframes toolsScroll{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
+  }
+  .tools-marquee:hover .tools-track{animation-play-state:paused;}
+
   .quote-bar{padding:20px; text-align:center; background:var(--navy-raised); border-top:1px solid var(--navy-line); border-bottom:1px solid var(--navy-line); font-family:'Poppins',sans-serif; font-style:italic; font-size:.92rem; color:var(--ink-dim); position:relative; z-index:2;}
   .quote-bar b{color:var(--gold); font-style:normal; font-weight:600;}
   section{padding:80px 0; position:relative; z-index:2;}
   .divider{border:none; border-top:1px solid var(--navy-line); margin:0; position:relative; z-index:2;}
   .divider::after{content:""; position:absolute; left:50%; top:-1px; width:80px; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); transform:translateX(-50%); box-shadow:0 0 12px var(--gold);}
-  .about-grid{display:grid; grid-template-columns:0.9fr 1.3fr; gap:50px; align-items:start;}
-  .about-hello{font-family:'Poppins',sans-serif; font-weight:700; font-size:clamp(1.9rem,4vw,2.6rem); line-height:1.15;}
+  .about-grid{display:grid; grid-template-columns:0.7fr 1.6fr; gap:60px; align-items:start;}
+  .about-hello{font-family:'Poppins',sans-serif; font-weight:800; font-size:clamp(2rem,4.5vw,3rem); line-height:1.15; letter-spacing:-.02em;}
   .about-hello .accent{color:var(--gold);}
-  .about-copy p{color:var(--ink-dim); font-size:1.02rem; margin:0;}
+  .about-copy p{color:var(--ink-dim); font-size:1.02rem; margin:0; line-height:1.85;}
   .about-copy b{color:var(--gold); font-weight:600;}
   .about-copy b.white{color:var(--white); font-weight:700;}
   .stats-dash{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:24px;}
@@ -154,43 +179,20 @@
   .stat-card:hover{border-color:var(--gold); transform:translateY(-3px); box-shadow:0 10px 30px -10px rgba(242,169,0,.3);}
   .stat-num{font-family:'Poppins',sans-serif; font-weight:700; font-size:1.5rem; color:var(--gold); line-height:1.1;}
   .stat-label{font-size:.75rem; color:var(--ink-dim); margin-top:4px; line-height:1.3;}
-  .about-actions{display:flex; align-items:center; gap:12px; margin-top:24px; flex-wrap:wrap;}
-  .icon-circle{width:48px; height:48px; border-radius:50%; border:2px solid var(--white); display:flex; align-items:center; justify-content:center; transition:all .2s; color:var(--white); background:transparent; cursor:pointer;}
-  .icon-circle:hover{border-color:var(--gold); color:var(--gold); transform:translateY(-3px) rotate(8deg); box-shadow:0 8px 20px -6px rgba(242,169,0,.5);}
+  .about-actions{display:flex; align-items:center; gap:14px; margin-top:32px; flex-wrap:wrap;}
+  .icon-circle{width:52px; height:52px; border-radius:50%; border:1.5px solid var(--navy-line); display:flex; align-items:center; justify-content:center; transition:all .2s; color:var(--white); background:transparent; cursor:pointer;}
+  .icon-circle:hover{border-color:var(--gold); color:var(--gold); transform:translateY(-3px); box-shadow:0 8px 20px -6px rgba(242,169,0,.5);}
   .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:13px 24px; border-radius:999px; text-decoration:none; font-weight:600; font-size:.92rem; border:2px solid var(--white); color:var(--white); background:transparent; transition:all .2s; font-family:'Poppins',sans-serif; cursor:pointer; position:relative; overflow:hidden;}
   .btn:hover{transform:translateY(-2px);}
   .btn-gold{border-color:var(--gold); color:var(--gold);}
   .btn-gold:hover{background:var(--gold); color:var(--navy); box-shadow:0 10px 30px -8px rgba(242,169,0,.6);}
   .btn-ghost:hover{border-color:var(--gold); color:var(--gold); box-shadow:0 0 20px rgba(242,169,0,.3);}
-  .btn-sm{padding:9px 18px; font-size:.82rem;}
+  .btn-sm{padding:11px 26px; font-size:.88rem;}
   .skills-cats{display:grid; grid-template-columns:repeat(2,1fr); gap:30px;}
   .skill-cat h4{font-size:1.05rem; color:var(--gold); margin-bottom:14px; font-weight:600;}
   .tag-list{display:flex; flex-wrap:wrap; gap:8px;}
   .tag{border:1.5px solid var(--navy-line); background:var(--navy-raised); color:var(--white); padding:8px 16px; border-radius:999px; font-size:0.88rem; font-weight:500; transition:all .25s;}
   .tag:hover{border-color:var(--gold); transform:translateY(-2px); box-shadow:0 8px 16px -6px rgba(242,169,0,.5);}
-  .sql-playground{margin-top:50px; background:var(--navy-raised); border:1px solid var(--navy-line); border-radius:16px; overflow:hidden;}
-  .sql-head{padding:16px 22px; background:rgba(242,169,0,.06); border-bottom:1px solid var(--navy-line); display:flex; align-items:center; gap:12px; flex-wrap:wrap;}
-  .sql-head h4{margin:0; font-size:1.05rem; color:var(--gold);}
-  .sql-head .hint{font-size:.78rem; color:var(--ink-dim);}
-  .sql-body{display:grid; grid-template-columns:1fr 1fr; min-height:340px;}
-  .sql-left{padding:18px; border-right:1px solid var(--navy-line); display:flex; flex-direction:column;}
-  .sql-editor{width:100%; flex:1; min-height:180px; background:#05070F; border:1px solid var(--navy-line); border-radius:10px; color:#B9C2E0; font-family:'JetBrains Mono',monospace; font-size:.82rem; padding:14px; resize:vertical; outline:none; line-height:1.6;}
-  .sql-editor:focus{border-color:var(--gold); box-shadow:0 0 0 3px rgba(242,169,0,.1);}
-  .sql-toolbar{display:flex; gap:8px; margin-top:12px; flex-wrap:wrap;}
-  .sql-btn{background:var(--gold); color:var(--navy); border:none; padding:9px 18px; border-radius:8px; font-family:'Poppins',sans-serif; font-weight:700; cursor:pointer; font-size:.82rem; transition:all .15s; position:relative; overflow:hidden;}
-  .sql-btn:hover{transform:translateY(-1px); background:var(--gold-light); box-shadow:0 8px 20px -6px rgba(242,169,0,.6);}
-  .sql-btn.ghost{background:transparent; color:var(--gold); border:1.5px solid var(--gold);}
-  .sql-examples{display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;}
-  .sql-example{background:transparent; border:1px solid var(--navy-line); color:var(--ink-dim); font-size:.72rem; padding:4px 11px; border-radius:999px; cursor:pointer; font-family:'JetBrains Mono',monospace; transition:all .2s;}
-  .sql-example:hover{border-color:var(--gold); color:var(--gold);}
-  .sql-right{padding:18px; overflow:auto; max-height:480px; background:#05070F;}
-  .sql-result-table{width:100%; border-collapse:collapse; font-family:'JetBrains Mono',monospace; font-size:.78rem;}
-  .sql-result-table th,.sql-result-table td{padding:7px 11px; text-align:left; border-bottom:1px solid var(--navy-line);}
-  .sql-result-table th{color:var(--gold); font-weight:700; background:rgba(242,169,0,.05); position:sticky; top:0;}
-  .sql-result-table td{color:#B9C2E0;}
-  .sql-status{padding:8px 14px; font-size:.78rem; font-family:'JetBrains Mono',monospace; color:var(--ink-dim); border-top:1px solid var(--navy-line);}
-  .sql-status.success{color:var(--green);} .sql-status.error{color:var(--red);}
-  .sql-empty{color:var(--ink-dim); font-size:.85rem; text-align:center; padding:40px 20px; font-family:'JetBrains Mono',monospace;}
   .bg-grid{display:grid; grid-template-columns:1fr 1fr; gap:50px;}
   .bg-col h3{color:var(--gold); font-size:1.1rem; margin-bottom:24px; font-weight:600;}
   .bg-item{border-left:2px solid var(--navy-line); padding-left:18px; margin-bottom:26px; position:relative;}
@@ -273,9 +275,6 @@
   .back-to-top{position:fixed; right:24px; bottom:100px; width:48px; height:48px; border-radius:50%; border:none; background:var(--gold); color:var(--navy); font-size:1.3rem; font-weight:700; display:grid; place-items:center; cursor:pointer; z-index:900; opacity:0; visibility:hidden; transform:translateY(14px); transition:all .3s;}
   .back-to-top.show{opacity:1; visibility:visible; transform:translateY(0);}
   .back-to-top:hover{box-shadow:0 0 30px rgba(242,169,0,.7);}
-  .whatsapp-float{position:fixed; left:24px; bottom:100px; width:52px; height:52px; border-radius:50%; background:#25D366; color:#fff; display:grid; place-items:center; z-index:900; text-decoration:none; transition:all .25s;}
-  .whatsapp-float:hover{transform:scale(1.1);}
-  .whatsapp-float svg{width:28px; height:28px;}
   .chat-fab{position:fixed; right:24px; bottom:24px; width:56px; height:56px; border-radius:50%; background:var(--gold); color:var(--navy); display:grid; place-items:center; cursor:pointer; z-index:950; border:none; font-size:1.4rem; transition:all .25s;}
   .chat-fab:hover{transform:scale(1.08); background:var(--gold-light);}
   .chat-panel{position:fixed; right:24px; bottom:92px; width:340px; max-width:calc(100vw - 40px); background:var(--navy-raised); border:1px solid var(--navy-line); border-radius:16px; z-index:950; overflow:hidden; display:flex; flex-direction:column; height:440px; transform:translateY(20px) scale(.96); opacity:0; visibility:hidden; transition:all .3s; box-shadow:0 30px 60px -20px rgba(0,0,0,.7);}
@@ -333,12 +332,6 @@
   .match-list{display:flex; flex-wrap:wrap; gap:5px; margin-top:10px;}
   .match-pill{padding:3px 10px; border-radius:999px; font-size:.7rem; font-weight:600;}
   .match-pill.hit{background:rgba(61,220,151,.15); color:var(--green); border:1px solid rgba(61,220,151,.3);}
-  .intro-overlay{position:fixed; inset:0; background:var(--navy); display:flex; align-items:center; justify-content:center; z-index:99999; transition:all .9s;}
-  .intro-overlay.hidden{transform:translateY(-100%); opacity:0; pointer-events:none;}
-  .intro-content{text-align:center;}
-  .intro-logo{width:68px; height:68px; margin:0 auto 16px; display:grid; place-items:center; border-radius:16px; background:var(--gold); color:#0A0E27; font-family:'Poppins',sans-serif; font-weight:800; font-size:1.5rem; animation:badgePulse 1.5s ease-in-out infinite;}
-  .intro-name{font-family:'Poppins',sans-serif; font-weight:700; font-size:1.4rem; color:var(--white);}
-  .intro-role{color:var(--gold); font-weight:600; font-size:.88rem; letter-spacing:.18em; text-transform:uppercase; margin-top:6px;}
   .reveal{opacity:0; transform:translateY(28px); transition:all .7s;}
   .reveal.visible{opacity:1; transform:translateY(0);}
   .vfx-panel{position:fixed; top:60px; right:24px; z-index:9990; background:var(--navy-raised); border:1px solid var(--navy-line); border-radius:12px; padding:12px; display:none; min-width:230px; max-height:80vh; overflow-y:auto; box-shadow:0 20px 40px -20px rgba(0,0,0,.7);}
@@ -350,7 +343,6 @@
   .vfx-toggle-row .sw::after{content:""; position:absolute; top:2px; left:2px; width:14px; height:14px; border-radius:50%; background:var(--white); transition:all .2s;}
   .vfx-toggle-row.on .sw{background:var(--gold);}
   .vfx-toggle-row.on .sw::after{left:18px; background:var(--navy);}
-  @media (max-width:1000px){.sql-body{grid-template-columns:1fr;} .sql-left{border-right:none; border-bottom:1px solid var(--navy-line);}}
   @media (max-width:960px){.contact-split,.about-grid,.bg-grid{grid-template-columns:1fr;} .stats-dash{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:860px){
     .nav-links{display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; gap:0; background:rgba(10,14,39,0.98); border-bottom:1px solid var(--navy-line); padding:10px 32px 18px;}
@@ -361,27 +353,42 @@
     .nav-fresher{display:none;}
     .hero-inner{grid-template-columns:1fr;}
     .hero-photo-wrap{order:-1; margin-bottom:20px;}
-    .rk-badge{width:200px;}
+    .rk-badge{width:240px;}
     .skills-cats{grid-template-columns:1fr;}
     .chat-panel{right:14px; bottom:86px; width:calc(100vw - 28px);}
     .chat-fab{right:14px; bottom:14px;}
     .back-to-top{right:14px; bottom:86px;}
-    .whatsapp-float{left:14px; bottom:86px;}
     .ach-toast{right:14px; top:70px;}
     .vfx-panel{right:14px; top:56px;}
+    .tools-track{gap:32px;}
+    .tools-track span{font-size:1rem; gap:32px;}
+    .tools-track span::after{font-size:.55rem;}
+    .about-actions{gap:10px;}
+    .icon-circle{width:46px; height:46px;}
   }
   @media (max-width:480px){
     .stats-dash{grid-template-columns:1fr;}
     .wrap{padding:0 20px;}
     .icon-btn{width:34px; height:34px;}
+    .rk-badge{width:200px;}
+    .tools-track span{font-size:.9rem; gap:24px;}
+    .tools-track{gap:24px;}
   }
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     .scroll-cue span,.blob,.rk-badge,.vfx-aurora,.vfx-noise,.vfx-vignette{animation:none;}
     .reveal{opacity:1; transform:none;}
-    .intro-overlay{display:none !important;}
     #particleCanvas,#vfxCanvas,#trailCanvas,#matrixCanvas,#hoverCanvas,.scan-lines{display:none !important;}
     .glitch::before,.glitch::after{display:none;}
+    .tools-track{animation:none;}
+  }
+
+  /* BULLETPROOF INTRO FIX */
+  #vkIntro{
+    animation: forceHideVk 0.6s ease 4.5s forwards !important;
+  }
+  @keyframes forceHideVk{
+    to{ opacity:0; visibility:hidden; pointer-events:none; transform:translateY(-100%); }
   }
 </style>
 </head>
@@ -397,14 +404,6 @@
 <canvas id="vfxCanvas"></canvas>
 
 <div class="read-progress" id="readProgress"></div>
-
-<div class="intro-overlay" id="introOverlay">
-  <div class="intro-content">
-    <div class="intro-logo">RK</div>
-    <div class="intro-name">Rushikesh Kilche</div>
-    <div class="intro-role">Data Analyst · Fresher</div>
-  </div>
-</div>
 
 <div class="cursor-dot" id="cursorDot"></div>
 <div class="cursor-ring" id="cursorRing"></div>
@@ -478,36 +477,36 @@
   <div class="blob blob-2"></div>
   <div class="wrap hero-inner">
     <div>
-      <span class="pill">DATA <b>ANALYST</b> · FRESHER</span>
+      <span class="pill">DATA <b>ANALYST</b> PORTFOLIO</span>
       <h1><span class="glitch" data-text="RUSHIKESH">RUSHIKESH</span><br><span class="last shimmer">KILCHE</span></h1>
-      <div class="fresher-tag">
-        <span class="fresher-chip">● Immediate Joiner</span>
-        <span class="fresher-chip">📍 Pune · Open to Relocate</span>
-        <span class="fresher-chip">🎓 MBA Business Analytics</span>
-      </div>
       <p class="role" id="heroTagline">I help businesses find <b>clarity</b> through <b>data</b>.</p>
-      <p class="hero-tools">SQL · PYTHON · POWER BI · EXCEL · TABLEAU</p>
-      <p class="hero-copy">Fresher <b>Data Analyst &amp; Business Analyst</b> with hands-on project experience across retail, HR and investment datasets.</p>
-      <p class="hero-copy-sub">Immediate joiner · Open to full-time roles, internships and remote positions.</p>
-
-      <div class="crypto-ticker" id="cryptoTicker">
-        <span class="ticker-label">LIVE DATA</span>
-        <span class="coin"><span class="sym">BTC</span><span class="price">--</span><span class="chg">--</span></span>
-        <span class="coin"><span class="sym">ETH</span><span class="price">--</span><span class="chg">--</span></span>
-        <span class="coin"><span class="sym">SOL</span><span class="price">--</span><span class="chg">--</span></span>
-      </div>
-
-      <div class="hero-actions">
-        <a class="btn btn-gold ripple-host" href="Rushikesh_Kilche_CV.pdf" download>⬇ Download Resume</a>
-        <button class="btn btn-ghost ripple-host" id="resumeViewBtn">👁 View CV</button>
-      </div>
+      <p class="hero-copy"><b>Data Analyst &amp; Business Analyst</b> with hands-on project experience across retail, HR and investment datasets.</p>
     </div>
     <div class="hero-photo-wrap">
-      <div class="rk-badge"><img src="hero-photo.png" alt="Rushikesh Kilche"></div>
+      <div class="rk-badge">
+        <img src="hero-photo.png" alt="Rushikesh Kilche" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+        <div class="rk-fallback">RK</div>
+      </div>
     </div>
   </div>
   <div class="scroll-cue"><span>&#8964;</span></div>
 </section>
+
+<!-- ===== TOOLS MARQUEE ===== -->
+<div class="tools-marquee" aria-hidden="true">
+  <div class="tools-track">
+    <span>SQL</span>
+    <span>PYTHON</span>
+    <span>POWER BI</span>
+    <span>EXCEL</span>
+    <span>TABLEAU</span>
+    <span>SQL</span>
+    <span>PYTHON</span>
+    <span>POWER BI</span>
+    <span>EXCEL</span>
+    <span>TABLEAU</span>
+  </div>
+</div>
 
 <div class="quote-bar">
   <div class="wrap" id="quoteText">"In God we trust — all others must bring <b>data</b>." — W. Edwards Deming</div>
@@ -517,22 +516,18 @@
 
 <section id="about">
   <div class="wrap about-grid reveal">
-    <div class="about-hello">Hello,<br>I'm <span class="accent shimmer">Rushi</span>!</div>
+    <div class="about-hello">Hello,<br>I'm <span class="accent">Rushi</span>!</div>
     <div>
       <div class="about-copy">
-        <p><b class="white">Fresher Data Analyst &amp; Business Analyst</b> and <b class="white">MBA Business Analytics candidate</b> with practical project experience across retail, HR and investment data. Skilled in <b>SQL, Python, Power BI, Excel and Tableau</b>.</p>
-      </div>
-      <div class="stats-dash">
-        <div class="stat-card"><div class="stat-num scramble" data-target="500" data-suffix="K+">500K+</div><div class="stat-label">Rows analyzed</div></div>
-        <div class="stat-card"><div class="stat-num scramble" data-target="25" data-suffix="+">25+</div><div class="stat-label">Dashboards</div></div>
-        <div class="stat-card"><div class="stat-num scramble" data-target="3">3</div><div class="stat-label">Sectors</div></div>
-        <div class="stat-card"><div class="stat-num scramble" data-target="3">3</div><div class="stat-label">Live projects</div></div>
+        <p><b class="white">Data Analyst</b> and <b class="white">MBA Business Analytics candidate</b> with hands-on experience across retail, HR, and investment-sector data. Proficient in <b>SQL</b>, <b>Python</b>, <b>Power BI</b>, <b>MS Excel</b>, <b>Statistics</b>, and <b>Tableau</b> for comprehensive data analysis and visualization. Comfortable with end-to-end data analysis, data cleaning, dashboard creation, and presenting actionable insights to stakeholders — with a track record of maintaining <b>98%+ accuracy</b> across <b>300+ live records</b>.</p>
       </div>
       <div class="about-actions">
         <a class="icon-circle" href="https://www.linkedin.com/in/rushikesh-kilche" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.24h4.5V23H.24V8.24zM8.5 8.24h4.32v2.02h.06c.6-1.14 2.07-2.34 4.26-2.34 4.55 0 5.39 3 5.39 6.9V23h-4.5v-7.3c0-1.74-.03-3.98-2.43-3.98-2.43 0-2.8 1.9-2.8 3.86V23H8.5V8.24z" fill="currentColor"/></svg></a>
         <a class="icon-circle" href="tel:+919172774866" aria-label="Phone"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg></a>
         <a class="icon-circle" href="mailto:kilcherushikesh@gmail.com" aria-label="Email"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm2 2v.01L12 12l8-5.99V6H4zm16 2.24-7.4 5.55a1 1 0 0 1-1.2 0L4 8.24V18h16V8.24z" fill="currentColor"/></svg></a>
-        <button class="btn btn-sm btn-ghost ripple-host" id="matchScoreBtn">🎯 Resume Match</button>
+        <a class="btn btn-sm btn-ghost ripple-host" href="#projects">Projects</a>
+        <a class="btn btn-sm btn-gold ripple-host" href="Rushikesh_Kilche_CV.pdf" download>Download CV</a>
+        <button class="btn btn-sm btn-ghost ripple-host" id="resumeViewBtn2">View CV</button>
       </div>
     </div>
   </div>
@@ -548,30 +543,6 @@
       <div class="skill-cat reveal"><h4>Data skills</h4><div class="tag-list"><span class="tag">Data cleaning &amp; ETL</span><span class="tag">Validation</span><span class="tag">Statistics</span><span class="tag">KPI reporting</span></div></div>
       <div class="skill-cat reveal"><h4>Business analysis</h4><div class="tag-list"><span class="tag">Requirements</span><span class="tag">BRD / FRD</span><span class="tag">Gap analysis</span><span class="tag">Agile</span></div></div>
       <div class="skill-cat reveal"><h4>Collaboration</h4><div class="tag-list"><span class="tag">CRM</span><span class="tag">JIRA</span><span class="tag">MS Teams</span><span class="tag">PowerPoint</span></div></div>
-    </div>
-    <div class="sql-playground reveal">
-      <div class="sql-head">
-        <h4>🧪 Live SQL Playground</h4>
-        <span class="hint">Real SQLite running in your browser. Try typing a query!</span>
-      </div>
-      <div class="sql-body">
-        <div class="sql-left">
-          <textarea class="sql-editor" id="sqlEditor" spellcheck="false">SELECT name, dept, salary FROM employees ORDER BY salary DESC LIMIT 5;</textarea>
-          <div class="sql-toolbar">
-            <button class="sql-btn ripple-host" id="sqlRun">▶ Run Query</button>
-            <button class="sql-btn ghost ripple-host" id="sqlReset">↻ Reset DB</button>
-          </div>
-          <div class="sql-examples">
-            <button class="sql-example" data-sql="SELECT * FROM employees WHERE dept = 'Data';">Data team</button>
-            <button class="sql-example" data-sql="SELECT dept, COUNT(*) as cnt, AVG(salary) as avg_sal FROM employees GROUP BY dept;">Avg by dept</button>
-            <button class="sql-example" data-sql="SELECT name, salary, RANK() OVER (ORDER BY salary DESC) as rnk FROM employees;">Salary rank</button>
-            <button class="sql-example" data-sql="SELECT * FROM employees WHERE tenure <= 2;">Freshers</button>
-            <button class="sql-example" data-sql="SELECT * FROM employees WHERE salary > (SELECT AVG(salary) FROM employees);">Above avg</button>
-          </div>
-        </div>
-        <div class="sql-right" id="sqlResult"><div class="sql-empty">Click ▶ Run Query to see results</div></div>
-      </div>
-      <div class="sql-status" id="sqlStatus">Ready. Load a sample query or write your own.</div>
     </div>
   </div>
 </section>
@@ -663,10 +634,10 @@
   <div class="wrap">
     <span class="pill">Recruiter <b>FAQ</b></span>
     <div class="faq-list">
-      <div class="faq-item reveal"><div class="faq-q">What is your notice period?</div><div class="faq-a"><b>Zero notice period.</b> I'm a fresher and can join <b>immediately</b> — within 24 hours of receiving an offer.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">What is your notice period?</div><div class="faq-a"><b>Zero notice period.</b> I can join <b>immediately</b> — within 24 hours of receiving an offer.</div></div>
       <div class="faq-item reveal"><div class="faq-q">What kind of roles are you looking for?</div><div class="faq-a">Entry-level <b>Data Analyst</b>, <b>Business Analyst</b>, <b>MIS Executive</b>, <b>Reporting Analyst</b>, and <b>Power BI Developer</b> roles.</div></div>
       <div class="faq-item reveal"><div class="faq-q">Are you open to relocating?</div><div class="faq-a">Yes — I'm based in <b>Pune</b> but open to relocating to <b>Mumbai, Bangalore, Hyderabad, or Delhi NCR</b>.</div></div>
-      <div class="faq-item reveal"><div class="faq-q">What's your expected salary as a fresher?</div><div class="faq-a">Flexible — looking for a fair market rate. Open to discussion.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">What's your expected salary?</div><div class="faq-a">Flexible — looking for a fair market rate. Open to discussion.</div></div>
       <div class="faq-item reveal"><div class="faq-q">Do you have real project experience?</div><div class="faq-a">Yes — <b>3 live projects</b> built end-to-end plus real internship experience at <b>Square Yards</b> and <b>Lords Pharmaceuticals</b>.</div></div>
       <div class="faq-item reveal"><div class="faq-q">Can you share your resume?</div><div class="faq-a">Absolutely — <a href="Rushikesh_Kilche_CV.pdf" download style="color:var(--gold);text-decoration:underline">click here to download my CV</a>.</div></div>
     </div>
@@ -721,10 +692,6 @@
 
 <button class="back-to-top ripple-host" id="backToTop" aria-label="Back to top">↑</button>
 
-<a class="whatsapp-float" href="https://wa.me/919172774866?text=Hi%20Rushikesh" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.1-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3.1 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
-</a>
-
 <button class="chat-fab" id="chatFab">💬</button>
 
 <div class="chat-panel" id="chatPanel">
@@ -770,346 +737,272 @@
 <div class="modal-overlay" id="matchModal"><div class="modal"><button class="modal-close">×</button><h3>🎯 Resume Match Score</h3><div class="modal-tag">Paste a JD → see match score</div><textarea class="modal-textarea" id="jdInput" placeholder="Paste the JD here..."></textarea><div class="modal-actions"><button class="link-pill" id="matchRun">Calculate Match</button></div><div class="match-result" id="matchResult"><div class="match-score" id="matchScore">0%</div><div class="match-label">Match with Rushi's skill set</div><div id="matchDetails"></div></div></div></div>
 
 <script>
-window.onerror = function(msg){ console.warn('⚠️', msg); var ov = document.getElementById('introOverlay'); if(ov && !ov.classList.contains('hidden')) ov.classList.add('hidden'); return false; };
+window.onerror = function(msg){ console.warn('⚠️', msg); return false; };
 var storage = { get: function(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }, set: function(k,v){ try{ localStorage.setItem(k,v); }catch(e){} } };
 
-document.addEventListener('DOMContentLoaded', function(){
-  console.log('✓ Portfolio loaded');
+console.log('✓ Portfolio loaded');
 
-  var yearEl = document.getElementById('year');
-  if(yearEl) yearEl.textContent = new Date().getFullYear();
+var yearEl = document.getElementById('year');
+if(yearEl) yearEl.textContent = new Date().getFullYear();
 
-  var intro = document.getElementById('introOverlay'); var introHidden = false;
-  function hideIntro(){ if(introHidden || !intro) return; introHidden = true; intro.classList.add('hidden'); setTimeout(function(){ if(intro && intro.parentNode) intro.parentNode.removeChild(intro); }, 1000); }
-  setTimeout(hideIntro, 1300);
-  window.addEventListener('load', function(){ setTimeout(hideIntro, 1100); });
+var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var navToggle = document.getElementById('navToggle'), navLinksEl = document.getElementById('navLinks');
+if(navToggle && navLinksEl){
+  navToggle.addEventListener('click', function(){ var isOpen = navLinksEl.classList.toggle('open'); navToggle.classList.toggle('open', isOpen); });
+  navLinksEl.querySelectorAll('a').forEach(function(l){ l.addEventListener('click', function(){ navLinksEl.classList.remove('open'); navToggle.classList.remove('open'); }); });
+}
 
-  var navToggle = document.getElementById('navToggle'), navLinksEl = document.getElementById('navLinks');
-  if(navToggle && navLinksEl){
-    navToggle.addEventListener('click', function(){ var isOpen = navLinksEl.classList.toggle('open'); navToggle.classList.toggle('open', isOpen); });
-    navLinksEl.querySelectorAll('a').forEach(function(l){ l.addEventListener('click', function(){ navLinksEl.classList.remove('open'); navToggle.classList.remove('open'); }); });
-  }
+var soundEnabled = storage.get('sound') === 'on';
+var audioCtx = null;
+function playBeep(freq, dur, vol){
+  if(!soundEnabled) return;
+  try{
+    if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    var osc = audioCtx.createOscillator(); var gain = audioCtx.createGain();
+    osc.frequency.value = freq; osc.type='sine'; gain.gain.value = vol||0.06;
+    osc.connect(gain); gain.connect(audioCtx.destination);
+    osc.start(); gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime+(dur||0.1));
+    osc.stop(audioCtx.currentTime+(dur||0.1));
+  }catch(e){}
+}
+function updateSoundIcon(){
+  var on = document.getElementById('soundIconOn'), off = document.getElementById('soundIconOff'), btn = document.getElementById('soundToggle');
+  if(on) on.style.display = soundEnabled ? 'block' : 'none';
+  if(off) off.style.display = soundEnabled ? 'none' : 'block';
+  if(btn) btn.classList.toggle('active', soundEnabled);
+}
+var soundBtn = document.getElementById('soundToggle');
+if(soundBtn){
+  updateSoundIcon();
+  soundBtn.addEventListener('click', function(){
+    soundEnabled = !soundEnabled; storage.set('sound', soundEnabled?'on':'off'); updateSoundIcon();
+    if(soundEnabled) playBeep(880,0.12,0.08);
+  });
+}
 
-  var soundEnabled = storage.get('sound') === 'on';
-  var audioCtx = null;
-  function playBeep(freq, dur, vol){
-    if(!soundEnabled) return;
-    try{
-      if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      var osc = audioCtx.createOscillator(); var gain = audioCtx.createGain();
-      osc.frequency.value = freq; osc.type='sine'; gain.gain.value = vol||0.06;
-      osc.connect(gain); gain.connect(audioCtx.destination);
-      osc.start(); gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime+(dur||0.1));
-      osc.stop(audioCtx.currentTime+(dur||0.1));
-    }catch(e){}
-  }
-  function updateSoundIcon(){
-    var on = document.getElementById('soundIconOn'), off = document.getElementById('soundIconOff'), btn = document.getElementById('soundToggle');
-    if(on) on.style.display = soundEnabled ? 'block' : 'none';
-    if(off) off.style.display = soundEnabled ? 'none' : 'block';
-    if(btn) btn.classList.toggle('active', soundEnabled);
-  }
-  var soundBtn = document.getElementById('soundToggle');
-  if(soundBtn){
-    updateSoundIcon();
-    soundBtn.addEventListener('click', function(){
-      soundEnabled = !soundEnabled; storage.set('sound', soundEnabled?'on':'off'); updateSoundIcon();
-      if(soundEnabled) playBeep(880,0.12,0.08);
-    });
-  }
+var contrastBtn = document.getElementById('contrastToggle');
+if(contrastBtn){
+  if(storage.get('contrast') === 'high'){ document.documentElement.setAttribute('data-contrast','high'); contrastBtn.classList.add('active'); }
+  contrastBtn.addEventListener('click', function(){
+    var isHigh = document.documentElement.getAttribute('data-contrast') === 'high';
+    if(isHigh){ document.documentElement.removeAttribute('data-contrast'); storage.set('contrast','normal'); contrastBtn.classList.remove('active'); }
+    else{ document.documentElement.setAttribute('data-contrast','high'); storage.set('contrast','high'); contrastBtn.classList.add('active'); }
+    playBeep(720,0.06);
+  });
+}
 
-  var contrastBtn = document.getElementById('contrastToggle');
-  if(contrastBtn){
-    if(storage.get('contrast') === 'high'){ document.documentElement.setAttribute('data-contrast','high'); contrastBtn.classList.add('active'); }
-    contrastBtn.addEventListener('click', function(){
-      var isHigh = document.documentElement.getAttribute('data-contrast') === 'high';
-      if(isHigh){ document.documentElement.removeAttribute('data-contrast'); storage.set('contrast','normal'); contrastBtn.classList.remove('active'); }
-      else{ document.documentElement.setAttribute('data-contrast','high'); storage.set('contrast','high'); contrastBtn.classList.add('active'); }
-      playBeep(720,0.06);
-    });
-  }
+var themeBtn = document.getElementById('themeToggle');
+if(themeBtn){
+  if(storage.get('theme') === 'light') document.documentElement.setAttribute('data-theme','light');
+  themeBtn.addEventListener('click', function(){
+    var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    if(isLight){ document.documentElement.removeAttribute('data-theme'); storage.set('theme','dark'); }
+    else{ document.documentElement.setAttribute('data-theme','light'); storage.set('theme','light'); }
+  });
+}
 
-  var themeBtn = document.getElementById('themeToggle');
-  if(themeBtn){
-    if(storage.get('theme') === 'light') document.documentElement.setAttribute('data-theme','light');
-    themeBtn.addEventListener('click', function(){
-      var isLight = document.documentElement.getAttribute('data-theme') === 'light';
-      if(isLight){ document.documentElement.removeAttribute('data-theme'); storage.set('theme','dark'); }
-      else{ document.documentElement.setAttribute('data-theme','light'); storage.set('theme','light'); }
-    });
-  }
+var langSelect = document.getElementById('langSelect');
+var i18n = {
+  en:{pill:'DATA <b>ANALYST</b> PORTFOLIO',tagline:'I help businesses find <b>clarity</b> through <b>data</b>.',heroCopy:'<b>Data Analyst &amp; Business Analyst</b> with hands-on project experience across retail, HR and investment datasets.'},
+  hi:{pill:'डेटा <b>एनालिस्ट</b> पोर्टफोलियो',tagline:'मैं व्यवसायों को <b>डेटा</b> से <b>स्पष्टता</b> पाने में मदद करता हूँ।',heroCopy:'<b>डेटा और बिजनेस एनालिस्ट</b> — रिटेल, HR और निवेश डेटासेट पर व्यावहारिक प्रोजेक्ट अनुभव।'},
+  mr:{pill:'डेटा <b>अॅनालिस्ट</b> पोर्टफोलिओ',tagline:'मी व्यवसायांना <b>डेटा</b> द्वारे <b>स्पष्टता</b> शोधण्यास मदत करतो.',heroCopy:'<b>डेटा आणि बिझनेस अॅनालिस्ट</b> — किरकोळ, HR आणि गुंतवणूक डेटासेटवर प्रात्यक्षिक प्रकल्प अनुभव.'}
+};
+function setLang(lang){
+  var dict = i18n[lang] || i18n.en;
+  var pill = document.querySelector('.pill'); if(pill && dict.pill) pill.innerHTML = dict.pill;
+  var tagline = document.getElementById('heroTagline'); if(tagline && dict.tagline) tagline.innerHTML = dict.tagline;
+  var heroCopy = document.querySelector('.hero-copy'); if(heroCopy && dict.heroCopy) heroCopy.innerHTML = dict.heroCopy;
+  storage.set('lang', lang);
+}
+if(langSelect){
+  var savedLang = storage.get('lang') || 'en';
+  langSelect.value = savedLang;
+  if(savedLang !== 'en') setLang(savedLang);
+  langSelect.addEventListener('change', function(){ setLang(this.value); playBeep(660,0.08); });
+}
 
-  var langSelect = document.getElementById('langSelect');
-  var i18n = {
-    en:{pill:'DATA <b>ANALYST</b> · FRESHER',tagline:'I help businesses find <b>clarity</b> through <b>data</b>.',heroCopy:'Fresher <b>Data Analyst &amp; Business Analyst</b> with hands-on project experience across retail, HR and investment datasets.',heroSub:'Immediate joiner · Open to full-time roles, internships and remote positions.'},
-    hi:{pill:'डेटा <b>एनालिस्ट</b> · फ्रेशर',tagline:'मैं व्यवसायों को <b>डेटा</b> से <b>स्पष्टता</b> पाने में मदद करता हूँ।',heroCopy:'फ्रेशर <b>डेटा और बिजनेस एनालिस्ट</b> — रिटेल, HR और निवेश डेटासेट पर व्यावहारिक प्रोजेक्ट अनुभव।',heroSub:'तुरंत जॉइन · फुल-टाइम, इंटर्नशिप और रिमोट भूमिकाएँ।'},
-    mr:{pill:'डेटा <b>अ‍ॅनालिस्ट</b> · फ्रेशर',tagline:'मी व्यवसायांना <b>डेटा</b> द्वारे <b>स्पष्टता</b> शोधण्यास मदत करतो.',heroCopy:'फ्रेशर <b>डेटा आणि बिझनेस अ‍ॅनालिस्ट</b> — किरकोळ, HR आणि गुंतवणूक डेटासेटवर प्रात्यक्षिक प्रकल्प अनुभव.',heroSub:'तात्काळ रुजू · पूर्ण-वेळ, इंटर्नशिप.'}
-  };
-  function setLang(lang){
-    var dict = i18n[lang] || i18n.en;
-    var pill = document.querySelector('.pill'); if(pill && dict.pill) pill.innerHTML = dict.pill;
-    var tagline = document.getElementById('heroTagline'); if(tagline && dict.tagline) tagline.innerHTML = dict.tagline;
-    var heroCopy = document.querySelector('.hero-copy'); if(heroCopy && dict.heroCopy) heroCopy.innerHTML = dict.heroCopy;
-    var heroSub = document.querySelector('.hero-copy-sub'); if(heroSub && dict.heroSub) heroSub.textContent = dict.heroSub;
-    storage.set('lang', lang);
-  }
-  if(langSelect){
-    var savedLang = storage.get('lang') || 'en';
-    langSelect.value = savedLang;
-    if(savedLang !== 'en') setLang(savedLang);
-    langSelect.addEventListener('change', function(){ setLang(this.value); playBeep(660,0.08); });
-  }
+var vfxState = {
+  scanlines: storage.get('vfx-scanlines') !== 'off',
+  glitch: storage.get('vfx-glitch') !== 'off',
+  ripple: storage.get('vfx-ripple') !== 'off',
+  burst: storage.get('vfx-burst') !== 'off',
+  trail: storage.get('vfx-trail') !== 'off',
+  shimmer: storage.get('vfx-shimmer') !== 'off',
+  holo: storage.get('vfx-holo') !== 'off',
+  matrix: false,
+  wave: storage.get('vfx-wave') !== 'off',
+  rgb: storage.get('vfx-rgb') === 'on',
+  tilt: storage.get('vfx-tilt') !== 'off',
+  holoscan: storage.get('vfx-holoscan') !== 'off'
+};
 
-  var vfxState = {
-    scanlines: storage.get('vfx-scanlines') !== 'off',
-    glitch: storage.get('vfx-glitch') !== 'off',
-    ripple: storage.get('vfx-ripple') !== 'off',
-    burst: storage.get('vfx-burst') !== 'off',
-    trail: storage.get('vfx-trail') !== 'off',
-    shimmer: storage.get('vfx-shimmer') !== 'off',
-    holo: storage.get('vfx-holo') !== 'off',
-    matrix: false,
-    wave: storage.get('vfx-wave') !== 'off',
-    rgb: storage.get('vfx-rgb') === 'on',
-    tilt: storage.get('vfx-tilt') !== 'off',
-    holoscan: storage.get('vfx-holoscan') !== 'off'
-  };
+var vfxPanel = document.getElementById('vfxPanel');
+var vfxBtn = document.getElementById('vfxToggleBtn');
+if(vfxBtn && vfxPanel){
+  vfxBtn.addEventListener('click', function(){ vfxPanel.classList.toggle('open'); });
+  document.addEventListener('click', function(e){
+    if(!vfxPanel.contains(e.target) && e.target !== vfxBtn && !vfxBtn.contains(e.target)) vfxPanel.classList.remove('open');
+  });
+}
 
-  var vfxPanel = document.getElementById('vfxPanel');
-  var vfxBtn = document.getElementById('vfxToggleBtn');
-  if(vfxBtn && vfxPanel){
-    vfxBtn.addEventListener('click', function(){ vfxPanel.classList.toggle('open'); });
-    document.addEventListener('click', function(e){
-      if(!vfxPanel.contains(e.target) && e.target !== vfxBtn && !vfxBtn.contains(e.target)) vfxPanel.classList.remove('open');
-    });
-  }
-
-  function applyVfxStates(){
-    document.body.classList.toggle('vfx-scanlines', vfxState.scanlines);
-    document.body.classList.toggle('matrix-on', vfxState.matrix);
-    document.querySelectorAll('.glitch').forEach(function(g){ g.classList.toggle('glitch-off', !vfxState.glitch); });
-    document.querySelectorAll('.shimmer').forEach(function(s){ s.style.animation = vfxState.shimmer ? '' : 'none'; });
-    document.querySelectorAll('.holo').forEach(function(h){ h.style.animation = vfxState.holo ? '' : 'none'; });
-    var tag = document.getElementById('heroTagline');
-    if(tag) tag.classList.toggle('rgb-split', vfxState.rgb);
-    if(vfxPanel){
-      vfxPanel.querySelectorAll('.vfx-toggle-row').forEach(function(row){
-        var key = row.getAttribute('data-vfx');
-        if(key in vfxState) row.classList.toggle('on', !!vfxState[key]);
-      });
-    }
-  }
-
+function applyVfxStates(){
+  document.body.classList.toggle('vfx-scanlines', vfxState.scanlines);
+  document.body.classList.toggle('matrix-on', vfxState.matrix);
+  document.querySelectorAll('.glitch').forEach(function(g){ g.classList.toggle('glitch-off', !vfxState.glitch); });
+  document.querySelectorAll('.shimmer').forEach(function(s){ s.style.animation = vfxState.shimmer ? '' : 'none'; });
+  document.querySelectorAll('.holo').forEach(function(h){ h.style.animation = vfxState.holo ? '' : 'none'; });
+  var tag = document.getElementById('heroTagline');
+  if(tag) tag.classList.toggle('rgb-split', vfxState.rgb);
   if(vfxPanel){
     vfxPanel.querySelectorAll('.vfx-toggle-row').forEach(function(row){
-      row.addEventListener('click', function(){
-        var key = row.getAttribute('data-vfx');
-        vfxState[key] = !vfxState[key];
-        storage.set('vfx-'+key, vfxState[key]?'on':'off');
-        applyVfxStates();
-        playBeep(880,0.05);
-      });
+      var key = row.getAttribute('data-vfx');
+      if(key in vfxState) row.classList.toggle('on', !!vfxState[key]);
     });
   }
-  applyVfxStates();
+}
 
-  var readBar = document.getElementById('readProgress');
-  window.addEventListener('scroll', function(){
-    var h = document.documentElement.scrollHeight - window.innerHeight;
-    if(readBar) readBar.style.width = (window.scrollY / h * 100) + '%';
-  }, { passive:true });
-
-  if('IntersectionObserver' in window){
-    var revealObs = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-    document.querySelectorAll('.reveal').forEach(function(el){ revealObs.observe(el); });
-  }
-
-  var tagline = document.getElementById('heroTagline');
-  if(tagline && !reduceMotion){
-    var orig = tagline.innerHTML, plain = tagline.textContent;
-    tagline.textContent = ''; tagline.classList.add('typing');
-    var idx = 0;
-    setTimeout(function typeNext(){
-      if(idx < plain.length){ tagline.textContent += plain.charAt(idx); idx++; setTimeout(typeNext, 35); }
-      else { tagline.innerHTML = orig; tagline.classList.remove('typing'); }
-    }, 400);
-  }
-
-  var header = document.querySelector('header');
-  window.addEventListener('scroll', function(){ if(header) header.classList.toggle('scrolled', window.scrollY > 40); }, { passive:true });
-
-  var backBtn = document.getElementById('backToTop');
-  window.addEventListener('scroll', function(){ if(backBtn) backBtn.classList.toggle('show', window.scrollY > 500); }, { passive:true });
-  if(backBtn) backBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
-
-  document.querySelectorAll('.filter-btn').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var f = btn.getAttribute('data-filter');
-      document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
-      btn.classList.add('active');
-      document.querySelectorAll('.project-card').forEach(function(card){
-        var tags = card.getAttribute('data-tags') || '';
-        card.classList.toggle('hidden', !(f === 'all' || tags.indexOf(f) !== -1));
-      });
-      playBeep(520,0.05);
+if(vfxPanel){
+  vfxPanel.querySelectorAll('.vfx-toggle-row').forEach(function(row){
+    row.addEventListener('click', function(){
+      var key = row.getAttribute('data-vfx');
+      vfxState[key] = !vfxState[key];
+      storage.set('vfx-'+key, vfxState[key]?'on':'off');
+      applyVfxStates();
+      playBeep(880,0.05);
     });
   });
+}
+applyVfxStates();
 
-  (function(){
-    var overlays = document.querySelectorAll('.modal-overlay');
-    function closeAll(){ overlays.forEach(function(o){ o.classList.remove('open'); }); document.body.style.overflow = ''; }
+var readBar = document.getElementById('readProgress');
+window.addEventListener('scroll', function(){
+  var h = document.documentElement.scrollHeight - window.innerHeight;
+  if(readBar) readBar.style.width = (window.scrollY / h * 100) + '%';
+}, { passive:true });
+
+if('IntersectionObserver' in window){
+  var revealObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el){ revealObs.observe(el); });
+}
+
+var tagline = document.getElementById('heroTagline');
+if(tagline && !reduceMotion){
+  var orig = tagline.innerHTML, plain = tagline.textContent;
+  tagline.textContent = ''; tagline.classList.add('typing');
+  var idx = 0;
+  setTimeout(function typeNext(){
+    if(idx < plain.length){ tagline.textContent += plain.charAt(idx); idx++; setTimeout(typeNext, 35); }
+    else { tagline.innerHTML = orig; tagline.classList.remove('typing'); }
+  }, 400);
+}
+
+var header = document.querySelector('header');
+window.addEventListener('scroll', function(){ if(header) header.classList.toggle('scrolled', window.scrollY > 40); }, { passive:true });
+
+var backBtn = document.getElementById('backToTop');
+window.addEventListener('scroll', function(){ if(backBtn) backBtn.classList.toggle('show', window.scrollY > 500); }, { passive:true });
+if(backBtn) backBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+document.querySelectorAll('.filter-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var f = btn.getAttribute('data-filter');
+    document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
     document.querySelectorAll('.project-card').forEach(function(card){
-      card.addEventListener('click', function(e){
-        if(e.target.closest('a')) return;
-        var id = card.getAttribute('data-modal'); if(!id) return;
-        var m = document.getElementById(id);
-        if(m){ m.classList.add('open'); document.body.style.overflow = 'hidden'; }
-      });
+      var tags = card.getAttribute('data-tags') || '';
+      card.classList.toggle('hidden', !(f === 'all' || tags.indexOf(f) !== -1));
     });
-    overlays.forEach(function(o){
-      o.addEventListener('click', function(e){ if(e.target === o) closeAll(); });
-      var c = o.querySelector('.modal-close'); if(c) c.addEventListener('click', closeAll);
-    });
-    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeAll(); });
-    var rb = document.getElementById('resumeViewBtn'), rm = document.getElementById('resumeModal');
-    if(rb && rm) rb.addEventListener('click', function(){ rm.classList.add('open'); document.body.style.overflow='hidden'; });
-    var mb = document.getElementById('matchScoreBtn'), mm = document.getElementById('matchModal');
-    if(mb && mm) mb.addEventListener('click', function(){ mm.classList.add('open'); document.body.style.overflow='hidden'; });
-  })();
+    playBeep(520,0.05);
+  });
+});
 
-  document.querySelectorAll('.faq-q').forEach(function(q){
-    if(q.__bound) return; q.__bound = true;
-    q.addEventListener('click', function(){
-      var item = q.parentElement;
-      var wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
-      if(!wasOpen) item.classList.add('open');
-      playBeep(660,0.04);
+(function(){
+  var overlays = document.querySelectorAll('.modal-overlay');
+  function closeAll(){ overlays.forEach(function(o){ o.classList.remove('open'); }); document.body.style.overflow = ''; }
+  document.querySelectorAll('.project-card').forEach(function(card){
+    card.addEventListener('click', function(e){
+      if(e.target.closest('a')) return;
+      var id = card.getAttribute('data-modal'); if(!id) return;
+      var m = document.getElementById(id);
+      if(m){ m.classList.add('open'); document.body.style.overflow = 'hidden'; }
     });
   });
+  overlays.forEach(function(o){
+    o.addEventListener('click', function(e){ if(e.target === o) closeAll(); });
+    var c = o.querySelector('.modal-close'); if(c) c.addEventListener('click', closeAll);
+  });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeAll(); });
+  var rb = document.getElementById('resumeViewBtn'), rm = document.getElementById('resumeModal');
+  if(rb && rm) rb.addEventListener('click', function(){ rm.classList.add('open'); document.body.style.overflow='hidden'; });
+  var rb2 = document.getElementById('resumeViewBtn2');
+  if(rb2 && rm) rb2.addEventListener('click', function(){ rm.classList.add('open'); document.body.style.overflow='hidden'; });
+  var mb = document.getElementById('matchScoreBtn'), mm = document.getElementById('matchModal');
+  if(mb && mm) mb.addEventListener('click', function(){ mm.classList.add('open'); document.body.style.overflow='hidden'; });
+})();
 
-  (function(){
-    var fab = document.getElementById('chatFab'), panel = document.getElementById('chatPanel'), close = document.getElementById('chatClose');
-    var body = document.getElementById('chatBody'), input = document.getElementById('chatInput'), send = document.getElementById('chatSend');
-    if(!fab || !panel) return;
-    var kb = [
-      { k: ['notice','join'], a:'<b>Zero notice period</b> — can join in 24 hours.' },
-      { k: ['available','immediate'], a:'<b>Available immediately.</b> Pune-based, willing to relocate.' },
-      { k: ['skill','tech'], a:'<b>SQL, Python, Power BI, Excel, Tableau</b> + statistics.' },
-      { k: ['experience','work'], a:'<b>Square Yards</b>, <b>Lords Pharmaceuticals</b>, <b>ASM IBMR</b>.' },
-      { k: ['project'], a:'3 projects: Cricbuzz, Attrition, Retail Sales.' },
-      { k: ['hire','contact','email'], a:'<b>kilcherushikesh@gmail.com</b> · <b>+91 91727 74866</b>' },
-      { k: ['education','mba'], a:'MBA Business Analytics at ASM IBMR.' },
-      { k: ['salary','pay'], a:'Fair market rate. Open to discussion.' },
-      { k: ['resume','cv'], a:'Click "Download Resume" in the hero.' },
-      { k: ['fresher'], a:'Yes, fresher — 3 projects, 2 internships.' },
-      { k: ['hi','hello'], a:'Hi! 👋 Ask about skills, projects, or hiring.' },
-      { k: ['thank'], a:'You\'re welcome! 🙂' }
-    ];
-    function answer(q){
-      q = q.toLowerCase();
-      for(var i = 0; i < kb.length; i++) for(var j = 0; j < kb[i].k.length; j++) if(q.indexOf(kb[i].k[j]) !== -1) return kb[i].a;
-      return 'Ask about <b>skills, projects, experience, availability</b>. Email <b>kilcherushikesh@gmail.com</b>.';
-    }
-    function add(t, who){ var d = document.createElement('div'); d.className = 'chat-msg '+who; d.innerHTML = t; body.appendChild(d); body.scrollTop = body.scrollHeight; }
-    function respond(q){ add(q, 'user'); input.value=''; setTimeout(function(){ add(answer(q), 'bot'); playBeep(660,0.06); }, 350); }
-    fab.addEventListener('click', function(){ panel.classList.toggle('open'); if(panel.classList.contains('open')) setTimeout(function(){ input.focus(); }, 250); });
-    close.addEventListener('click', function(){ panel.classList.remove('open'); });
-    send.addEventListener('click', function(){ var v = input.value.trim(); if(v) respond(v); });
-    input.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); var v=input.value.trim(); if(v) respond(v); } });
-    document.querySelectorAll('#chatSuggestions button').forEach(function(b){ b.addEventListener('click', function(){ respond(b.getAttribute('data-q')); }); });
-  })();
-
-  (function(){
-    var editor = document.getElementById('sqlEditor'), result = document.getElementById('sqlResult'), status = document.getElementById('sqlStatus');
-    if(!editor || !result || typeof initSqlJs === 'undefined') return;
-    var db = null;
-    function initDb(SQL){
-      db = new SQL.Database();
-      db.run("CREATE TABLE employees (id INT, name TEXT, dept TEXT, salary INT, tenure INT);");
-      db.run("INSERT INTO employees VALUES (1,'Aarav Sharma','Data',45000,1),(2,'Priya Patel','Data',52000,3),(3,'Rohan Mehta','Analytics',48000,2),(4,'Sneha Kulkarni','Finance',38000,5),(5,'Vikram Singh','Analytics',61000,4),(6,'Ananya Roy','Data',55000,2),(7,'Karan Joshi','Finance',42000,6),(8,'Meera Iyer','HR',35000,3),(9,'Arjun Nair','Analytics',58000,1),(10,'Riya Deshmukh','HR',33000,2),(11,'Dev Kapoor','Data',49000,7),(12,'Tanvi Bhat','Finance',45000,4),(13,'Sahil Khan','Analytics',72000,5),(14,'Aditi Rao','HR',37000,1),(15,'Nikhil Verma','Data',53000,3);");
-      status.textContent = '✓ Sample database loaded — 15 employees';
-      status.className = 'sql-status success';
-    }
-    initSqlJs({ locateFile: function(file){ return 'https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/'+file; } }).then(initDb).catch(function(){ status.textContent = '⚠ SQL engine could not load'; status.className = 'sql-status error'; });
-    function runQuery(){
-      if(!db){ status.textContent='⚠ Database not ready'; status.className='sql-status error'; return; }
-      var q = editor.value.trim();
-      if(!q){ status.textContent='⚠ Type a query first'; status.className='sql-status error'; return; }
-      try{
-        var res = db.exec(q);
-        if(!res.length){ result.innerHTML = '<div class="sql-empty">Query executed. No rows returned</div>'; status.textContent='✓ Query OK'; status.className='sql-status success'; return; }
-        var cols = res[0].columns, rows = res[0].values;
-        var html = '<table class="sql-result-table"><thead><tr>'+cols.map(function(c){ return '<th>'+c+'</th>'; }).join('')+'</tr></thead><tbody>';
-        rows.slice(0,100).forEach(function(r){
-          html += '<tr>' + r.map(function(v){ return '<td>'+(v===null?'<i style="color:#666">NULL</i>':String(v))+'</td>'; }).join('') + '</tr>';
-        });
-        html += '</tbody></table>';
-        result.innerHTML = html;
-        status.textContent = '✓ '+rows.length+' row(s) returned';
-        status.className = 'sql-status success'; playBeep(800,0.06);
-      }catch(err){
-        result.innerHTML = '<div class="sql-empty" style="color:var(--red)">❌ '+err.message+'</div>';
-        status.textContent = '❌ Error: '+err.message; status.className = 'sql-status error';
-      }
-    }
-    var sqlRun = document.getElementById('sqlRun');
-    if(sqlRun) sqlRun.addEventListener('click', runQuery);
-    var sqlReset = document.getElementById('sqlReset');
-    if(sqlReset) sqlReset.addEventListener('click', function(){
-      if(typeof initSqlJs === 'undefined') return;
-      initSqlJs({ locateFile: function(f){ return 'https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/'+f; } }).then(initDb);
-      editor.value = 'SELECT name, dept, salary FROM employees ORDER BY salary DESC LIMIT 5;';
-      result.innerHTML = '<div class="sql-empty">DB reset. Click ▶ Run Query</div>';
-    });
-    document.querySelectorAll('.sql-example').forEach(function(b){
-      b.addEventListener('click', function(){ editor.value = b.getAttribute('data-sql'); runQuery(); });
-    });
-    editor.addEventListener('keydown', function(e){ if((e.ctrlKey||e.metaKey) && e.key === 'Enter'){ e.preventDefault(); runQuery(); } });
-  })();
-
-  (function(){
-    var ticker = document.getElementById('cryptoTicker'); if(!ticker) return;
-    function load(){
-      fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=usd&include_24hr_change=true')
-        .then(function(r){ return r.json(); })
-        .then(function(d){
-          if(!d.bitcoin) throw 0;
-          var fmt = function(n){ return '$' + n.toLocaleString('en-US', { maximumFractionDigits: n > 100 ? 0 : 2 }); };
-          var chg = function(c){ var cls = c >= 0 ? 'up' : 'down'; var sign = c >= 0 ? '+' : ''; return '<span class="chg '+cls+'">'+sign+c.toFixed(2)+'%</span>'; };
-          ticker.innerHTML = '<span class="ticker-label">LIVE DATA</span>' +
-            '<span class="coin"><span class="sym">BTC</span><span class="price">'+fmt(d.bitcoin.usd)+'</span>'+chg(d.bitcoin.usd_24h_change)+'</span>' +
-            '<span class="coin"><span class="sym">ETH</span><span class="price">'+fmt(d.ethereum.usd)+'</span>'+chg(d.ethereum.usd_24h_change)+'</span>' +
-            '<span class="coin"><span class="sym">SOL</span><span class="price">'+fmt(d.solana.usd)+'</span>'+chg(d.solana.usd_24h_change)+'</span>';
-        })
-        .catch(function(){ ticker.innerHTML = '<span class="ticker-label">LIVE DATA</span><span style="color:var(--ink-dim);font-size:.75rem">📊 API demo (offline)</span>'; });
-    }
-    load(); setInterval(load, 60000);
-  })();
-
-  (function(){
-    var toast = document.getElementById('achToast'), title = document.getElementById('achTitle'), desc = document.getElementById('achDesc'), icon = document.getElementById('achIcon');
-    if(!toast) return;
-    var unlocked = {}; try{ unlocked = JSON.parse(storage.get('achievements') || '{}'); }catch(e){}
-    function show(ic, t, d){
-      icon.textContent = ic; title.textContent = t; desc.textContent = d;
-      toast.classList.add('show');
-      setTimeout(function(){ toast.classList.remove('show'); }, 3500);
-    }
-    function unlock(id, ic, t, d){
-      if(unlocked[id]) return;
-      unlocked[id] = true; storage.set('achievements', JSON.stringify(unlocked));
-      setTimeout(function(){ show(ic, t, d); }, 600);
-    }
-    setTimeout(function(){ unlock('explorer','🏆','Explorer Badge','Welcome to Rushi\'s portfolio!'); }, 3000);
-  })();
-
-  console.log('✓ Ready');
+document.querySelectorAll('.faq-q').forEach(function(q){
+  if(q.__bound) return; q.__bound = true;
+  q.addEventListener('click', function(){
+    var item = q.parentElement;
+    var wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+    if(!wasOpen) item.classList.add('open');
+    playBeep(660,0.04);
+  });
 });
+
+(function(){
+  var fab = document.getElementById('chatFab'), panel = document.getElementById('chatPanel'), close = document.getElementById('chatClose');
+  var body = document.getElementById('chatBody'), input = document.getElementById('chatInput'), send = document.getElementById('chatSend');
+  if(!fab || !panel) return;
+  var kb = [
+    { k: ['notice','join'], a:'<b>Zero notice period</b> — can join in 24 hours.' },
+    { k: ['available','immediate'], a:'<b>Available immediately.</b> Pune-based, willing to relocate.' },
+    { k: ['skill','tech'], a:'<b>SQL, Python, Power BI, Excel, Tableau</b> + statistics.' },
+    { k: ['experience','work'], a:'<b>Square Yards</b>, <b>Lords Pharmaceuticals</b>, <b>ASM IBMR</b>.' },
+    { k: ['project'], a:'3 projects: Cricbuzz, Attrition, Retail Sales.' },
+    { k: ['hire','contact','email'], a:'<b>kilcherushikesh@gmail.com</b> · <b>+91 91727 74866</b>' },
+    { k: ['education','mba'], a:'MBA Business Analytics at ASM IBMR.' },
+    { k: ['salary','pay'], a:'Fair market rate. Open to discussion.' },
+    { k: ['resume','cv'], a:'Click "Download Resume" in the hero.' },
+    { k: ['hi','hello'], a:'Hi! 👋 Ask about skills, projects, or hiring.' },
+    { k: ['thank'], a:'You\'re welcome! 🙂' }
+  ];
+  function answer(q){
+    q = q.toLowerCase();
+    for(var i = 0; i < kb.length; i++) for(var j = 0; j < kb[i].k.length; j++) if(q.indexOf(kb[i].k[j]) !== -1) return kb[i].a;
+    return 'Ask about <b>skills, projects, experience, availability</b>. Email <b>kilcherushikesh@gmail.com</b>.';
+  }
+  function add(t, who){ var d = document.createElement('div'); d.className = 'chat-msg '+who; d.innerHTML = t; body.appendChild(d); body.scrollTop = body.scrollHeight; }
+  function respond(q){ add(q, 'user'); input.value=''; setTimeout(function(){ add(answer(q), 'bot'); playBeep(660,0.06); }, 350); }
+  fab.addEventListener('click', function(){ panel.classList.toggle('open'); if(panel.classList.contains('open')) setTimeout(function(){ input.focus(); }, 250); });
+  close.addEventListener('click', function(){ panel.classList.remove('open'); });
+  send.addEventListener('click', function(){ var v = input.value.trim(); if(v) respond(v); });
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); var v=input.value.trim(); if(v) respond(v); } });
+  document.querySelectorAll('#chatSuggestions button').forEach(function(b){ b.addEventListener('click', function(){ respond(b.getAttribute('data-q')); }); });
+})();
+
+(function(){
+  var toast = document.getElementById('achToast'), title = document.getElementById('achTitle'), desc = document.getElementById('achDesc'), icon = document.getElementById('achIcon');
+  if(!toast) return;
+  var unlocked = {}; try{ unlocked = JSON.parse(storage.get('achievements') || '{}'); }catch(e){}
+  function show(ic, t, d){
+    icon.textContent = ic; title.textContent = t; desc.textContent = d;
+    toast.classList.add('show');
+    setTimeout(function(){ toast.classList.remove('show'); }, 3500);
+  }
+  function unlock(id, ic, t, d){
+    if(unlocked[id]) return;
+    unlocked[id] = true; storage.set('achievements', JSON.stringify(unlocked));
+    setTimeout(function(){ show(ic, t, d); }, 600);
+  }
+  setTimeout(function(){ unlock('explorer','🏆','Explorer Badge','Welcome to Rushi\'s portfolio!'); }, 3000);
+})();
+
+console.log('✓ Ready');
 </script>
 
 <script>
@@ -1119,21 +1012,20 @@ document.addEventListener('DOMContentLoaded', function(){
   var CSS = `
     body::before{content:""; position:fixed; inset:-20%; z-index:-2; pointer-events:none; background:radial-gradient(40% 30% at 15% 20%, rgba(242,169,0,.18), transparent 60%),radial-gradient(35% 40% at 85% 15%, rgba(92,108,255,.16), transparent 60%),radial-gradient(45% 35% at 50% 90%, rgba(61,220,151,.14), transparent 60%); filter:blur(40px); animation:vkMesh 28s ease-in-out infinite;}
     @keyframes vkMesh{0%,100%{transform:translate(0,0) scale(1);}33%{transform:translate(3%,-2%) scale(1.06);}66%{transform:translate(-2%,3%) scale(.97);}}
-    .stat-card,.cert-card,.testi-card,.project-card,.faq-item,.sql-playground,.contact-form,.chat-panel{backdrop-filter:blur(18px) saturate(140%); -webkit-backdrop-filter:blur(18px) saturate(140%);}
+    .stat-card,.cert-card,.testi-card,.project-card,.faq-item,.contact-form,.chat-panel{backdrop-filter:blur(18px) saturate(140%); -webkit-backdrop-filter:blur(18px) saturate(140%);}
     .glitch-off::before, .glitch-off::after { display: none !important; }
-    #vkIntro{position:fixed; inset:0; z-index:99999; background:#05070F; display:flex; align-items:center; justify-content:center; flex-direction:column; font-family:'JetBrains Mono',monospace; color:#AEB5D1; overflow:hidden; transition:transform 1s cubic-bezier(.77,0,.175,1), opacity .6s;}
+    #vkIntro{position:fixed; inset:0; z-index:99999; background:#0A0E27; display:flex; align-items:center; justify-content:center; flex-direction:column; font-family:'JetBrains Mono',monospace; color:#AEB5D1; overflow:hidden; transition:transform 1s cubic-bezier(.77,0,.175,1), opacity .6s;}
     #vkIntro.done{transform:translateY(-100%); opacity:0; pointer-events:none;}
     #vkIntro .vk-photo{
-      width:clamp(140px,26vw,200px); height:clamp(140px,26vw,200px);
-      border-radius:50%; object-fit:cover; object-position:center 15%;
-      border:3px solid #F2A900;
-      box-shadow:0 0 40px rgba(242,169,0,.6), 0 0 90px rgba(242,169,0,.3);
+      width:clamp(200px,36vw,280px); height:clamp(200px,36vw,280px);
+      object-fit:contain;
+      filter: drop-shadow(0 0 40px rgba(242,169,0,.6)) drop-shadow(0 0 90px rgba(242,169,0,.3));
       opacity:0; transform:translateY(40px) scale(.8);
-      animation:vkLetter .8s .15s cubic-bezier(.22,1,.36,1) forwards;
+      animation:vkLetter 1s .15s cubic-bezier(.22,1,.36,1) forwards;
     }
     @keyframes vkLetter{to{opacity:1; transform:translateY(0) scale(1);}}
-    #vkIntro .vk-sub{margin-top:26px; font-size:.72rem; letter-spacing:.42em; text-transform:uppercase; color:#F2A900; opacity:0; animation:vkFade .8s .9s forwards; text-align:center; padding:0 20px;}
-    #vkIntro .vk-boot{margin-top:36px; font-size:.78rem; min-height:1.2em; color:#AEB5D1; opacity:0; animation:vkFade .4s 1.2s forwards;}
+    #vkIntro .vk-sub{margin-top:14px; font-size:.72rem; letter-spacing:.42em; text-transform:uppercase; color:#F2A900; opacity:0; animation:vkFade .8s .9s forwards; text-align:center; padding:0 20px;}
+    #vkIntro .vk-boot{margin-top:32px; font-size:.78rem; min-height:1.2em; color:#AEB5D1; opacity:0; animation:vkFade .4s 1.2s forwards;}
     #vkIntro .vk-boot::after{content:"▋"; color:#F2A900; animation:vkBlink .7s steps(1) infinite;}
     @keyframes vkBlink{50%{opacity:0;}}
     @keyframes vkFade{to{opacity:1;}}
@@ -1142,19 +1034,6 @@ document.addEventListener('DOMContentLoaded', function(){
     @keyframes vkLoad{to{width:100%;}}
     #vkSkip{position:absolute; top:24px; right:24px; background:transparent; border:1px solid rgba(242,169,0,.4); color:#F2A900; padding:6px 16px; border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:.68rem; cursor:pointer; opacity:0; animation:vkFade .4s 1s forwards; letter-spacing:.12em;}
     #vkSkip:hover{background:rgba(242,169,0,.12);}
-    .vk-terminal{margin-top:22px; max-width:520px; background:rgba(5,7,15,.85); border:1px solid rgba(242,169,0,.28); border-radius:12px; backdrop-filter:blur(14px); overflow:hidden; font-family:'JetBrains Mono',monospace; font-size:.78rem; box-shadow:0 20px 50px -20px rgba(242,169,0,.35); animation:vkTermIn .8s 1.8s both cubic-bezier(.22,1,.36,1);}
-    @keyframes vkTermIn{from{opacity:0; transform:translateY(16px) scale(.96);} to{opacity:1; transform:none;}}
-    .vk-terminal .vk-bar3{display:flex; gap:6px; padding:9px 12px; background:rgba(255,255,255,.03); border-bottom:1px solid rgba(242,169,0,.12);}
-    .vk-terminal .vk-bar3 i{width:10px;height:10px;border-radius:50%;background:#444;}
-    .vk-terminal .vk-bar3 i:nth-child(1){background:#ff5f57;}
-    .vk-terminal .vk-bar3 i:nth-child(2){background:#febc2e;}
-    .vk-terminal .vk-bar3 i:nth-child(3){background:#28c840;}
-    .vk-terminal .vk-body{padding:14px 16px; min-height:132px; color:#B9C2E0; line-height:1.7;}
-    .vk-terminal .vk-body .vk-ln{white-space:pre-wrap; word-break:break-word;}
-    .vk-terminal .vk-body .vk-p{color:#3ddc97;}
-    .vk-terminal .vk-body .vk-c{color:#F2A900;}
-    .vk-terminal .vk-body .vk-o{color:#AEB5D1;}
-    .vk-terminal .vk-cursor{display:inline-block; width:8px; height:15px; background:#F2A900; vertical-align:-3px; animation:vkBlink .8s steps(1) infinite;}
     #vkBuddy{position:fixed; top:0; left:0; width:56px; height:56px; z-index:9997; pointer-events:none; opacity:0; transition:opacity .3s; filter:drop-shadow(0 6px 14px rgba(242,169,0,.5));}
     #vkBuddy.on{opacity:1;}
     #vkBuddy .vk-bubble{position:absolute; left:62px; top:-4px; white-space:nowrap; background:rgba(5,7,15,.95); border:1px solid rgba(242,169,0,.45); color:#F2A900; font-family:'JetBrains Mono',monospace; font-size:.7rem; padding:6px 12px; border-radius:10px; opacity:0; transform:translateX(-8px); transition:all .3s; pointer-events:none;}
@@ -1189,8 +1068,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     safe('intro', function(){
       if(reduce) return;
-      var old = document.getElementById('introOverlay');
-      if(old && old.parentNode) old.parentNode.removeChild(old);
+      if(document.getElementById('vkIntro')) return;
 
       var el = document.createElement('div');
       el.id = 'vkIntro';
@@ -1230,73 +1108,6 @@ document.addEventListener('DOMContentLoaded', function(){
       document.addEventListener('keydown', function(e){
         if(e.key === 'Enter' || e.key === 'Escape') close();
       }, { once:true });
-    });
-
-    safe('terminal', function(){
-      var anchor = $('.hero-actions') || $('.hero-copy-sub');
-      if(!anchor || !anchor.parentNode) return;
-      if($('.vk-terminal')) return;
-      var wrap = document.createElement('div');
-      wrap.className = 'vk-terminal';
-      wrap.innerHTML = '<div class="vk-bar3"><i></i><i></i><i></i></div>' +
-                       '<div class="vk-body" id="vkTerm"><div class="vk-ln">' +
-                       '<span class="vk-p">rushi@data</span><span class="vk-o">:~$ </span>' +
-                       '<span class="vk-cursor"></span></div></div>';
-      anchor.parentNode.insertBefore(wrap, anchor);
-      if(reduce) return;
-
-      var body = document.getElementById('vkTerm');
-      if(!body) return;
-      var script = [
-        { cmd:'whoami',                out:'Rushikesh Kilche · Data Analyst & Business Analyst' },
-        { cmd:'cat skills.txt',        out:'SQL · Python · Power BI · Excel · Tableau · DAX' },
-        { cmd:'ls projects/',          out:'cricbuzz-livestats/  attrition/  retail-sales/' },
-        { cmd:'python match.py --jd',  out:'match score: 87% · status: READY TO INTERVIEW' },
-        { cmd:'hire --notice-period',  out:'0 days · available immediately · Pune/remote' }
-      ];
-      function newLine(){ var d = document.createElement('div'); d.className='vk-ln'; body.appendChild(d); return d; }
-      function typeCmd(ln, text, done){
-        var p = document.createElement('span'); p.className='vk-p'; p.textContent='rushi@data';
-        var o = document.createElement('span'); o.className='vk-o'; o.textContent=':~$ ';
-        var c = document.createElement('span'); c.className='vk-c';
-        ln.appendChild(p); ln.appendChild(o); ln.appendChild(c);
-        var k = 0;
-        (function tick(){
-          c.textContent = text.slice(0, ++k);
-          if(k < text.length) setTimeout(tick, 45 + Math.random()*40);
-          else setTimeout(done, 220);
-        })();
-      }
-      function showOut(ln, text, done){
-        var o = document.createElement('span'); o.className='vk-o'; ln.appendChild(o);
-        var k = 0;
-        (function tick(){
-          o.textContent = text.slice(0, ++k);
-          if(k < text.length) setTimeout(tick, 12);
-          else setTimeout(done, 500);
-        })();
-      }
-      var idx = 0;
-      function run(){
-        if(idx >= script.length){
-          var d = newLine();
-          d.innerHTML = '<span class="vk-p">rushi@data</span><span class="vk-o">:~$ </span><span class="vk-cursor"></span>';
-          setTimeout(function(){
-            idx = 0; body.innerHTML = '';
-            var nl = newLine();
-            nl.innerHTML = '<span class="vk-p">rushi@data</span><span class="vk-o">:~$ </span><span class="vk-cursor"></span>';
-            run();
-          }, 4200);
-          return;
-        }
-        var item = script[idx++];
-        var cmdLine = newLine();
-        typeCmd(cmdLine, item.cmd, function(){
-          var outLine = newLine();
-          showOut(outLine, item.out, run);
-        });
-      }
-      setTimeout(run, 2200);
     });
 
     safe('buddy', function(){
@@ -1420,7 +1231,7 @@ document.addEventListener('DOMContentLoaded', function(){
         var act = btn.getAttribute('data-act');
         var clickId = function(id){ var el = document.getElementById(id); if(el) el.click(); };
         if(act === 'resume'){ var a = document.createElement('a'); a.href='Rushikesh_Kilche_CV.pdf'; a.download=''; a.click(); }
-        if(act === 'view') clickId('resumeViewBtn');
+        if(act === 'view'){ clickId('resumeViewBtn2'); if(!document.getElementById('resumeViewBtn2')) clickId('resumeViewBtn'); }
         if(act === 'email'){ if(navigator.clipboard) navigator.clipboard.writeText('kilcherushikesh@gmail.com'); if(window.__vkSay) window.__vkSay('Email copied ✓'); }
         if(act === 'phone'){ if(navigator.clipboard) navigator.clipboard.writeText('+919172774866'); if(window.__vkSay) window.__vkSay('Phone copied ✓'); }
         if(act === 'linkedin') window.open('https://www.linkedin.com/in/rushikesh-kilche','_blank');
@@ -1446,7 +1257,7 @@ document.addEventListener('DOMContentLoaded', function(){
         });
       }
 
-      $$('.btn, .sql-btn, .form-submit, .link-pill, .icon-btn').forEach(function(btn){
+      $$('.btn, .form-submit, .link-pill, .icon-btn').forEach(function(btn){
         btn.addEventListener('click', function(){
           var r = btn.getBoundingClientRect();
           var cx = r.left + r.width/2, cy = r.top + r.height/2;
