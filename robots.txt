@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kilcherushikesh-gif.github.io/Rushikesh-Kilche--Portfolio/sitemap.xml
