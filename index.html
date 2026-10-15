@@ -192,8 +192,9 @@
   .contact-inner h2 .accent{color:var(--gold);}
   .contact-list{display:flex; flex-direction:column; gap:22px;}
   .contact-row{display:flex; align-items:center; gap:16px;}
+  .contact-row>div{min-width:0;}
   .contact-row .label{color:var(--gold); font-size:.85rem; margin-bottom:2px; font-weight:600;}
-  .contact-row a.value{color:var(--white); text-decoration:none; font-size:1rem; font-weight:500;}
+  .contact-row a.value{color:var(--white); text-decoration:none; font-size:1rem; font-weight:500; overflow-wrap:anywhere;}
   .contact-row a.value:hover{color:var(--gold);}
   .contact-form{background:var(--navy-raised); border:1px solid var(--navy-line); border-radius:16px; padding:28px;}
   .contact-form h4{font-size:1.15rem; margin-bottom:6px; font-weight:700;}
@@ -298,9 +299,9 @@
     .nav-links a{display:block; padding:12px 0; border-bottom:1px solid var(--navy-line);}
     .nav-toggle{display:flex;}
     .nav-right{margin-left:auto;}
-    .hero-inner{grid-template-columns:1fr;}
+    .hero-inner{grid-template-columns:1fr; row-gap:14px;}
     .hero p.role,.hero p.hero-copy{width:100%; max-width:100%; overflow-wrap:anywhere;}
-    .hero-photo-wrap{order:-1; margin-bottom:20px;}
+    .hero-photo-wrap{order:-1; margin-bottom:0;}
     .rk-badge{width:240px;}
     .skills-cats{grid-template-columns:1fr;}
     .back-to-top{right:14px; bottom:96px;}
@@ -318,6 +319,16 @@
     .rk-badge{width:min(100%,260px);}
   }
   @media (max-width:600px){
+    section{padding:56px 0;}
+    #projects{padding:48px 0;}
+    .hero{padding-top:36px;}
+    .hero-inner{row-gap:14px;}
+    .contact-list{gap:18px;}
+    .contact-row{align-items:flex-start; gap:12px;}
+    .contact-row .icon-circle{flex:0 0 46px;}
+    .contact-form{padding:22px;}
+    .siri-fab{right:calc(14px + env(safe-area-inset-right)); bottom:calc(14px + env(safe-area-inset-bottom));}
+    .back-to-top{right:calc(14px + env(safe-area-inset-right)); bottom:calc(86px + env(safe-area-inset-bottom));}
     .nav{padding:14px 16px; gap:10px;}
     .nav-mark{font-size:0.98rem;}
     .nav-right{gap:6px; margin-left:10px;}
@@ -325,6 +336,7 @@
   @media (max-width:480px){
     .wrap{padding:0 20px;}
     .hero-inner>div:first-child{width:100%; max-width:calc(100vw - 40px);}
+    .tools-line{padding:0 20px;}
     .mobile-break{display:block;}
     .nav{padding:12px 14px; gap:8px;}
     .nav-mark{font-size:0.92rem;}
