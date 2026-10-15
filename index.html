@@ -143,15 +143,18 @@
   .bg-item h4{font-size:1.05rem; margin-bottom:4px; font-weight:700; font-family:'Poppins',sans-serif;}
   .bg-item .org{color:var(--ink-dim); font-size:.9rem; margin-bottom:10px;}
   .bg-item p{color:var(--ink-dim); font-size:.95rem; margin:0; max-width:52ch; line-height:1.7;}
-  .project-filters{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:32px;}
+  #projects{padding:64px 0;}
+  #projects .pill{margin-bottom:20px;}
+  .project-filters{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px;}
+  .projects-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px;}
   .filter-btn{background:transparent; border:1.5px solid var(--navy-line); color:var(--ink-dim); padding:8px 18px; border-radius:999px; font-family:'Poppins',sans-serif; font-weight:600; font-size:.82rem; cursor:pointer; transition:all .2s;}
   .filter-btn:hover{color:var(--white); border-color:var(--gold);}
   .filter-btn.active{background:var(--gold); color:var(--navy); border-color:var(--gold);}
-  .project-card{margin-bottom:50px; cursor:pointer; transition:opacity .4s; padding:20px; border-radius:16px;}
+  .project-card{margin:0; cursor:pointer; transition:opacity .4s; padding:18px; border-radius:16px;}
   .project-card.hidden{display:none;}
   .project-head{display:flex; align-items:baseline; gap:16px; margin-bottom:14px;}
   .project-num{font-family:'Poppins',sans-serif; font-weight:800; font-size:2.4rem; color:var(--gold); line-height:1;}
-  .project-head h3{font-size:1.4rem; line-height:1.3; font-weight:700;}
+  .project-head h3{font-size:1.2rem; line-height:1.3; font-weight:700;}
   .project-card p.desc{color:var(--ink-dim); font-size:.95rem; max-width:74ch; margin:0 0 14px;}
   .project-card p.desc b{color:var(--gold); font-weight:600;}
   .project-tags{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;}
@@ -305,6 +308,7 @@
     .siri-fab{right:14px; bottom:14px; width:58px; height:58px;}
     .siri-panel{right:14px; left:14px; bottom:84px; width:auto; height:calc(100vh - 110px); max-height:calc(100vh - 110px);}
   }
+  @media (max-width:760px){.projects-grid{grid-template-columns:1fr;}}
   @media (min-width:601px) and (max-width:860px){
     .hero-inner{grid-template-columns:minmax(0,1.2fr) minmax(190px,.8fr); gap:18px; align-items:center;}
     .hero-photo-wrap{order:initial; margin:0; padding:0;}
@@ -514,6 +518,7 @@
       <button class="filter-btn ripple-host" data-filter="sql">SQL</button>
       <button class="filter-btn ripple-host" data-filter="powerbi">Power BI</button>
     </div>
+    <div class="projects-grid">
     <article class="project-card reveal holo" data-tags="python sql" data-modal="modal-1">
       <div class="project-head"><div class="project-num">01</div><h3>Fitbit Activity &amp; Wellness Analysis</h3></div>
       <p class="desc">Cleaned Fitbit activity, sleep, heart-rate, and weight logs, loaded them into <b>SQLite</b>, and built an interactive dashboard with SQL analysis and data-cleaning views.</p>
@@ -542,7 +547,9 @@
       <p class="desc">An Android safety app released on <b>Indus Appstore</b>, with automatic crash detection for bikes and cars, emergency SOS alerts, and nearby hospital lookup.</p>
       <div class="project-tags"><span class="tag">Android App</span><span class="tag">Crash Detection</span><span class="tag">Emergency SOS</span><span class="tag">Indus Appstore</span></div>
       <div class="project-links"><a class="link-pill" href="https://www.indusappstore.com/apps/auto-and-vehicles/crashguard-sos/com.crashguard.sos.app/?id=com.crashguard.sos.app&amp;page=details" target="_blank" rel="noopener">View on Indus Appstore</a></div>
-    </article>  </div>
+    </article>
+    </div>
+  </div>
 </section>
 
 <div class="scroll-cue"><a href="#certifications" aria-label="Scroll to Certifications">&#8964;</a></div>
