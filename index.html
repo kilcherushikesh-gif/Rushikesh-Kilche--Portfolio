@@ -204,6 +204,8 @@
   .form-status.show{display:block;}
   .form-status.success{background:rgba(61,220,151,.12); color:var(--green); border:1px solid rgba(61,220,151,.3);}
   .form-status.error{background:rgba(255,90,90,.12); color:var(--red); border:1px solid rgba(255,90,90,.3);}
+  .form-status.info{background:rgba(242,169,0,.08); color:var(--gold-light); border:1px solid rgba(242,169,0,.25);}
+  .form-email-link{color:inherit; font-weight:700; text-decoration:underline; text-underline-offset:2px;}
   footer{padding:24px 0; color:var(--ink-dim); font-size:.82rem; border-top:1px solid var(--navy-line); text-align:center; position:relative; z-index:2;}
   footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px; align-items:center;}
 
@@ -812,12 +814,28 @@ document.querySelectorAll('.faq-q').forEach(function(q){
   var form = document.getElementById('contactForm');
   var status = document.getElementById('formStatus');
   if(!form || !status) return;
+  function createEmailDraftLink(){
+    var values = new FormData(form);
+    var name = String(values.get('name') || '').trim();
+    var email = String(values.get('email') || '').trim();
+    var message = String(values.get('message') || '').trim();
+    var subject = 'Portfolio message from ' + name;
+    var body = 'Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message;
+    var link = document.createElement('a');
+    link.className = 'form-email-link';
+    link.href = 'mailto:kilcherushikesh@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    link.textContent = 'Open your email app to send';
+    return link;
+  }
+  function showEmailDraftFallback(message){
+    status.className = 'form-status info show';
+    status.replaceChildren(document.createTextNode(message + ' '), createEmailDraftLink());
+  }
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var accessKeyInput = form.querySelector('input[name="access_key"]');
     if(!accessKeyInput || !accessKeyInput.value || accessKeyInput.value === 'YOUR_WEB3FORMS_ACCESS_KEY'){
-      status.className = 'form-status error show';
-      status.textContent = '❌ Setup incomplete. Email kilcherushikesh@gmail.com directly.';
+      showEmailDraftFallback('Online sending is not configured. Your message is ready as an email draft;');
       return;
     }
     var btn = form.querySelector('.form-submit');
@@ -843,8 +861,7 @@ document.querySelectorAll('.faq-q').forEach(function(q){
       } else { throw new Error(data.message || 'Submission failed'); }
     })
     .catch(function(err){
-      status.className = 'form-status error show';
-      status.textContent = '❌ ' + err.message + ' — or email kilcherushikesh@gmail.com directly.';
+      showEmailDraftFallback('Online sending failed. Your message is ready as an email draft;');
       if(btn){ btn.disabled = false; btn.textContent = originalText; }
     });
   });
