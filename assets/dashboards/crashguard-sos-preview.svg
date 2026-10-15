@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" role="img" aria-labelledby="title desc">
+  <title id="title">CrashGuard SOS app preview</title>
+  <desc id="desc">Illustrative phone mockup highlighting crash detection, emergency SOS, location sharing, and nearby hospitals.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#151b3a"/><stop offset="1" stop-color="#090d21"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffc94a"/><stop offset="1" stop-color="#f2a900"/></linearGradient>
+    <filter id="shadow" x="-.4" y="-.3" width="1.8" height="1.8"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000" flood-opacity=".38"/></filter>
+  </defs>
+  <rect width="1100" height="520" rx="18" fill="url(#bg)"/>
+  <circle cx="248" cy="220" r="220" fill="#f2a900" opacity=".045"/>
+  <g font-family="Arial,sans-serif">
+    <text x="55" y="82" fill="#f2a900" font-size="17" font-weight="700" letter-spacing="3">ROAD SAFETY APP</text>
+    <text x="55" y="133" fill="#fff" font-size="36" font-weight="700">CrashGuard SOS</text>
+    <text x="55" y="169" fill="#aeb5d1" font-size="18">A quicker way to call for help on the road.</text>
+    <g>
+      <rect x="55" y="205" width="390" height="72" rx="13" fill="#111634" stroke="#2b335e"/>
+      <circle cx="91" cy="241" r="18" fill="#f2a900" opacity=".16"/><text x="83" y="248" fill="#ffc94a" font-size="21">✦</text>
+      <text x="122" y="239" fill="#fff" font-size="17" font-weight="700">Automatic crash detection</text><text x="122" y="260" fill="#aeb5d1" font-size="13">For bikes and cars</text>
+      <rect x="55" y="290" width="390" height="72" rx="13" fill="#111634" stroke="#2b335e"/>
+      <circle cx="91" cy="326" r="18" fill="#ff7b7b" opacity=".15"/><text x="82" y="333" fill="#ff8989" font-size="20" font-weight="700">!</text>
+      <text x="122" y="324" fill="#fff" font-size="17" font-weight="700">Emergency SOS</text><text x="122" y="345" fill="#aeb5d1" font-size="13">Send an alert with live location</text>
+      <rect x="55" y="375" width="390" height="72" rx="13" fill="#111634" stroke="#2b335e"/>
+      <circle cx="91" cy="411" r="18" fill="#61b8ff" opacity=".14"/><text x="82" y="418" fill="#80c8ff" font-size="20">⌖</text>
+      <text x="122" y="409" fill="#fff" font-size="17" font-weight="700">Nearby hospital locator</text><text x="122" y="430" fill="#aeb5d1" font-size="13">Find care close to your location</text>
+    </g>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="715" y="20" width="310" height="480" rx="42" fill="#060811" stroke="#454a62" stroke-width="2"/>
+    <rect x="730" y="37" width="280" height="446" rx="30" fill="#f8f8fb"/>
+    <rect x="824" y="44" width="92" height="13" rx="7" fill="#060811"/>
+    <g font-family="Arial,sans-serif">
+      <text x="752" y="91" fill="#111634" font-size="16" font-weight="700" letter-spacing="1">CRASHGUARD</text>
+      <circle cx="978" cy="84" r="14" fill="#eeeef4"/><text x="972" y="90" fill="#4b5070" font-size="15">?</text>
+      <text x="752" y="133" fill="#111634" font-size="23" font-weight="700">Stay safe on</text><text x="752" y="160" fill="#111634" font-size="23" font-weight="700">every ride.</text>
+      <text x="752" y="184" fill="#70758f" font-size="13">Safety tools when you need them.</text>
+      <rect x="750" y="205" width="240" height="58" rx="13" fill="#fff" stroke="#e3e4eb"/>
+      <circle cx="773" cy="234" r="10" fill="#46bc83"/><path d="m768 234 4 4 7-9" fill="none" stroke="#fff" stroke-width="2"/>
+      <text x="793" y="232" fill="#20243a" font-size="14" font-weight="700">Crash detection</text><text x="793" y="250" fill="#777c93" font-size="11">Bike &amp; car safety</text>
+      <rect x="750" y="280" width="240" height="92" rx="15" fill="#fff" stroke="#e3e4eb"/>
+      <text x="770" y="305" fill="#30354e" font-size="12" font-weight="700">NEED HELP?</text>
+      <rect x="770" y="317" width="200" height="40" rx="20" fill="url(#gold)"/>
+      <text x="870" y="343" text-anchor="middle" fill="#111634" font-size="14" font-weight="700">SEND EMERGENCY SOS</text>
+      <rect x="750" y="387" width="240" height="58" rx="13" fill="#fff" stroke="#e3e4eb"/>
+      <circle cx="777" cy="416" r="14" fill="#e9f2ff"/><text x="771" y="422" fill="#397bc4" font-size="18">⌖</text>
+      <text x="800" y="414" fill="#20243a" font-size="13" font-weight="700">Nearby hospitals</text><text x="800" y="432" fill="#777c93" font-size="11">Find medical help</text>
+      <text x="870" y="468" text-anchor="middle" fill="#888da0" font-size="10">ILLUSTRATIVE APP PREVIEW</text>
+    </g>
+  </g>
+</svg>

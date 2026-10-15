@@ -159,6 +159,7 @@
   .project-card.hidden{display:none;}
   .dashboard-preview{display:none;}
   .cricket-dashboard-shot{display:none;}
+  .app-preview{display:none;}
   .hero .desktop-resume-cta,.project-links .case-study-trigger,.project-links .mobile-case-label{display:none;}
   .project-head{display:flex; align-items:baseline; gap:16px; margin-bottom:14px;}
   .project-num{font-family:'Poppins',sans-serif; font-weight:800; font-size:2.4rem; color:var(--gold); line-height:1;}
@@ -396,11 +397,15 @@
     .modal p{max-width:78ch; line-height:1.8;}
     .project-links{margin-top:auto; padding-top:8px;}
     .project-card:last-child{grid-column:1/-1; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); grid-template-areas:"head tags" "desc links"; align-items:center; column-gap:clamp(24px,5vw,64px); row-gap:10px; min-height:190px; padding:30px clamp(28px,5vw,64px);}
+    .project-card.has-app-preview{grid-template-columns:minmax(0,1fr) minmax(320px,.95fr); grid-template-areas:"head preview" "desc preview" "tags preview" "links preview";}
     .project-card:last-child .project-head{grid-area:head; display:grid; grid-template-columns:48px minmax(0,1fr); align-items:center;}
     .project-card:last-child .project-head::after{content:"Released Android app | Indus Appstore"; display:block; grid-column:2; margin:6px 0 0; color:var(--gold); font:600 .7rem 'JetBrains Mono',monospace; letter-spacing:.08em; text-transform:uppercase;}
     .project-card:last-child p.desc{grid-area:desc; margin:0;}
     .project-card:last-child .project-tags{grid-area:tags;}
     .project-card:last-child .project-links{grid-area:links; margin:0; padding-top:0;}
+    .project-card:last-child .app-preview{grid-area:preview; display:flex; flex-direction:column; gap:7px; min-width:0; margin:0;}
+    .project-card:last-child .app-preview img{display:block; width:100%; height:auto; max-height:280px; object-fit:contain; border:1px solid var(--navy-line); border-radius:12px;}
+    .project-card:last-child .app-preview figcaption{color:var(--ink-dim); font:500 .64rem 'JetBrains Mono',monospace;}
     .link-pill[href*="streamlit.app"]{background:var(--gold); color:var(--navy);}
     .link-pill[href*="streamlit.app"]::after{content:"↗"; margin-left:7px;}
     .link-pill[href*="streamlit.app"]:hover{background:var(--gold-light); border-color:var(--gold-light);}
@@ -764,8 +769,9 @@
       <p class="desc">Analyzed <b>500K+ retail transactions</b> with SQL and Python, then built a Power BI dashboard to explore product, regional, and customer trends.</p>
       <div class="project-tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">DAX</span></div>
       <div class="project-links"><button class="link-pill case-study-trigger" type="button" aria-haspopup="dialog">Case study</button><span class="link-pill mobile-case-label">Case Study</span></div>
-    </article>    <article class="project-card reveal holo" data-tags="android app" data-modal="modal-5">
+    </article>    <article class="project-card reveal holo has-app-preview" data-tags="android app" data-modal="modal-5">
       <div class="project-head"><div class="project-num">05</div><h3>CrashGuard SOS</h3></div>
+      <figure class="app-preview"><img src="assets/dashboards/crashguard-sos-preview.svg" alt="Illustrative CrashGuard SOS phone preview with emergency alert, crash detection, and nearby hospital features" loading="lazy" decoding="async"><figcaption>Illustrative app preview, not an actual app screenshot.</figcaption></figure>
       <p class="desc">An Android safety app released on <b>Indus Appstore</b>, with automatic crash detection for bikes and cars, emergency SOS alerts, and nearby hospital lookup.</p>
       <div class="project-tags"><span class="tag">Android App</span><span class="tag">Crash Detection</span><span class="tag">Emergency SOS</span><span class="tag">Indus Appstore</span></div>
       <div class="project-links"><button class="link-pill case-study-trigger" type="button" aria-haspopup="dialog">Case study</button><a class="link-pill" href="https://www.indusappstore.com/apps/auto-and-vehicles/crashguard-sos/com.crashguard.sos.app/?id=com.crashguard.sos.app&amp;page=details" target="_blank" rel="noopener">Install on Indus Appstore</a></div>
