@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Rushikesh Kilche — Data Analyst | Immediate Joiner</title>
 <meta name="description" content="Rushikesh Kilche — Data Analyst (MBA Business Analytics). Immediate joiner.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -191,6 +191,7 @@
   .contact-split{display:grid; grid-template-columns:1fr 1.1fr; gap:50px; align-items:start;}
   .contact-inner h2{font-size:clamp(2rem,4vw,2.75rem); font-weight:800; line-height:1.15; margin-bottom:32px; max-width:16ch; font-family:'Poppins',sans-serif; letter-spacing:-.02em;}
   .contact-inner h2 .accent{color:var(--gold);}
+  .mobile-contact-actions{display:none;}
   .contact-list{display:flex; flex-direction:column; gap:22px;}
   .contact-row{display:flex; align-items:center; gap:16px;}
   .contact-row>div{min-width:0;}
@@ -320,19 +321,94 @@
     .rk-badge{width:min(100%,260px);}
   }
   @media (max-width:600px){
+    html{scroll-padding-top:76px;}
+    header{top:max(3px,env(safe-area-inset-top)); backdrop-filter:none; background:rgba(10,14,39,.98);}
+    [data-theme="light"] header{background:rgba(245,243,238,.98);}
+    section{scroll-margin-top:68px;}
+    .hero{padding-top:24px;}
+    .hero-inner{row-gap:10px; padding-bottom:12px;}
+    .hero h1{font-size:clamp(2.1rem,10vw,3rem); line-height:1.02; letter-spacing:-.035em;}
+    .hero .pill{font-size:.8rem; padding:6px 14px; margin-bottom:15px;}
+    .hero p.role{font-size:1.02rem; margin-top:14px; line-height:1.5;}
+    .hero p.hero-copy{font-size:.94rem; margin-top:9px; line-height:1.55;}
+    .hero-photo-wrap{padding:0;}
+    .rk-badge{width:min(44vw,180px); animation:none;}
+    .nav{padding:10px 12px; gap:6px;}
+    .nav-mark{font-size:.9rem; letter-spacing:-.02em;}
+    .nav-right{gap:5px; margin-left:4px;}
+    .icon-btn,.nav-toggle{width:40px; height:40px;}
+    .nav-links{padding:8px 20px calc(16px + env(safe-area-inset-bottom)); max-height:calc(100dvh - 64px - env(safe-area-inset-top)); overflow-y:auto; overscroll-behavior:contain;}
+    .nav-links a{min-height:48px; display:flex; align-items:center; padding:12px 0;}
+    .tools-marquee{padding:18px 0;}
+    .tools-line{gap:8px 14px;}
+    .tools-line span{font-size:.8rem;}
+    .quote-bar{padding:18px; font-size:.82rem; line-height:1.6;}
+    .about-grid,.bg-grid,.contact-split{gap:24px;}
+    .skills-cats{gap:24px;}
+    .tag{min-height:40px; display:inline-flex; align-items:center; padding:8px 14px;}
+    .bg-grid{gap:18px;}
+    .bg-item{padding-left:15px; margin-bottom:22px;}
+    .filter-btn{min-height:44px; padding:9px 15px;}
+    .projects-grid{gap:12px;}
+    .project-card{padding:16px;}
+    .project-head{align-items:flex-start; gap:10px;}
+    .project-num{font-size:1.9rem;}
+    .project-head h3{font-size:1.05rem; overflow-wrap:anywhere;}
+    .project-card p.desc{font-size:.9rem; line-height:1.65;}
+    .btn,.link-pill{min-height:44px; display:inline-flex; align-items:center; justify-content:center;}
+    .link-pill{padding:9px 14px; font-size:.8rem;}
+    .cert-grid,.testi-grid{grid-template-columns:1fr; gap:12px;}
+    .cert-card,.testi-card{padding:18px;}
+    .faq-q{min-height:52px; padding:14px 16px; font-size:.9rem; line-height:1.45;}
+    .faq-a,.faq-item.open .faq-a{padding-left:16px; padding-right:16px;}
+    .contact-inner h2{margin-bottom:22px;}
+    .mobile-contact-actions{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; margin:-6px 0 22px;}
+    .mobile-contact-actions a{min-height:46px; display:flex; align-items:center; justify-content:center; padding:8px 5px; border:1px solid rgba(242,169,0,.55); border-radius:10px; color:var(--gold); font-family:'Poppins',sans-serif; font-size:.78rem; font-weight:600; text-decoration:none; text-align:center;}
+    .contact-row a.value{font-size:.96rem; line-height:1.45;}
+    .contact-form{padding:20px;}
+    .form-row input,.form-row textarea{font-size:16px; min-height:48px;}
+    .form-row textarea{min-height:130px;}
+    .form-submit{min-height:48px;}
+    .siri-fab{width:54px; height:54px; box-shadow:0 6px 18px rgba(242,169,0,.3); animation:none;}
+    .siri-fab .siri-dot{animation:none; box-shadow:none;}
+    .siri-panel{right:calc(10px + env(safe-area-inset-right)); left:calc(10px + env(safe-area-inset-left)); bottom:calc(76px + env(safe-area-inset-bottom)); width:auto; height:calc(100dvh - 96px - env(safe-area-inset-top) - env(safe-area-inset-bottom)); max-height:calc(100dvh - 96px - env(safe-area-inset-top) - env(safe-area-inset-bottom)); border-radius:16px;}
+    .siri-head{padding:12px;}
+    .siri-body{padding:12px;}
+    .siri-suggestions{padding:0 12px 8px; gap:5px;}
+    .siri-suggestions button{min-height:36px; padding:6px 10px;}
+    .siri-input-wrap{padding:10px;}
+    .siri-input{min-height:44px; font-size:16px;}
+    .siri-send{width:44px; height:44px;}
+    .modal-overlay{padding:12px;}
+    .modal{padding:22px 16px; max-height:88dvh; border-radius:14px;}
+    .modal-close{top:8px; right:8px; width:44px; height:44px;}
+    .modal h3{font-size:1.2rem; padding-right:32px; overflow-wrap:anywhere;}
+    .modal-iframe{height:68dvh;}
+    footer{padding:18px 0 calc(18px + env(safe-area-inset-bottom));}
+    .read-progress{animation:none; box-shadow:none;}
+    .visit-badge .visit-dot{animation:none;}
+    .glitch::before,.glitch::after,.shimmer,.holo{animation:none;}
+    .scan-lines{display:none;}
+    #vkIntro .vk-photo{animation-duration:.65s; animation-delay:0s;}
+    #vkIntro .vk-sub{animation-duration:.45s; animation-delay:.4s;}
+    #vkIntro .vk-boot,#vkIntro .vk-bar{animation-duration:.25s; animation-delay:.65s;}
+    #vkIntro .vk-bar i{animation-duration:1.4s; animation-delay:.75s;}
     section{padding:56px 0;}
     #projects{padding:48px 0;}
-    .hero{padding-top:36px;}
-    .hero-inner{row-gap:14px;}
     .contact-list{gap:18px;}
     .contact-row{align-items:flex-start; gap:12px;}
     .contact-row .icon-circle{flex:0 0 46px;}
-    .contact-form{padding:22px;}
     .siri-fab{right:calc(14px + env(safe-area-inset-right)); bottom:calc(14px + env(safe-area-inset-bottom));}
     .back-to-top{right:calc(14px + env(safe-area-inset-right)); bottom:calc(86px + env(safe-area-inset-bottom));}
-    .nav{padding:14px 16px; gap:10px;}
-    .nav-mark{font-size:0.98rem;}
-    .nav-right{gap:6px; margin-left:10px;}
+    .hero{padding-top:24px;}
+    .hero-inner{row-gap:10px; padding-bottom:12px;}
+    .contact-form{padding:20px;}
+    .nav{padding:10px 12px; gap:6px;}
+    .nav-mark{font-size:.9rem; letter-spacing:-.02em;}
+    .nav-right{gap:5px; margin-left:4px;}
+    .icon-btn,.nav-toggle{width:40px; height:40px;}
+    .tools-line{gap:8px 14px;}
+    .tools-line span{font-size:.8rem;}
     .mobile-scroll-hint{position:fixed; left:50%; bottom:calc(88px + env(safe-area-inset-bottom)); z-index:970; display:flex; align-items:center; gap:8px; padding:10px 16px; border:1px solid rgba(242,169,0,.65); border-radius:999px; background:rgba(10,14,39,.97); color:var(--white); font-size:.8rem; font-weight:600; text-decoration:none; white-space:nowrap; box-shadow:0 6px 20px rgba(0,0,0,.3); transform:translateX(-50%); opacity:1; visibility:visible; transition:opacity .25s, visibility .25s, transform .25s;}
     .mobile-scroll-hint span{color:var(--gold); font-size:1.1rem; animation:bob 1.8s ease-in-out infinite;}
     .mobile-scroll-hint.is-hidden{opacity:0; visibility:hidden; transform:translate(-50%,8px); pointer-events:none;}
@@ -343,21 +419,27 @@
     .tools-line{padding:0 20px;}
     .mobile-break{display:block;}
     .nav{padding:12px 14px; gap:8px;}
-    .nav-mark{font-size:0.92rem;}
-    .nav-right{gap:6px; margin-left:8px;}
-    .lang-select{height:34px; padding:0 24px 0 10px; font-size:.72rem; border-radius:999px;}
+    .nav-mark{font-size:.86rem;}
+    .nav-right{gap:4px; margin-left:3px;}
+    .lang-select{height:40px; min-width:44px; padding:0 22px 0 9px; font-size:.7rem; border-radius:999px;}
     .lang-chevron{width:9px; height:9px; right:8px;}
-    .icon-btn{width:34px; height:34px;}
+    .icon-btn{width:40px; height:40px;}
     .icon-btn svg{width:15px; height:15px;}
-    .rk-badge{width:200px;}
-    .tools-line span{font-size:.78rem;}
-    .tools-line{gap:8px 14px;}
+    .rk-badge{width:min(43vw,170px);}
+    .tools-line span{font-size:.74rem;}
+    .tools-line{gap:8px 12px;}
     .tools-line .dot{font-size:.45rem;}
     .about-hello{font-size:1.9rem;}
     .contact-inner h2{font-size:1.9rem;}
     .bg-item h4{font-size:1rem;}
     .skill-cat h4, .bg-col h3{font-size:1.05rem;}
     footer .wrap{justify-content:center; text-align:center;}
+  }
+  @media (max-width:360px){
+    #contrastToggle{display:none;}
+    .wrap{padding-left:16px; padding-right:16px;}
+    .mobile-contact-actions{gap:6px;}
+    .mobile-contact-actions a{font-size:.72rem;}
   }
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
@@ -423,7 +505,7 @@
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
       </button>
-      <button class="icon-btn nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="icon-btn nav-toggle" id="navToggle" aria-label="Menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
 </header>
@@ -438,7 +520,7 @@
     </div>
     <div class="hero-photo-wrap">
       <div class="rk-badge">
-        <img src="hero-photo.png" alt="Rushikesh Kilche" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+        <img src="hero-photo.png" alt="Rushikesh Kilche" loading="eager" decoding="async" fetchpriority="high" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
         <div class="rk-fallback">RK</div>
       </div>
     </div>
@@ -632,6 +714,11 @@
   <div class="wrap contact-split reveal">
     <div class="contact-inner">
       <h2>Let's <span class="accent">connect</span> and work <span class="accent">together</span>!</h2>
+      <div class="mobile-contact-actions" aria-label="Quick contact">
+        <a href="tel:+919172774866">Call</a>
+        <a href="https://wa.me/919172774866" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:kilcherushikesh@gmail.com">Email</a>
+      </div>
       <div class="contact-list">
         <div class="contact-row"><span class="icon-circle"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg></span><div><div class="label">Phone (WhatsApp)</div><a class="value" href="tel:+919172774866">+91 91727 74866</a></div></div>
         <div class="contact-row"><span class="icon-circle"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm2 2v.01L12 12l8-5.99V6H4zm16 2.24-7.4 5.55a1 1 0 0 1-1.2 0L4 8.24V18h16V8.24z" fill="currentColor"/></svg></span><div><div class="label">E-mail</div><a class="value" href="mailto:kilcherushikesh@gmail.com">kilcherushikesh@gmail.com</a></div></div>
@@ -741,7 +828,7 @@ var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     document.body.style.overflow = '';
     setTimeout(function(){ if(el.parentNode) el.parentNode.removeChild(el); }, 1100);
   }
-  setTimeout(close, 4200);
+  setTimeout(close, window.matchMedia('(max-width:600px)').matches ? 2600 : 4200);
   var skip = document.getElementById('vkSkip');
   if(skip) skip.addEventListener('click', close);
   document.addEventListener('keydown', function(e){
@@ -781,8 +868,8 @@ var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 var navToggle = document.getElementById('navToggle'), navLinksEl = document.getElementById('navLinks');
 if(navToggle && navLinksEl){
-  navToggle.addEventListener('click', function(){ var isOpen = navLinksEl.classList.toggle('open'); navToggle.classList.toggle('open', isOpen); });
-  navLinksEl.querySelectorAll('a').forEach(function(l){ l.addEventListener('click', function(){ navLinksEl.classList.remove('open'); navToggle.classList.remove('open'); }); });
+  navToggle.addEventListener('click', function(){ var isOpen = navLinksEl.classList.toggle('open'); navToggle.classList.toggle('open', isOpen); navToggle.setAttribute('aria-expanded', String(isOpen)); });
+  navLinksEl.querySelectorAll('a').forEach(function(l){ l.addEventListener('click', function(){ navLinksEl.classList.remove('open'); navToggle.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); }); });
 }
 
 var themeBtn = document.getElementById('themeToggle');
