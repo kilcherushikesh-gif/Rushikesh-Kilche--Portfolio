@@ -582,7 +582,7 @@
     <form class="contact-form" id="contactForm">
       <h4>Send me a message</h4>
       <p class="form-sub">Recruiters — send me the JD and I'll respond within 24 hours.</p>
-      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="access_key" value="f8dbf7bc-5239-4adb-b300-9d24282d1c2e">
       <input type="hidden" name="subject" value="New message from portfolio">
       <input type="hidden" name="from_name" value="Rushikesh Portfolio">
       <div class="form-row"><label for="cf-name">Name</label><input id="cf-name" name="name" type="text" required placeholder="Your name"></div>
@@ -834,7 +834,7 @@ document.querySelectorAll('.faq-q').forEach(function(q){
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var accessKeyInput = form.querySelector('input[name="access_key"]');
-    if(!accessKeyInput || !accessKeyInput.value || accessKeyInput.value === 'YOUR_WEB3FORMS_ACCESS_KEY'){
+    if(!accessKeyInput || !accessKeyInput.value || accessKeyInput.value === 'f8dbf7bc-5239-4adb-b300-9d24282d1c2e'){
       showEmailDraftFallback('Online sending is not configured. Your message is ready as an email draft;');
       return;
     }
