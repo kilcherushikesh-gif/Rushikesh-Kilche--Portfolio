@@ -160,7 +160,9 @@
   .dashboard-preview{display:none;}
   .cricket-dashboard-shot{display:none;}
   .app-preview{display:none;}
-  .hero .desktop-resume-cta,.project-links .case-study-trigger,.project-links .mobile-case-label{display:none;}
+  .project-links .case-study-trigger{display:none;}
+  .hero-actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;}
+  .hero-actions .btn{min-height:46px;}
   .project-head{display:flex; align-items:baseline; gap:16px; margin-bottom:14px;}
   .project-num{font-family:'Poppins',sans-serif; font-weight:800; font-size:2.4rem; color:var(--gold); line-height:1;}
   .project-head h3{font-size:1.2rem; line-height:1.3; font-weight:700;}
@@ -168,6 +170,15 @@
   .project-card p.desc b{color:var(--gold); font-weight:600;}
   .project-tags{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;}
   .project-links{display:flex; gap:12px; flex-wrap:wrap;}
+  .retail-brief-grid{display:grid; grid-template-columns:minmax(110px,.72fr) minmax(0,1.5fr); gap:10px;}
+  .retail-brief-volume,.retail-brief-workflow{min-width:0; padding:14px; border:1px solid var(--navy-line); border-radius:10px; background:rgba(255,255,255,.025);}
+  .retail-brief-volume{display:flex; flex-direction:column; justify-content:center;}
+  .retail-brief-volume strong{color:var(--gold); font:800 clamp(1.7rem,3vw,2.5rem)/1 'Poppins',sans-serif;}
+  .retail-brief-volume span,.retail-brief-kicker{color:var(--ink-dim); font:600 .62rem 'JetBrains Mono',monospace; letter-spacing:.06em; text-transform:uppercase;}
+  .retail-brief-workflow{display:grid; align-content:center; gap:8px;}
+  .retail-brief-flow,.retail-brief-scopes{display:flex; flex-wrap:wrap; align-items:center; gap:6px;}
+  .retail-brief-flow span:not(.retail-brief-arrow),.retail-brief-scopes span{padding:5px 8px; border:1px solid var(--navy-line); border-radius:999px; color:var(--white); font:600 .66rem 'JetBrains Mono',monospace;}
+  .retail-brief-flow .retail-brief-arrow{color:var(--gold); font-weight:700;}
   .link-pill{border:2px solid var(--gold); color:var(--gold); border-radius:999px; padding:9px 20px; text-decoration:none; font-weight:600; font-size:.85rem; font-family:'Poppins',sans-serif; transition:all .2s; display:inline-block; cursor:pointer; background:transparent;}
   .link-pill:hover{background:var(--gold); color:var(--navy);}
   .cert-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px;}
@@ -336,6 +347,13 @@
     .app-preview figcaption{margin-top:7px; color:var(--ink-dim); font:500 .64rem 'JetBrains Mono',monospace;}
   }
   @media (max-width:760px){.projects-grid{grid-template-columns:1fr;}}
+  @media (min-width:861px) and (max-width:960px){
+    .dashboard-preview,.app-preview{display:block; margin:6px 0 14px; padding:10px 12px; border:1px solid var(--navy-line); border-radius:12px; background:linear-gradient(145deg,rgba(255,255,255,.025),rgba(255,255,255,.005));}
+    .dashboard-preview img,.app-preview img{display:block; width:100%; height:auto; max-height:240px; margin:0 auto; object-fit:contain; border-radius:8px;}
+    .dashboard-preview img{background:#fff;}
+    .dashboard-preview .cricket-dashboard-shot{background:#071b13;}
+    .app-preview img{max-height:250px;}
+  }
   @media (min-width:601px) and (max-width:860px){
     .hero-inner{grid-template-columns:minmax(0,1.2fr) minmax(190px,.8fr); gap:18px; align-items:center;}
     .hero-photo-wrap{order:initial; margin:0; padding:0;}
@@ -350,7 +368,7 @@
     .about-copy p{max-width:72ch; line-height:1.9;}
     .hero-photo-wrap{padding:18px;}
     .rk-badge{width:min(100%,320px); animation:none;}
-    .hero .desktop-resume-cta{display:inline-flex; margin-top:22px;}
+    .hero-actions{margin-top:22px;}
     .nav-links{gap:clamp(14px,1.6vw,24px);}
     .nav-links a[aria-current="location"]{color:var(--gold);}
     .nav-links a[aria-current="location"]::after{content:""; position:absolute; left:0; right:0; bottom:-7px; height:2px; border-radius:2px; background:var(--gold);}
@@ -363,23 +381,6 @@
     .dashboard-preview{display:block; margin:4px 0 18px; padding:12px 14px 10px; border:1px solid var(--navy-line); border-radius:12px; background:linear-gradient(145deg,rgba(255,255,255,.025),rgba(255,255,255,.005));}
     .dashboard-preview img{display:block; width:100%; height:auto; max-height:260px; margin:0 auto; object-fit:contain; border-radius:8px; background:#fff;}
     .dashboard-preview .cricket-dashboard-shot{display:block; width:100%; height:auto; max-height:260px; margin:0 auto; object-fit:contain; border-radius:8px; background:#071b13;}
-    .retail-dashboard-shot{display:block; width:100%; height:auto; max-height:260px; margin:0 auto; object-fit:contain; border-radius:8px;}
-    .retail-demo-details{margin-top:10px; padding-top:8px; border-top:1px solid var(--navy-line);}
-    .retail-demo-details summary{width:max-content; max-width:100%; color:var(--gold); font:600 .72rem 'JetBrains Mono',monospace; cursor:pointer;}
-    .retail-demo-details[open] .retail-demo{margin-top:10px;}
-    .retail-demo{display:grid; gap:10px;}
-    .retail-demo-controls{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px 14px;}
-    .retail-demo-controls [role="group"]{display:flex; flex-wrap:wrap; gap:6px;}
-    .retail-demo-controls button{min-height:32px; padding:5px 10px; border:1px solid var(--navy-line); border-radius:8px; background:rgba(255,255,255,.025); color:var(--ink-dim); font:600 .68rem 'JetBrains Mono',monospace; cursor:pointer; transition:background .18s,color .18s,border-color .18s;}
-    .retail-demo-controls button[aria-pressed="true"]{border-color:rgba(242,169,0,.6); background:rgba(242,169,0,.12); color:var(--gold);}
-    .retail-demo-controls button:focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
-    .retail-demo-readout{margin:0; color:var(--ink-dim); font:500 .7rem 'JetBrains Mono',monospace;}
-    .retail-demo-chart{display:block; width:100%; height:auto; max-height:190px;}
-    .retail-demo-chart text{fill:var(--ink-dim); font:12px 'JetBrains Mono',monospace;}
-    .retail-demo-chart .retail-demo-bar{fill:rgba(242,169,0,.76); transition:y .35s,height .35s,fill .2s;}
-    .retail-demo-chart .retail-demo-bar:nth-of-type(even){fill:rgba(242,169,0,.43);}
-    .retail-demo-chart .retail-demo-bar:focus{stroke:var(--white); stroke-width:2;}
-    .retail-demo .preview-study-label{line-height:1.5;}
     .preview-top{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:7px; color:var(--ink-dim); font:600 .65rem 'JetBrains Mono',monospace; letter-spacing:.08em; text-transform:uppercase;}
     .preview-top span:last-child{color:var(--gold); font-size:.58rem; white-space:nowrap;}
     .preview-chart{display:block; width:100%; height:82px;}
@@ -391,6 +392,7 @@
     .preview-bar:nth-of-type(even){fill:rgba(242,169,0,.38);}
     .preview-study-label{display:inline-flex; align-items:center; gap:7px; color:var(--ink-dim); font-size:.68rem;}
     .preview-study-label::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--gold);}
+    .retail-brief-grid{grid-template-columns:minmax(120px,.72fr) minmax(0,1.5fr);}
     .bg-item{display:grid; grid-template-columns:clamp(116px,13vw,150px) minmax(0,1fr); column-gap:18px; padding-left:20px;}
     .bg-item .dates{grid-column:1; grid-row:1 / span 4; line-height:1.5;}
     .bg-item h4,.bg-item .org,.bg-item p{grid-column:2;}
@@ -419,13 +421,15 @@
     .scroll-cue span,.scroll-cue a{box-shadow:0 4px 14px rgba(0,0,0,.2);}
   }
   @media (max-width:600px){
-    .project-links .mobile-case-label{display:inline-block;}
+    .project-links .case-study-trigger{display:inline-flex;}
     html{scroll-padding-top:76px;}
     header{top:max(3px,env(safe-area-inset-top)); backdrop-filter:none; background:rgba(10,14,39,.98);}
     [data-theme="light"] header{background:rgba(245,243,238,.98);}
     section{scroll-margin-top:68px;}
     .hero h1{font-size:clamp(2.1rem,10vw,3rem); line-height:1.02; letter-spacing:-.035em;}
     .hero .pill{font-size:.8rem; padding:6px 14px; margin-bottom:15px;}
+    .hero-actions{gap:8px; margin-top:16px;}
+    .hero-actions .btn{min-height:44px; padding:9px 14px; font-size:.8rem;}
     .hero p.role{font-size:1.02rem; margin-top:14px; line-height:1.5;}
     .hero p.hero-copy{font-size:.94rem; margin-top:9px; line-height:1.55;}
     .hero-photo-wrap{padding:0;}
@@ -592,7 +596,7 @@
 <a class="skip-link" href="#home">Skip to content</a>
 
 <div id="vkIntro">
-  <img class="vk-photo" src="hero-photo.png" alt="Rushikesh Kilche" onerror="this.style.display='none'">
+  <img class="vk-photo" src="hero-photo.webp" alt="Rushikesh Kilche" onerror="this.style.display='none'">
   <div class="vk-sub">Data Analyst &amp; Business Analyst</div>
   <div class="vk-boot" id="vkBoot">> initializing portfolio…</div>
   <div class="vk-bar"><i></i></div>
@@ -639,11 +643,14 @@
       <h1><span class="glitch" data-text="RUSHIKESH">RUSHIKESH</span><br><span class="last">KILCHE</span></h1>
       <p class="role" id="heroTagline">I help businesses find <b>clarity</b><br class="mobile-break"> through <b>data</b>.</p>
       <p class="hero-copy"><b>Data Analyst &amp; Business Analyst</b><br class="mobile-break"> with hands-on project experience<br class="mobile-break"> across retail, HR and investment datasets.</p>
-      <a class="btn btn-gold desktop-resume-cta" href="Rushikesh_Kilche_CV.pdf" download>Download Resume <span aria-hidden="true">↓</span></a>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="Rushikesh_Kilche_CV.pdf" download>Download CV <span aria-hidden="true">↓</span></a>
+        <a class="btn btn-ghost" href="#projects">View projects <span aria-hidden="true">↘</span></a>
+      </div>
     </div>
     <div class="hero-photo-wrap">
       <div class="rk-badge">
-        <img src="hero-photo.png" alt="Rushikesh Kilche" loading="eager" decoding="async" fetchpriority="high" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+        <img src="hero-photo.webp" alt="Rushikesh Kilche" loading="eager" decoding="async" fetchpriority="high" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
         <div class="rk-fallback">RK</div>
       </div>
     </div>
@@ -763,17 +770,29 @@
     </article>
     <article class="project-card reveal holo" data-tags="python sql" data-modal="modal-3">
       <div class="project-head"><div class="project-num">03</div><h3>Cricbuzz LiveStats</h3></div>
-      <figure class="dashboard-preview"><div class="preview-top"><span>Cricbuzz LiveStats</span><span>Live dashboard</span></div><img class="cricket-dashboard-shot" src="assets/dashboards/cricbuzz-livestats.svg" alt="Cricbuzz LiveStats dashboard showing database totals, top five run scorers, and top five wicket takers" loading="lazy" decoding="async"><figcaption class="preview-study-label">Screenshot of the live dashboard</figcaption></figure>
+      <figure class="dashboard-preview"><div class="preview-top"><span>Cricbuzz LiveStats</span><span>Overview snapshot</span></div><img class="cricket-dashboard-shot" src="assets/dashboards/cricbuzz-livestats.svg" alt="Cricbuzz LiveStats overview showing totals and top five run scorers and wicket takers" loading="lazy" decoding="async"><figcaption class="preview-study-label">Overview figures through 09 Sep 2026</figcaption></figure>
       <p class="desc">A multi-page cricket analytics dashboard with <b>25 SQL queries</b>, interactive visualizations, live API exploration, and data-quality checks across match and player data.</p>
       <div class="project-tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">SQLite</span><span class="tag">SQL</span><span class="tag">Plotly</span></div>
       <div class="project-links"><button class="link-pill case-study-trigger" type="button" aria-haspopup="dialog">Case study</button><a class="link-pill" href="https://github.com/kilcherushikesh-gif/cricbuzz-livestats" target="_blank" rel="noopener">View on GitHub</a><a class="link-pill" href="https://cricbuzz-livestats-rishi.streamlit.app/" target="_blank" rel="noopener">Live Dashboard</a></div>
     </article>
     <article class="project-card reveal holo" data-tags="sql python powerbi" data-modal="modal-4">
       <div class="project-head"><div class="project-num">04</div><h3>Retail Sales &amp; Customer Insights</h3></div>
-      <figure class="dashboard-preview"><div class="preview-top"><span>Retail sales dashboard</span><span>Sample screenshot</span></div><img class="retail-dashboard-shot" src="assets/dashboards/retail-sample-dashboard.webp" alt="Sample Retail dashboard screenshot with synthetic quarterly sales index; it does not show project results" loading="lazy" decoding="async"><details class="retail-demo-details"><summary>Explore the interactive sample</summary><div class="retail-demo" data-retail-demo><div class="retail-demo-controls"><div role="group" aria-label="Choose sample region"><button type="button" data-retail-region="all" aria-pressed="true">All regions</button><button type="button" data-retail-region="north" aria-pressed="false">North</button><button type="button" data-retail-region="south" aria-pressed="false">South</button><button type="button" data-retail-region="west" aria-pressed="false">West</button></div><div role="group" aria-label="Choose sample measure"><button type="button" data-retail-metric="sales" aria-pressed="true">Sales</button><button type="button" data-retail-metric="profit" aria-pressed="false">Profit</button></div></div><p class="retail-demo-readout" data-retail-readout aria-live="polite">All regions - sample sales index</p><svg class="retail-demo-chart" viewBox="0 0 560 190" role="img" aria-labelledby="retailDemoChartTitle"><title id="retailDemoChartTitle">Illustrative sample quarterly retail sales index for all regions</title><path class="preview-gridline" d="M24 30H548M24 80H548M24 130H548"/><rect class="retail-demo-bar" data-retail-bar="0" x="64" y="59" width="58" height="91" rx="5" tabindex="0" aria-label="Q1 sample index 61"/><rect class="retail-demo-bar" data-retail-bar="1" x="190" y="39" width="58" height="111" rx="5" tabindex="0" aria-label="Q2 sample index 74"/><rect class="retail-demo-bar" data-retail-bar="2" x="316" y="48" width="58" height="102" rx="5" tabindex="0" aria-label="Q3 sample index 68"/><rect class="retail-demo-bar" data-retail-bar="3" x="442" y="18" width="58" height="132" rx="5" tabindex="0" aria-label="Q4 sample index 88"/><text x="83" y="174">Q1</text><text x="209" y="174">Q2</text><text x="335" y="174">Q3</text><text x="461" y="174">Q4</text></svg></div></details><figcaption class="preview-study-label">Screenshot preview uses synthetic sample values, not the Retail project data.</figcaption></figure>
+      <figure class="dashboard-preview retail-brief" aria-label="Retail project scope summary">
+        <div class="preview-top"><span>Retail sales &amp; customer insights</span><span>Project scope</span></div>
+        <div class="retail-brief-grid">
+          <div class="retail-brief-volume"><strong>500K+</strong><span>transactions analyzed</span></div>
+          <div class="retail-brief-workflow">
+            <span class="retail-brief-kicker">Analysis workflow</span>
+            <div class="retail-brief-flow"><span>SQL</span><span class="retail-brief-arrow" aria-hidden="true">→</span><span>Python</span><span class="retail-brief-arrow" aria-hidden="true">→</span><span>Power BI</span></div>
+            <span class="retail-brief-kicker">Report views</span>
+            <div class="retail-brief-scopes"><span>Regions</span><span>Product categories</span><span>Customer cohorts</span></div>
+          </div>
+        </div>
+        <figcaption class="preview-study-label">Project scope summary; verified results are not included.</figcaption>
+      </figure>
       <p class="desc">Analyzed <b>500K+ retail transactions</b> with SQL and Python, then built a Power BI dashboard to explore product, regional, and customer trends.</p>
       <div class="project-tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">DAX</span></div>
-      <div class="project-links"><button class="link-pill case-study-trigger" type="button" aria-haspopup="dialog">Case study</button><span class="link-pill mobile-case-label">Case Study</span></div>
+      <div class="project-links"><button class="link-pill case-study-trigger" type="button" aria-haspopup="dialog">Case study</button></div>
     </article>    <article class="project-card reveal holo has-app-preview" data-tags="android app" data-modal="modal-5">
       <div class="project-head"><div class="project-num">05</div><h3>CrashGuard SOS</h3></div>
       <figure class="app-preview"><img src="assets/dashboards/crashguard-sos-preview.svg" alt="Illustrative CrashGuard SOS phone preview with emergency alert, crash detection, and nearby hospital features" loading="lazy" decoding="async"></figure>
@@ -918,8 +937,8 @@
 
 <div class="modal-overlay" id="modal-1"><div class="modal"><button class="modal-close">×</button><h3>Fitbit Activity &amp; Wellness Analysis</h3><div class="modal-tag">Python · pandas · SQLite · SQL · Streamlit</div><h4>Business Question</h4><p>How do daily activity patterns relate to sleep, and how complete are the wearable logs?</p><h4>Data &amp; Preparation</h4><p>Combined Fitbit activity, sleep, heart-rate, and weight logs in SQLite. Removed 72 zero-step, full-day sedentary non-wear records, dropped 3 duplicate sleep rows, standardized timestamps, and rolled roughly 2.4 million heart-rate readings up to hourly values.</p><h4>Analysis</h4><p>SQL explores weekday and hourly activity, user activity segments, sleep-duration groups, nights under 7 hours, heart-rate patterns, and data coverage. The Streamlit app exposes cleaning, dashboard, and query views.</p><h4>What the data supports</h4><p>Weight and heart-rate coverage is limited: only 8 users logged weight and 14 users have heart-rate records in the source dataset. Treat comparisons involving those measures as directional, not representative of every participant.</p><h4>Explore</h4><div class="modal-actions"><a class="link-pill" href="https://github.com/kilcherushikesh-gif/fitbit-project" target="_blank" rel="noopener">View on GitHub</a><a class="link-pill" href="https://fitbit-insight.streamlit.app/" target="_blank" rel="noopener">Live Dashboard</a></div></div></div>
 <div class="modal-overlay" id="modal-2"><div class="modal"><button class="modal-close">×</button><h3>Stock Market SQL Analysis</h3><div class="modal-tag">SQL · SQLite · Python · Streamlit</div><h4>Business Question</h4><p>What do historical prices and simple moving-average signals reveal across six NSE stocks?</p><h4>Data &amp; Preparation</h4><p>Loaded six stock price histories covering 2015-01-01 to 2018-07-31, with 889 trading-day rows per stock. Built a SQLite database and a 17-task SQL analysis playground.</p><h4>Analysis &amp; Findings</h4><p>Used moving averages, LAG, returns, and signal comparisons. Raw close-to-close returns misread 1:1 bonus adjustments as sharp losses: Infosys showed -49.9% on 2015-06-15 and TCS -50.4% on 2018-05-31. After adjustment, the project reports period returns of +38.2% for Infosys and +52.4% for TCS, instead of raw -30.9% and -23.8%.</p><h4>Interpretation</h4><p>Corporate actions need to be accounted for before comparing historical returns. Moving-average signals are an educational backtest; the analysis excludes transaction costs and does not establish future performance.</p><h4>Explore</h4><div class="modal-actions"><a class="link-pill" href="https://github.com/kilcherushikesh-gif/stock-market-sql-playground" target="_blank" rel="noopener">View on GitHub</a><a class="link-pill" href="https://nse-stock-market-explorer.streamlit.app/" target="_blank" rel="noopener">Live SQL Playground</a></div></div></div>
-<div class="modal-overlay" id="modal-3"><div class="modal"><button class="modal-close">×</button><h3>Cricbuzz LiveStats</h3><div class="modal-tag">Python · Streamlit · SQLite · SQL · Plotly</div><h4>Business Question</h4><p>How can match and player records be explored together in one interactive cricket analytics app?</p><h4>Data &amp; Preparation</h4><p>Parsed Cricsheet YAML into SQLite and connected live/recent match and player views to the Cricbuzz API. The project README reports 4,577 matches, 5,059 players, 223 teams, 388 venues, 1,770,801 runs, and 65,846 wickets in its database.</p><h4>Analysis &amp; Product</h4><p>Built searchable dashboards, visual summaries, 25 SQL analysis queries, and database CRUD tools. The app combines historical ball-by-ball exploration with API-powered match views.</p><h4>Limitations</h4><p>Historical coverage depends on the available Cricsheet files; live views depend on the external API and its availability.</p><h4>Explore</h4><div class="modal-actions"><a class="link-pill" href="https://github.com/kilcherushikesh-gif/cricbuzz-livestats" target="_blank" rel="noopener">View on GitHub</a><a class="link-pill" href="https://cricbuzz-livestats-rishi.streamlit.app/" target="_blank" rel="noopener">Live Dashboard</a></div></div></div>
-<div class="modal-overlay" id="modal-4"><div class="modal"><button class="modal-close">×</button><h3>Retail Sales &amp; Customer Insights</h3><div class="modal-tag">SQL · Python · Power BI · DAX</div><h4>Business Question</h4><p>How do sales vary across regions, product categories, and customer cohorts?</p><h4>Data &amp; Preparation</h4><p>The portfolio project describes a dataset of more than 500,000 retail transactions, profiled and cleaned with SQL and Python before modeling in Power BI.</p><h4>Analysis &amp; Deliverable</h4><p>A four-page Power BI dashboard supports regional and category comparisons plus customer-cohort drill-downs. This portfolio summary documents the analysis scope; detailed measured findings and recommendations are not published here yet.</p><h4>Explore</h4><p>Use the dashboard views to review sales performance by region, category, and cohort.</p></div></div><div class="modal-overlay" id="modal-5"><div class="modal"><button class="modal-close">×</button><h3>CrashGuard SOS</h3><div class="modal-tag">Android · Road Safety · Indus Appstore release</div><h4>Purpose</h4><p>Helps riders and drivers respond to road accidents with safety and emergency-support features.</p><h4>Features</h4><p>Automatic crash detection for motorcycles and cars, SOS SMS with live GPS coordinates, a loud alert, voice prompts for bystanders, and a nearby hospital locator.</p><h4>Release</h4><div class="modal-actions"><a class="link-pill" href="https://www.indusappstore.com/apps/auto-and-vehicles/crashguard-sos/com.crashguard.sos.app/?id=com.crashguard.sos.app&amp;page=details" target="_blank" rel="noopener">View on Indus Appstore</a></div></div></div><div class="modal-overlay" id="resumeModal"><div class="modal"><button class="modal-close">×</button><h3>Resume — Rushikesh Kilche</h3><div class="modal-tag">PDF Preview</div><iframe class="modal-iframe" src="Rushikesh_Kilche_CV.pdf" title="Resume"></iframe><div class="modal-actions"><a class="link-pill" href="Rushikesh_Kilche_CV.pdf" download>Download PDF</a></div></div></div>
+<div class="modal-overlay" id="modal-3"><div class="modal"><button class="modal-close">×</button><h3>Cricbuzz LiveStats</h3><div class="modal-tag">Python · Streamlit · SQLite · SQL · Plotly</div><h4>Business Question</h4><p>How can match and player records be explored together in one interactive cricket analytics app?</p><h4>Data &amp; Preparation</h4><p>Parsed more than 22,000 Cricsheet match files into SQLite and connected live, recent, and upcoming match views to the Cricbuzz API. The portfolio overview is a dated snapshot through 09 Sep 2026, spanning matches from 19 Dec 2001. Its displayed totals belong to that capture; use the linked repository for the current database summary.</p><h4>Analysis &amp; Product</h4><p>Built searchable dashboards, visual summaries, 25 SQL analysis queries, and database CRUD tools. The app combines historical ball-by-ball exploration with API-powered match views.</p><h4>Limitations</h4><p>Historical coverage depends on the available Cricsheet files; live views depend on the external API and its availability.</p><h4>Explore</h4><div class="modal-actions"><a class="link-pill" href="https://github.com/kilcherushikesh-gif/cricbuzz-livestats" target="_blank" rel="noopener">View on GitHub</a><a class="link-pill" href="https://cricbuzz-livestats-rishi.streamlit.app/" target="_blank" rel="noopener">Live Dashboard</a></div></div></div>
+<div class="modal-overlay" id="modal-4"><div class="modal"><button class="modal-close">×</button><h3>Retail Sales &amp; Customer Insights</h3><div class="modal-tag">SQL · Python · Power BI · DAX</div><h4>Business Question</h4><p>How do sales vary across regions, product categories, and customer cohorts?</p><h4>Data &amp; Preparation</h4><p>The project scope describes 500K+ retail transactions prepared with SQL and Python before modeling in Power BI.</p><h4>Analysis &amp; Deliverable</h4><p>A four-page Power BI dashboard supports regional and category comparisons plus customer-cohort analysis. The portfolio preview summarizes the project scope; verified measured results and an authentic report screenshot are not currently included.</p><h4>Explore</h4><p>Use the dashboard views to review sales performance by region, category, and cohort.</p></div></div><div class="modal-overlay" id="modal-5"><div class="modal"><button class="modal-close">×</button><h3>CrashGuard SOS</h3><div class="modal-tag">Android · Road Safety · Indus Appstore release</div><h4>Purpose</h4><p>Helps riders and drivers respond to road accidents with safety and emergency-support features.</p><h4>Features</h4><p>Automatic crash detection for motorcycles and cars, SOS SMS with live GPS coordinates, a loud alert, voice prompts for bystanders, and a nearby hospital locator.</p><h4>Release</h4><div class="modal-actions"><a class="link-pill" href="https://www.indusappstore.com/apps/auto-and-vehicles/crashguard-sos/com.crashguard.sos.app/?id=com.crashguard.sos.app&amp;page=details" target="_blank" rel="noopener">View on Indus Appstore</a></div></div></div><div class="modal-overlay" id="resumeModal"><div class="modal"><button class="modal-close">×</button><h3>Resume — Rushikesh Kilche</h3><div class="modal-tag">PDF Preview</div><iframe class="modal-iframe" src="Rushikesh_Kilche_CV.pdf" title="Resume"></iframe><div class="modal-actions"><a class="link-pill" href="Rushikesh_Kilche_CV.pdf" download>Download PDF</a></div></div></div>
 
 <script>
 window.onerror = function(msg){ console.warn('⚠️', msg); return false; };
@@ -1100,35 +1119,6 @@ if(mobileScrollHint) mobileScrollHint.addEventListener('click', function(event){
   if(nextSection) nextSection.scrollIntoView({behavior:'smooth',block:'start'});
 });
 
-(function(){
-  var demo=document.querySelector('[data-retail-demo]');
-  if(!demo) return;
-  var sample={
-    all:{sales:[61,74,68,88],profit:[46,57,52,69]},
-    north:{sales:[55,69,63,81],profit:[39,52,47,62]},
-    south:{sales:[67,72,75,84],profit:[48,54,56,65]},
-    west:{sales:[63,79,70,92],profit:[44,61,51,72]}
-  };
-  var region='all',metric='sales';
-  var quarters=['Q1','Q2','Q3','Q4'];
-  function update(){
-    var values=sample[region][metric];
-    demo.querySelectorAll('[data-retail-bar]').forEach(function(bar,index){
-      var height=values[index]*1.5;
-      bar.setAttribute('y',String(150-height));
-      bar.setAttribute('height',String(height));
-      bar.setAttribute('aria-label',quarters[index]+' synthetic sample '+metric+' index '+values[index]);
-    });
-    demo.querySelector('[data-retail-readout]').textContent=(region==='all'?'All regions':region.charAt(0).toUpperCase()+region.slice(1))+' - sample '+metric+' index';
-    demo.querySelector('svg title').textContent='Synthetic sample quarterly retail '+metric+' index for '+(region==='all'?'all regions':region);
-    demo.querySelectorAll('[data-retail-region]').forEach(function(button){button.setAttribute('aria-pressed',String(button.getAttribute('data-retail-region')===region));});
-    demo.querySelectorAll('[data-retail-metric]').forEach(function(button){button.setAttribute('aria-pressed',String(button.getAttribute('data-retail-metric')===metric));});
-  }
-  demo.querySelectorAll('[data-retail-region]').forEach(function(button){button.addEventListener('click',function(){region=button.getAttribute('data-retail-region');update();});});
-  demo.querySelectorAll('[data-retail-metric]').forEach(function(button){button.addEventListener('click',function(){metric=button.getAttribute('data-retail-metric');update();});});
-  update();
-})();
-
 document.querySelectorAll('.filter-btn').forEach(function(btn){
   btn.addEventListener('click', function(){
     var f = btn.getAttribute('data-filter');
@@ -1171,7 +1161,7 @@ document.querySelectorAll('.filter-btn').forEach(function(btn){
   }
   document.querySelectorAll('.project-card').forEach(function(card){
     card.addEventListener('click', function(e){
-      if(e.target.closest('a,.retail-demo,.retail-demo-details')) return;
+      if(e.target.closest('a')) return;
       var id = card.getAttribute('data-modal'); if(!id) return;
       var m = document.getElementById(id);
       if(m) openModal(m,e.target.closest('.case-study-trigger'));
