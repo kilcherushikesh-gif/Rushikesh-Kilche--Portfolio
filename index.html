@@ -83,6 +83,7 @@
   .mobile-break{display:none;}
   .hero-photo-wrap{display:flex; justify-content:center; padding:10px; position:relative; z-index:2;}
   .rk-badge{width:min(100%,340px); aspect-ratio:1; border-radius:50%; display:grid; place-items:center; position:relative; animation:badgePulse 4s ease-in-out infinite; background:transparent;}
+  .rk-badge picture{display:block; width:100%; height:100%;}
   .rk-badge img{width:100%; height:100%; object-fit:contain; display:block;}
   .rk-badge .rk-fallback{font-family:'Poppins',sans-serif; font-weight:800; font-size:5rem; color:#0A0E27; width:100%; height:100%; display:none; place-items:center; letter-spacing:-.05em; border-radius:50%; background:linear-gradient(135deg,var(--gold),var(--gold-light));}
   @keyframes badgePulse{0%,100%{transform:scale(1);}50%{transform:scale(1.02);}}
@@ -300,6 +301,7 @@
   #vkIntro{position:fixed; inset:0; z-index:99999; background:#0A0E27; display:flex; align-items:center; justify-content:center; flex-direction:column; font-family:'JetBrains Mono',monospace; color:#AEB5D1; overflow:hidden; transition:transform 1s cubic-bezier(.77,0,.175,1), opacity .6s;}
   #vkIntro.done{transform:translateY(-100%); opacity:0; pointer-events:none;}
   #vkIntro .vk-photo{width:clamp(200px,36vw,280px); height:clamp(200px,36vw,280px); object-fit:contain; opacity:0; transform:translateY(40px) scale(.8); animation:vkLetter 1s .15s cubic-bezier(.22,1,.36,1) forwards;}
+  #vkIntro picture{display:contents;}
   @keyframes vkLetter{to{opacity:1; transform:translateY(0) scale(1);}}
   #vkIntro .vk-sub{margin-top:14px; font-size:.72rem; letter-spacing:.42em; text-transform:uppercase; color:#F2A900; opacity:0; animation:vkFade .8s .9s forwards; text-align:center; padding:0 20px;}
   #vkIntro .vk-boot{margin-top:32px; font-size:.78rem; min-height:1.2em; color:#AEB5D1; opacity:0; animation:vkFade .4s 1.2s forwards;}
@@ -596,7 +598,10 @@
 <a class="skip-link" href="#home">Skip to content</a>
 
 <div id="vkIntro">
-  <img class="vk-photo" src="hero-photo.webp" alt="Rushikesh Kilche" onerror="this.style.display='none'">
+  <picture>
+    <source media="(min-width:861px)" srcset="hero-photo-desktop.webp" type="image/webp">
+    <img class="vk-photo" src="hero-photo.webp" alt="Rushikesh Kilche" onerror="this.style.display='none'">
+  </picture>
   <div class="vk-sub">Data Analyst &amp; Business Analyst</div>
   <div class="vk-boot" id="vkBoot">> initializing portfolio…</div>
   <div class="vk-bar"><i></i></div>
@@ -650,7 +655,10 @@
     </div>
     <div class="hero-photo-wrap">
       <div class="rk-badge">
-        <img src="hero-photo.webp" alt="Rushikesh Kilche" loading="eager" decoding="async" fetchpriority="high" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+        <picture>
+          <source media="(min-width:861px)" srcset="hero-photo-desktop.webp" type="image/webp">
+          <img src="hero-photo.webp" alt="Rushikesh Kilche" loading="eager" decoding="async" fetchpriority="high" onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='grid';">
+        </picture>
         <div class="rk-fallback">RK</div>
       </div>
     </div>
