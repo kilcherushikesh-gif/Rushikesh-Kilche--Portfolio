@@ -354,6 +354,19 @@
     .project-card p.desc{flex:1; line-height:1.7;}
     .dashboard-preview{display:block; margin:4px 0 18px; padding:12px 14px 10px; border:1px solid var(--navy-line); border-radius:12px; background:linear-gradient(145deg,rgba(255,255,255,.025),rgba(255,255,255,.005));}
     .dashboard-preview img{display:block; width:100%; height:auto; max-height:260px; margin:0 auto; object-fit:contain; border-radius:8px; background:#fff;}
+    .retail-demo{display:grid; gap:10px;}
+    .retail-demo-controls{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px 14px;}
+    .retail-demo-controls [role="group"]{display:flex; flex-wrap:wrap; gap:6px;}
+    .retail-demo-controls button{min-height:32px; padding:5px 10px; border:1px solid var(--navy-line); border-radius:8px; background:rgba(255,255,255,.025); color:var(--ink-dim); font:600 .68rem 'JetBrains Mono',monospace; cursor:pointer; transition:background .18s,color .18s,border-color .18s;}
+    .retail-demo-controls button[aria-pressed="true"]{border-color:rgba(242,169,0,.6); background:rgba(242,169,0,.12); color:var(--gold);}
+    .retail-demo-controls button:focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
+    .retail-demo-readout{margin:0; color:var(--ink-dim); font:500 .7rem 'JetBrains Mono',monospace;}
+    .retail-demo-chart{display:block; width:100%; height:auto; max-height:190px;}
+    .retail-demo-chart text{fill:var(--ink-dim); font:12px 'JetBrains Mono',monospace;}
+    .retail-demo-chart .retail-demo-bar{fill:rgba(242,169,0,.76); transition:y .35s,height .35s,fill .2s;}
+    .retail-demo-chart .retail-demo-bar:nth-of-type(even){fill:rgba(242,169,0,.43);}
+    .retail-demo-chart .retail-demo-bar:focus{stroke:var(--white); stroke-width:2;}
+    .retail-demo .preview-study-label{line-height:1.5;}
     .preview-top{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:7px; color:var(--ink-dim); font:600 .65rem 'JetBrains Mono',monospace; letter-spacing:.08em; text-transform:uppercase;}
     .preview-top span:last-child{color:var(--gold); font-size:.58rem; white-space:nowrap;}
     .preview-chart{display:block; width:100%; height:82px;}
@@ -741,7 +754,7 @@
     </article>
     <article class="project-card reveal holo" data-tags="sql python powerbi" data-modal="modal-4">
       <div class="project-head"><div class="project-num">04</div><h3>Retail Sales &amp; Customer Insights</h3></div>
-      <figure class="dashboard-preview"><div class="preview-top"><span>Retail insights</span><span>Design preview</span></div><svg class="preview-chart" viewBox="0 0 560 120" role="img" aria-label="Illustrative retail dashboard chart"><path class="preview-gridline" d="M240 20H560M240 60H560M240 100H560"/><circle cx="100" cy="60" r="40" fill="none" stroke="rgba(242,169,0,.3)" stroke-width="20"/><circle cx="100" cy="60" r="40" fill="none" stroke="var(--gold)" stroke-width="20" stroke-dasharray="106 251" transform="rotate(-90 100 60)"/><rect class="preview-bar" x="260" y="30" width="250" height="12"/><rect class="preview-bar" x="260" y="54" width="190" height="12"/><rect class="preview-bar" x="260" y="78" width="220" height="12"/></svg><figcaption class="preview-study-label">Illustrative layout · no live data</figcaption></figure>
+      <figure class="dashboard-preview"><div class="preview-top"><span>Retail insights demo</span><span>Interactive sample</span></div><div class="retail-demo" data-retail-demo><div class="retail-demo-controls"><div role="group" aria-label="Choose sample region"><button type="button" data-retail-region="all" aria-pressed="true">All regions</button><button type="button" data-retail-region="north" aria-pressed="false">North</button><button type="button" data-retail-region="south" aria-pressed="false">South</button><button type="button" data-retail-region="west" aria-pressed="false">West</button></div><div role="group" aria-label="Choose sample measure"><button type="button" data-retail-metric="sales" aria-pressed="true">Sales</button><button type="button" data-retail-metric="profit" aria-pressed="false">Profit</button></div></div><p class="retail-demo-readout" data-retail-readout aria-live="polite">All regions - sample sales index</p><svg class="retail-demo-chart" viewBox="0 0 560 190" role="img" aria-labelledby="retailDemoChartTitle"><title id="retailDemoChartTitle">Illustrative sample quarterly retail sales index for all regions</title><path class="preview-gridline" d="M24 30H548M24 80H548M24 130H548"/><rect class="retail-demo-bar" data-retail-bar="0" x="64" y="59" width="58" height="91" rx="5" tabindex="0" aria-label="Q1 sample index 61"/><rect class="retail-demo-bar" data-retail-bar="1" x="190" y="39" width="58" height="111" rx="5" tabindex="0" aria-label="Q2 sample index 74"/><rect class="retail-demo-bar" data-retail-bar="2" x="316" y="48" width="58" height="102" rx="5" tabindex="0" aria-label="Q3 sample index 68"/><rect class="retail-demo-bar" data-retail-bar="3" x="442" y="18" width="58" height="132" rx="5" tabindex="0" aria-label="Q4 sample index 88"/><text x="83" y="174">Q1</text><text x="209" y="174">Q2</text><text x="335" y="174">Q3</text><text x="461" y="174">Q4</text></svg></div><figcaption class="preview-study-label">Synthetic sample only; these are not findings from the Retail project.</figcaption></figure>
       <p class="desc">Analyzed <b>500K+ retail transactions</b> with SQL and Python, then built a Power BI dashboard to explore product, regional, and customer trends.</p>
       <div class="project-tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">DAX</span></div>
       <div class="project-links"><button class="link-pill case-study-trigger" type="button" aria-haspopup="dialog">Case study</button><span class="link-pill mobile-case-label">Case Study</span></div>
@@ -1070,6 +1083,35 @@ if(mobileScrollHint) mobileScrollHint.addEventListener('click', function(event){
   if(nextSection) nextSection.scrollIntoView({behavior:'smooth',block:'start'});
 });
 
+(function(){
+  var demo=document.querySelector('[data-retail-demo]');
+  if(!demo) return;
+  var sample={
+    all:{sales:[61,74,68,88],profit:[46,57,52,69]},
+    north:{sales:[55,69,63,81],profit:[39,52,47,62]},
+    south:{sales:[67,72,75,84],profit:[48,54,56,65]},
+    west:{sales:[63,79,70,92],profit:[44,61,51,72]}
+  };
+  var region='all',metric='sales';
+  var quarters=['Q1','Q2','Q3','Q4'];
+  function update(){
+    var values=sample[region][metric];
+    demo.querySelectorAll('[data-retail-bar]').forEach(function(bar,index){
+      var height=values[index]*1.5;
+      bar.setAttribute('y',String(150-height));
+      bar.setAttribute('height',String(height));
+      bar.setAttribute('aria-label',quarters[index]+' synthetic sample '+metric+' index '+values[index]);
+    });
+    demo.querySelector('[data-retail-readout]').textContent=(region==='all'?'All regions':region.charAt(0).toUpperCase()+region.slice(1))+' - sample '+metric+' index';
+    demo.querySelector('svg title').textContent='Synthetic sample quarterly retail '+metric+' index for '+(region==='all'?'all regions':region);
+    demo.querySelectorAll('[data-retail-region]').forEach(function(button){button.setAttribute('aria-pressed',String(button.getAttribute('data-retail-region')===region));});
+    demo.querySelectorAll('[data-retail-metric]').forEach(function(button){button.setAttribute('aria-pressed',String(button.getAttribute('data-retail-metric')===metric));});
+  }
+  demo.querySelectorAll('[data-retail-region]').forEach(function(button){button.addEventListener('click',function(){region=button.getAttribute('data-retail-region');update();});});
+  demo.querySelectorAll('[data-retail-metric]').forEach(function(button){button.addEventListener('click',function(){metric=button.getAttribute('data-retail-metric');update();});});
+  update();
+})();
+
 document.querySelectorAll('.filter-btn').forEach(function(btn){
   btn.addEventListener('click', function(){
     var f = btn.getAttribute('data-filter');
@@ -1112,7 +1154,7 @@ document.querySelectorAll('.filter-btn').forEach(function(btn){
   }
   document.querySelectorAll('.project-card').forEach(function(card){
     card.addEventListener('click', function(e){
-      if(e.target.closest('a')) return;
+      if(e.target.closest('a,.retail-demo')) return;
       var id = card.getAttribute('data-modal'); if(!id) return;
       var m = document.getElementById(id);
       if(m) openModal(m,e.target.closest('.case-study-trigger'));
