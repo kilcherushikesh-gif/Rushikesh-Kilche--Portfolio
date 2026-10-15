@@ -298,6 +298,14 @@
   @keyframes vkLoad{to{width:100%;}}
   #vkSkip{position:absolute; top:24px; right:24px; background:transparent; border:1px solid rgba(242,169,0,.4); color:#F2A900; padding:6px 16px; border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:.68rem; cursor:pointer; opacity:0; animation:vkFade .4s 1s forwards; letter-spacing:.12em;}
   #vkSkip:hover{background:rgba(242,169,0,.12);}
+  @media (min-width:861px) and (max-width:1100px){
+    .nav-links{display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; gap:0; background:rgba(10,14,39,.98); border-bottom:1px solid var(--navy-line); padding:10px 32px 18px;}
+    .nav-links.open{display:flex;}
+    .nav-links li{width:100%;}
+    .nav-links a{display:block; padding:12px 0; border-bottom:1px solid var(--navy-line);}
+    .nav-toggle{display:flex;}
+    .nav-right{margin-left:auto;}
+  }
   @media (max-width:960px){.contact-split,.about-grid,.bg-grid{grid-template-columns:1fr;} }
   @media (max-width:860px){
     .nav-links{display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; gap:0; background:rgba(10,14,39,0.98); border-bottom:1px solid var(--navy-line); padding:10px 32px 18px;}
@@ -345,6 +353,7 @@
     .project-card:hover{transform:translateY(-3px);}
     .project-card p.desc{flex:1; line-height:1.7;}
     .dashboard-preview{display:block; margin:4px 0 18px; padding:12px 14px 10px; border:1px solid var(--navy-line); border-radius:12px; background:linear-gradient(145deg,rgba(255,255,255,.025),rgba(255,255,255,.005));}
+    .dashboard-preview img{display:block; width:100%; height:auto; max-height:260px; margin:0 auto; object-fit:contain; border-radius:8px; background:#fff;}
     .preview-top{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:7px; color:var(--ink-dim); font:600 .65rem 'JetBrains Mono',monospace; letter-spacing:.08em; text-transform:uppercase;}
     .preview-top span:last-child{color:var(--gold); font-size:.58rem; white-space:nowrap;}
     .preview-chart{display:block; width:100%; height:82px;}
@@ -367,6 +376,12 @@
     .modal h4{margin-top:22px; padding-bottom:6px; border-bottom:1px solid var(--navy-line);}
     .modal p{max-width:78ch; line-height:1.8;}
     .project-links{margin-top:auto; padding-top:8px;}
+    .project-card:last-child{grid-column:1/-1; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); grid-template-areas:"head tags" "desc links"; align-items:center; column-gap:clamp(24px,5vw,64px); row-gap:10px; min-height:190px; padding:30px clamp(28px,5vw,64px);}
+    .project-card:last-child .project-head{grid-area:head; display:grid; grid-template-columns:48px minmax(0,1fr); align-items:center;}
+    .project-card:last-child .project-head::after{content:"Released Android app | Indus Appstore"; display:block; grid-column:2; margin:6px 0 0; color:var(--gold); font:600 .7rem 'JetBrains Mono',monospace; letter-spacing:.08em; text-transform:uppercase;}
+    .project-card:last-child p.desc{grid-area:desc; margin:0;}
+    .project-card:last-child .project-tags{grid-area:tags;}
+    .project-card:last-child .project-links{grid-area:links; margin:0; padding-top:0;}
     .link-pill[href*="streamlit.app"]{background:var(--gold); color:var(--navy);}
     .link-pill[href*="streamlit.app"]::after{content:"↗"; margin-left:7px;}
     .link-pill[href*="streamlit.app"]:hover{background:var(--gold-light); border-color:var(--gold-light);}
@@ -705,14 +720,14 @@
     <div class="projects-grid">
     <article class="project-card reveal holo" data-tags="python sql" data-modal="modal-1">
       <div class="project-head"><div class="project-num">01</div><h3>Fitbit Activity &amp; Wellness Analysis</h3></div>
-      <figure class="dashboard-preview"><div class="preview-top"><span>Activity dashboard</span><span>Design preview</span></div><svg class="preview-chart" viewBox="0 0 560 120" role="img" aria-label="Illustrative activity trend chart"><path class="preview-gridline" d="M0 20H560M0 60H560M0 100H560"/><path class="preview-series-fill" d="M8 88 C55 82 66 50 112 64 S178 92 224 56 S296 36 340 51 S402 76 448 32 S514 46 552 15V120H8Z"/><path class="preview-series" d="M8 88 C55 82 66 50 112 64 S178 92 224 56 S296 36 340 51 S402 76 448 32 S514 46 552 15"/><circle class="preview-point" cx="224" cy="56" r="5"/><circle class="preview-point" cx="448" cy="32" r="5"/></svg><figcaption class="preview-study-label">Illustrative layout · no live data</figcaption></figure>
+      <figure class="dashboard-preview"><div class="preview-top"><span>Fitbit Insights</span><span>Live dashboard</span></div><img src="assets/dashboards/fitbit.webp" alt="Screenshot of the Fitbit activity insights dashboard with activity and sleep metrics" loading="lazy" decoding="async"><figcaption class="preview-study-label">Screenshot of the live dashboard</figcaption></figure>
       <p class="desc">Cleaned Fitbit activity, sleep, heart-rate, and weight logs, loaded them into <b>SQLite</b>, and built an interactive dashboard with SQL analysis and data-cleaning views.</p>
       <div class="project-tags"><span class="tag">Python</span><span class="tag">pandas</span><span class="tag">SQLite</span><span class="tag">SQL</span><span class="tag">Streamlit</span></div>
       <div class="project-links"><button class="link-pill case-study-trigger" type="button" aria-haspopup="dialog">Case study</button><a class="link-pill" href="https://github.com/kilcherushikesh-gif/fitbit-project" target="_blank" rel="noopener">View on GitHub</a><a class="link-pill" href="https://fitbit-insight.streamlit.app/" target="_blank" rel="noopener">Live Dashboard</a></div>
     </article>
     <article class="project-card reveal holo" data-tags="sql python" data-modal="modal-2">
       <div class="project-head"><div class="project-num">02</div><h3>Stock Market SQL Analysis</h3></div>
-      <figure class="dashboard-preview"><div class="preview-top"><span>Market explorer</span><span>Design preview</span></div><svg class="preview-chart" viewBox="0 0 560 120" role="img" aria-label="Illustrative market chart"><path class="preview-gridline" d="M0 20H560M0 60H560M0 100H560"/><path class="preview-series" d="M14 94L70 82L126 90L182 56L238 68L294 39L350 51L406 25L462 43L518 16L548 27"/><path class="preview-point" d="M68 76L74 82L68 88L62 82ZM236 62L242 68L236 74L230 68ZM404 19L410 25L404 31L398 25Z"/></svg><figcaption class="preview-study-label">Illustrative layout · no live data</figcaption></figure>
+      <figure class="dashboard-preview"><div class="preview-top"><span>NSE stock explorer</span><span>Live dashboard</span></div><img src="assets/dashboards/stock-market.webp" alt="Screenshot of the NSE stock market explorer with SQL playground and market metrics" loading="lazy" decoding="async"><figcaption class="preview-study-label">Screenshot of the live dashboard</figcaption></figure>
       <p class="desc">Explored stock-market data through <b>17 SQL analysis tasks</b>, a live SQL playground, and a generated insights report covering market trends.</p>
       <div class="project-tags"><span class="tag">SQL</span><span class="tag">SQLite</span><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Data Analysis</span></div>
       <div class="project-links"><button class="link-pill case-study-trigger" type="button" aria-haspopup="dialog">Case study</button><a class="link-pill" href="https://github.com/kilcherushikesh-gif/stock-market-sql-playground" target="_blank" rel="noopener">View on GitHub</a><a class="link-pill" href="https://nse-stock-market-explorer.streamlit.app/" target="_blank" rel="noopener">Live SQL Playground</a></div>
