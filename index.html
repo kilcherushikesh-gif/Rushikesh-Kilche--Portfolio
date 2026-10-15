@@ -79,7 +79,7 @@
   .hero p.hero-copy b{color:var(--gold); font-weight:600;}
   .hero-photo-wrap{display:flex; justify-content:center; padding:10px; position:relative; z-index:2;}
   .rk-badge{width:min(100%,340px); aspect-ratio:1; border-radius:50%; display:grid; place-items:center; position:relative; animation:badgePulse 4s ease-in-out infinite; background:transparent;}
-  .rk-badge img{width:100%; height:100%; object-fit:contain; display:block; filter:drop-shadow(0 0 40px rgba(242,169,0,.5));}
+  .rk-badge img{width:100%; height:100%; object-fit:contain; display:block;}
   .rk-badge .rk-fallback{font-family:'Poppins',sans-serif; font-weight:800; font-size:5rem; color:#0A0E27; width:100%; height:100%; display:none; place-items:center; letter-spacing:-.05em; border-radius:50%; background:linear-gradient(135deg,var(--gold),var(--gold-light));}
   @keyframes badgePulse{0%,100%{transform:scale(1);}50%{transform:scale(1.02);}}
   .scroll-cue{display:flex; justify-content:center; margin:-10px 0 0; position:relative; z-index:2;}
@@ -273,7 +273,7 @@
   .modal-actions{display:flex; gap:10px; margin-top:20px; flex-wrap:wrap;}
   #vkIntro{position:fixed; inset:0; z-index:99999; background:#0A0E27; display:flex; align-items:center; justify-content:center; flex-direction:column; font-family:'JetBrains Mono',monospace; color:#AEB5D1; overflow:hidden; transition:transform 1s cubic-bezier(.77,0,.175,1), opacity .6s;}
   #vkIntro.done{transform:translateY(-100%); opacity:0; pointer-events:none;}
-  #vkIntro .vk-photo{width:clamp(200px,36vw,280px); height:clamp(200px,36vw,280px); object-fit:contain; filter: drop-shadow(0 0 40px rgba(242,169,0,.6)) drop-shadow(0 0 90px rgba(242,169,0,.3)); opacity:0; transform:translateY(40px) scale(.8); animation:vkLetter 1s .15s cubic-bezier(.22,1,.36,1) forwards;}
+  #vkIntro .vk-photo{width:clamp(200px,36vw,280px); height:clamp(200px,36vw,280px); object-fit:contain; opacity:0; transform:translateY(40px) scale(.8); animation:vkLetter 1s .15s cubic-bezier(.22,1,.36,1) forwards;}
   @keyframes vkLetter{to{opacity:1; transform:translateY(0) scale(1);}}
   #vkIntro .vk-sub{margin-top:14px; font-size:.72rem; letter-spacing:.42em; text-transform:uppercase; color:#F2A900; opacity:0; animation:vkFade .8s .9s forwards; text-align:center; padding:0 20px;}
   #vkIntro .vk-boot{margin-top:32px; font-size:.78rem; min-height:1.2em; color:#AEB5D1; opacity:0; animation:vkFade .4s 1.2s forwards;}
@@ -309,7 +309,6 @@
     .hero-inner{grid-template-columns:minmax(0,1.2fr) minmax(190px,.8fr); gap:18px; align-items:center;}
     .hero-photo-wrap{order:initial; margin:0; padding:0;}
     .rk-badge{width:min(100%,260px);}
-    .rk-badge img{filter:drop-shadow(0 12px 24px rgba(0,0,0,.22));}
   }
   @media (max-width:600px){
     .nav{padding:14px 16px; gap:10px;}
