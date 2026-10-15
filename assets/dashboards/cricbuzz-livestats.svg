@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 900" role="img" aria-labelledby="title desc">
+  <title id="title">Cricbuzz LiveStats Home dashboard</title>
+  <desc id="desc">Dashboard snapshot with cricket database totals, top five run scorers and top five wicket takers.</desc>
+  <rect width="1920" height="900" fill="#071b13"/>
+  <rect width="374" height="900" fill="#0c241a"/>
+  <path d="M374 0v900" stroke="#183c2b" stroke-width="2"/>
+  <rect x="374" width="1546" height="56" fill="#0d1117"/>
+  <g fill="#d3e0d8" font-family="Arial, sans-serif" font-size="18">
+    <text x="1664" y="26">Share</text><text x="1740" y="26" font-size="24">☆</text><text x="1788" y="26" font-size="22">✎</text><text x="1835" y="26" font-size="22">◉</text><text x="1880" y="26" font-size="22">⋮</text>
+  </g>
+  <rect x="25" y="79" width="323" height="55" rx="9" fill="#344b44"/>
+  <g font-family="Arial, sans-serif" font-size="18" fill="#c8d8cf">
+    <text x="37" y="114" font-weight="700">Home</text><text x="37" y="177">Search</text><text x="37" y="240">Live Matches</text><text x="37" y="303">Player Stats</text><text x="37" y="366">SQL Analytics</text><text x="37" y="429">CRUD Operations</text><text x="37" y="492">Visualizations</text><text x="37" y="555">Analytics Overview</text><text x="37" y="618">Matches CRUD</text><text x="37" y="681">Scores CRUD</text><text x="37" y="744" fill="#ffffff" font-weight="700">View 4 more</text>
+  </g>
+  <path d="M25 763h323" stroke="#344b44"/>
+  <text x="25" y="827" fill="#c8d8cf" font-family="Arial,sans-serif" font-size="23" font-weight="700">Match filters</text>
+  <g font-family="Arial,sans-serif" fill="#b9c8c0">
+    <text x="474" y="122" font-size="18">Showing 22,596 matches from 19 Dec 2001 to 09 Sep 2026</text>
+  </g>
+  <g fill="#0b2118" stroke="#365243" stroke-width="1">
+    <rect x="474" y="150" width="206" height="130" rx="12"/><rect x="700" y="150" width="215" height="130" rx="12"/><rect x="935" y="150" width="148" height="130" rx="12"/><rect x="1103" y="150" width="155" height="130" rx="12"/><rect x="1278" y="150" width="277" height="130" rx="12"/><rect x="1575" y="150" width="231" height="130" rx="12"/>
+  </g>
+  <g font-family="Arial,sans-serif" fill="#c6d8ce">
+    <text x="492" y="192" font-size="19">🏏 Players</text><text x="718" y="192" font-size="19">🏟 Matches</text><text x="953" y="192" font-size="19">🚩 Teams</text><text x="1121" y="192" font-size="19">📍 Venues</text><text x="1296" y="192" font-size="19">🔥 Total Runs</text><text x="1593" y="192" font-size="19">🎯 Total Wickets</text>
+    <g font-size="47" font-weight="300"><text x="492" y="245">13,236</text><text x="718" y="245">22,596</text><text x="953" y="245">401</text><text x="1121" y="245">896</text><text x="1296" y="245">8,709,972</text><text x="1593" y="245">326,651</text></g>
+  </g>
+  <path d="M474 341h1332" stroke="#234333"/>
+  <g font-family="Arial,sans-serif" fill="#c6d8ce" font-size="35" font-weight="700"><text x="484" y="430">🏆 Top 5 Run Scorers</text><text x="1155" y="430">🎯 Top 5 Wicket Takers</text></g>
+  <g fill="#0d1117" stroke="#304a3b" stroke-width="1">
+    <rect x="474" y="460" width="658" height="274" rx="11"/><rect x="1150" y="460" width="656" height="274" rx="11"/>
+  </g>
+  <g fill="#1b1d24"><path d="M475 461h656v45H475z"/><path d="M1151 461h654v45h-654z"/></g>
+  <g stroke="#2a2e35" stroke-width="1">
+    <path d="M475 506h656M475 550h656M475 594h656M475 638h656M475 682h656"/><path d="M1151 506h654M1151 550h654M1151 594h654M1151 638h654M1151 682h654"/>
+    <path d="M674 461v273M855 461v273M985 461v273M1335 461v273M1519 461v273M1662 461v273"/>
+  </g>
+  <g font-family="Arial,sans-serif" font-size="16" fill="#c0c8d0">
+    <text x="486" y="490">Player</text><text x="686" y="490">Team</text><text x="866" y="490">Runs</text><text x="996" y="490">Avg SR</text>
+    <text x="1162" y="490">Player</text><text x="1347" y="490">Team</text><text x="1530" y="490">Wickets</text><text x="1673" y="490">Avg Eco</text>
+  </g>
+  <g font-family="Arial,sans-serif" font-size="17" fill="#f2f5f7">
+    <text x="486" y="534">V Kohli</text><text x="686" y="534">India</text><text x="928" y="534" text-anchor="end">27891</text><text x="1117" y="534" text-anchor="end">81.803</text>
+    <text x="486" y="578">JE Root</text><text x="686" y="578">England</text><text x="928" y="578" text-anchor="end">22667</text><text x="1117" y="578" text-anchor="end">69.0745</text>
+    <text x="486" y="622">KC Sangakkara</text><text x="686" y="622">Sri Lanka</text><text x="928" y="622" text-anchor="end">21401</text><text x="1117" y="622" text-anchor="end">73.8226</text>
+    <text x="486" y="666">RG Sharma</text><text x="686" y="666">India</text><text x="928" y="666" text-anchor="end">19754</text><text x="1117" y="666" text-anchor="end">86.4687</text>
+    <text x="486" y="710">KS Williamson</text><text x="686" y="710">New Zealand</text><text x="928" y="710" text-anchor="end">19197</text><text x="1117" y="710" text-anchor="end">75.4155</text>
+    <text x="1162" y="534">JM Anderson</text><text x="1347" y="534">England</text><text x="1608" y="534" text-anchor="end">950</text><text x="1790" y="534" text-anchor="end">4.2567</text>
+    <text x="1162" y="578">SCJ Broad</text><text x="1347" y="578">England</text><text x="1608" y="578" text-anchor="end">840</text><text x="1790" y="578" text-anchor="end">4.7858</text>
+    <text x="1162" y="622">TG Southee</text><text x="1347" y="622">New Zealand</text><text x="1608" y="622" text-anchor="end">770</text><text x="1790" y="622" text-anchor="end">5.8157</text>
+    <text x="1162" y="666">MA Starc</text><text x="1347" y="666">Australia</text><text x="1608" y="666" text-anchor="end">755</text><text x="1790" y="666" text-anchor="end">5.3787</text>
+    <text x="1162" y="710">R Ashwin</text><text x="1347" y="710">India</text><text x="1608" y="710" text-anchor="end">749</text><text x="1790" y="710" text-anchor="end">4.7724</text>
+  </g>
+  <path d="M474 795h1332" stroke="#234333"/>
+  <text x="484" y="875" fill="#c6d8ce" font-family="Arial,sans-serif" font-size="35" font-weight="700">📌 Pages Guide</text>
+</svg>
