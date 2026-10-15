@@ -72,7 +72,7 @@
   .hero{padding:70px 0 0; position:relative; overflow:hidden;}
   .hero-inner{position:relative; z-index:2; display:grid; grid-template-columns:1.4fr 1fr; gap:40px; align-items:center; padding-bottom:20px;}
   .hero h1{font-size:clamp(2.4rem,5vw,4rem); line-height:1.06; font-weight:800;}
-  .hero h1 .last{color:var(--gold); text-shadow:0 0 20px rgba(242,169,0,.4);}
+  .hero h1 .last{color:var(--gold);}
   .hero p.role{font-size:1.15rem; color:var(--white); margin-top:20px; max-width:46ch; font-weight:500;}
   .hero p.role b{color:var(--gold); font-weight:600;}
   .hero p.hero-copy{color:var(--white); font-size:1.05rem; font-weight:500; max-width:46ch; margin-top:14px;}
@@ -83,7 +83,8 @@
   .rk-badge .rk-fallback{font-family:'Poppins',sans-serif; font-weight:800; font-size:5rem; color:#0A0E27; width:100%; height:100%; display:none; place-items:center; letter-spacing:-.05em; border-radius:50%; background:linear-gradient(135deg,var(--gold),var(--gold-light));}
   @keyframes badgePulse{0%,100%{transform:scale(1);}50%{transform:scale(1.02);}}
   .scroll-cue{display:flex; justify-content:center; margin:-10px 0 0; position:relative; z-index:2;}
-  .scroll-cue span{width:48px; height:48px; border-radius:50%; background:var(--navy-raised); display:flex; align-items:center; justify-content:center; color:var(--gold); animation:bob 2.2s ease-in-out infinite; font-size:1.2rem; box-shadow:0 0 20px rgba(242,169,0,.2);}
+  .scroll-cue span,.scroll-cue a{width:48px; height:48px; border-radius:50%; background:var(--navy-raised); display:flex; align-items:center; justify-content:center; color:var(--gold); animation:bob 2.2s ease-in-out infinite; font-size:1.2rem; box-shadow:0 0 20px rgba(242,169,0,.2); text-decoration:none;}
+  .scroll-cue a:focus-visible{outline:2px solid var(--gold); outline-offset:4px;}
   @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
 
   .tools-marquee{
@@ -304,6 +305,12 @@
     .siri-fab{right:14px; bottom:14px; width:58px; height:58px;}
     .siri-panel{right:14px; left:14px; bottom:84px; width:auto; height:calc(100vh - 110px); max-height:calc(100vh - 110px);}
   }
+  @media (min-width:601px) and (max-width:860px){
+    .hero-inner{grid-template-columns:minmax(0,1.2fr) minmax(190px,.8fr); gap:18px; align-items:center;}
+    .hero-photo-wrap{order:initial; margin:0; padding:0;}
+    .rk-badge{width:min(100%,260px);}
+    .rk-badge img{filter:drop-shadow(0 12px 24px rgba(0,0,0,.22));}
+  }
   @media (max-width:600px){
     .nav{padding:14px 16px; gap:10px;}
     .nav-mark{font-size:0.98rem;}
@@ -330,7 +337,7 @@
   }
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
-    .scroll-cue span,.rk-badge,.siri-fab,.visit-badge .visit-dot{animation:none;}
+    .scroll-cue span,.scroll-cue a,.rk-badge,.siri-fab,.visit-badge .visit-dot{animation:none;}
     .reveal{opacity:1; transform:none;}
     .scan-lines{display:none !important;}
     .glitch::before,.glitch::after{display:none;}
@@ -401,7 +408,7 @@
   <div class="wrap hero-inner">
     <div>
       <span class="pill">DATA <b>ANALYST</b> PORTFOLIO</span>
-      <h1><span class="glitch" data-text="RUSHIKESH">RUSHIKESH</span><br><span class="last shimmer">KILCHE</span></h1>
+      <h1><span class="glitch" data-text="RUSHIKESH">RUSHIKESH</span><br><span class="last">KILCHE</span></h1>
       <p class="role" id="heroTagline">I help businesses find <b>clarity</b> through <b>data</b>.</p>
       <p class="hero-copy"><b>Data Analyst &amp; Business Analyst</b> with hands-on project experience across retail, HR and investment datasets.</p>
     </div>
@@ -432,7 +439,7 @@
   <div class="wrap">"In God we trust — all others must bring <b>data</b>." — W. Edwards Deming</div>
 </div>
 
-<div class="scroll-cue"><span>&#8964;</span></div>
+<div class="scroll-cue"><a href="#about" aria-label="Scroll to About">&#8964;</a></div>
 
 <hr class="divider">
 
@@ -455,6 +462,8 @@
   </div>
 </section>
 
+<div class="scroll-cue"><a href="#skill" aria-label="Scroll to Skills">&#8964;</a></div>
+
 <hr class="divider">
 
 <section id="skill">
@@ -468,6 +477,8 @@
     </div>
   </div>
 </section>
+
+<div class="scroll-cue"><a href="#background" aria-label="Scroll to Background">&#8964;</a></div>
 
 <hr class="divider">
 
@@ -490,6 +501,8 @@
     </div>
   </div>
 </section>
+
+<div class="scroll-cue"><a href="#projects" aria-label="Scroll to Projects">&#8964;</a></div>
 
 <hr class="divider">
 
@@ -533,6 +546,8 @@
     </article>  </div>
 </section>
 
+<div class="scroll-cue"><a href="#certifications" aria-label="Scroll to Certifications">&#8964;</a></div>
+
 <hr class="divider">
 
 <section id="certifications">
@@ -547,6 +562,8 @@
   </div>
 </section>
 
+<div class="scroll-cue"><a href="#testimonials" aria-label="Scroll to Recommendations">&#8964;</a></div>
+
 <hr class="divider">
 
 <section id="testimonials">
@@ -559,6 +576,8 @@
     </div>
   </div>
 </section>
+
+<div class="scroll-cue"><a href="#faq" aria-label="Scroll to FAQ">&#8964;</a></div>
 
 <hr class="divider">
 
@@ -575,6 +594,8 @@
     </div>
   </div>
 </section>
+
+<div class="scroll-cue"><a href="#contact" aria-label="Scroll to Contact">&#8964;</a></div>
 
 <hr class="divider">
 
