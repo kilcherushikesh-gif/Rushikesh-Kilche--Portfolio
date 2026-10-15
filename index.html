@@ -834,7 +834,7 @@ document.querySelectorAll('.faq-q').forEach(function(q){
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var accessKeyInput = form.querySelector('input[name="access_key"]');
-    if(!accessKeyInput || !accessKeyInput.value || accessKeyInput.value === 'f8dbf7bc-5239-4adb-b300-9d24282d1c2e'){
+    if(!accessKeyInput || !accessKeyInput.value || accessKeyInput.value === 'YOUR_WEB3FORMS_ACCESS_KEY'){
       showEmailDraftFallback('Online sending is not configured. Your message is ready as an email draft;');
       return;
     }
