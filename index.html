@@ -428,14 +428,15 @@
     header{top:max(3px,env(safe-area-inset-top)); backdrop-filter:none; background:rgba(10,14,39,.98);}
     [data-theme="light"] header{background:rgba(245,243,238,.98);}
     section{scroll-margin-top:68px;}
-    .hero h1{font-size:clamp(2.1rem,10vw,3rem); line-height:1.02; letter-spacing:-.035em;}
-    .hero .pill{font-size:.8rem; padding:6px 14px; margin-bottom:15px;}
-    .hero-actions{gap:8px; margin-top:16px;}
+    .hero h1{font-size:clamp(2.15rem,9.2vw,2.8rem); line-height:1; letter-spacing:-.04em; text-align:center; text-wrap:balance;}
+    .hero .pill{font-size:.78rem; padding:6px 14px; margin:0 auto 16px; border-width:1.5px; letter-spacing:.025em;}
+    .hero-inner>div:first-child{display:flex; flex-direction:column; align-items:center; width:100%; max-width:calc(100vw - 40px); margin-inline:auto; text-align:center;}
+    .hero-actions{justify-content:center; gap:8px; margin-top:18px;}
     .hero-actions .btn{min-height:44px; padding:9px 14px; font-size:.8rem;}
-    .hero p.role{font-size:1.02rem; margin-top:14px; line-height:1.5;}
-    .hero p.hero-copy{font-size:.94rem; margin-top:9px; line-height:1.55;}
-    .hero-photo-wrap{padding:0;}
-    .rk-badge{width:min(44vw,180px); animation:none;}
+    .hero p.role{font-size:1.02rem; max-width:32ch; margin:16px auto 0; line-height:1.5; text-align:center;}
+    .hero p.hero-copy{font-size:.94rem; max-width:38ch; margin:10px auto 0; line-height:1.55; text-align:center;}
+    .hero-photo-wrap{padding:4px 0 8px;}
+    .rk-badge{width:min(45vw,182px); animation:none; filter:drop-shadow(0 10px 18px rgba(242,169,0,.14));}
     .nav{padding:10px 12px; gap:6px;}
     .nav-mark{font-size:.9rem; letter-spacing:-.02em;}
     .nav-right{gap:5px; margin-left:4px;}
@@ -540,7 +541,7 @@
     .lang-chevron{width:9px; height:9px; right:8px;}
     .icon-btn{width:40px; height:40px;}
     .icon-btn svg{width:15px; height:15px;}
-    .rk-badge{width:min(43vw,170px);}
+    .rk-badge{width:min(46vw,182px);}
     .tools-line span{font-size:.74rem;}
     .tools-line{gap:8px 12px;}
     .tools-line .dot{font-size:.45rem;}
