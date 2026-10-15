@@ -826,10 +826,23 @@ window.addEventListener('scroll', function(){ if(backBtn) backBtn.classList.togg
 if(backBtn) backBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
 
 var mobileScrollHint = document.getElementById('mobileScrollHint');
-function hideMobileScrollHintOnScroll(){ if(mobileScrollHint && window.scrollY > 40) mobileScrollHint.classList.add('is-hidden'); }
-window.addEventListener('touchmove', hideMobileScrollHintOnScroll, { passive:true });
-window.addEventListener('wheel', hideMobileScrollHintOnScroll, { passive:true });
-if(mobileScrollHint) mobileScrollHint.addEventListener('click', function(){ mobileScrollHint.classList.add('is-hidden'); });
+var portfolioSections = Array.prototype.slice.call(document.querySelectorAll('section[id]'));
+function updateMobileScrollHint(){
+  if(!mobileScrollHint) return;
+  var currentIndex = 0;
+  portfolioSections.forEach(function(section,index){ if(section.getBoundingClientRect().top <= window.innerHeight * .35) currentIndex = index; });
+  mobileScrollHint.classList.toggle('is-hidden', currentIndex >= portfolioSections.length - 1);
+}
+window.addEventListener('scroll', updateMobileScrollHint, { passive:true });
+window.addEventListener('resize', updateMobileScrollHint, { passive:true });
+updateMobileScrollHint();
+if(mobileScrollHint) mobileScrollHint.addEventListener('click', function(event){
+  event.preventDefault();
+  var currentIndex = 0;
+  portfolioSections.forEach(function(section,index){ if(section.getBoundingClientRect().top <= window.innerHeight * .35) currentIndex = index; });
+  var nextSection = portfolioSections[Math.min(currentIndex + 1, portfolioSections.length - 1)];
+  if(nextSection) nextSection.scrollIntoView({behavior:'smooth',block:'start'});
+});
 
 document.querySelectorAll('.filter-btn').forEach(function(btn){
   btn.addEventListener('click', function(){
