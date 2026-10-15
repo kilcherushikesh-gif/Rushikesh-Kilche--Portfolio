@@ -467,6 +467,11 @@
     .lite-mobile .reveal{transition:none !important;}
     .lite-mobile .glitch::before,.lite-mobile .glitch::after,.lite-mobile .shimmer,.lite-mobile .holo,.lite-mobile .visit-badge .visit-dot{animation:none !important;}
     .lite-mobile #vkIntro{display:none !important;}
+    body.siri-open .mobile-chat-cta,body.siri-open .mobile-scroll-hint,body.siri-open .back-to-top{visibility:hidden; pointer-events:none;}
+  }
+  @media (hover:none) and (max-width:600px){
+    .icon-btn:hover,.tools-line span:hover,.icon-circle:hover,.btn:hover,.tag:hover,.cert-card:hover,.testi-card:hover,.form-submit:hover,.siri-fab:hover,.siri-send:hover{transform:none;}
+    .tools-line span:hover{text-shadow:none;}
   }
 </style>
 <meta name="google-site-verification" content="Rzd8Xxsf7fhqSYIHI0l25ljMdvv-AZ2zjnmNRqw3ixg" />
@@ -1137,11 +1142,14 @@ document.querySelectorAll('.faq-q').forEach(function(q){
 
   fab.addEventListener('click', function(){
     panel.classList.add('open');
+    document.body.classList.add('siri-open');
     setTimeout(function(){ input.focus(); }, 300);
     var dot = fab.querySelector('.siri-dot');
     if(dot) dot.style.display = 'none';
   });
-  closeBtn.addEventListener('click', function(){ panel.classList.remove('open'); });
+  function closeSiri(){ panel.classList.remove('open'); document.body.classList.remove('siri-open'); }
+  closeBtn.addEventListener('click', closeSiri);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && panel.classList.contains('open')) closeSiri(); });
   send.addEventListener('click', function(){ respond(input.value); });
   input.addEventListener('keydown', function(e){
     if(e.key === 'Enter'){ e.preventDefault(); respond(input.value); }
