@@ -87,6 +87,7 @@
   .scroll-cue{display:flex; justify-content:center; margin:-10px 0 0; position:relative; z-index:2;}
   .scroll-cue span,.scroll-cue a{width:48px; height:48px; border-radius:50%; background:var(--navy-raised); display:flex; align-items:center; justify-content:center; color:var(--gold); animation:bob 2.2s ease-in-out infinite; font-size:1.2rem; box-shadow:0 0 20px rgba(242,169,0,.2); text-decoration:none;}
   .scroll-cue a:focus-visible{outline:2px solid var(--gold); outline-offset:4px;}
+  .mobile-scroll-hint{display:none;}
   @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
 
   .tools-marquee{
@@ -332,6 +333,9 @@
     .nav{padding:14px 16px; gap:10px;}
     .nav-mark{font-size:0.98rem;}
     .nav-right{gap:6px; margin-left:10px;}
+    .mobile-scroll-hint{position:fixed; left:50%; bottom:calc(18px + env(safe-area-inset-bottom)); z-index:899; display:flex; align-items:center; gap:8px; padding:9px 14px; border:1px solid var(--navy-line); border-radius:999px; background:rgba(10,14,39,.94); color:var(--ink-dim); font-size:.76rem; text-decoration:none; white-space:nowrap; box-shadow:0 6px 20px rgba(0,0,0,.24); transform:translateX(-50%); opacity:1; visibility:visible; transition:opacity .25s, visibility .25s, transform .25s;}
+    .mobile-scroll-hint span{color:var(--gold); font-size:1rem; animation:bob 1.8s ease-in-out infinite;}
+    .mobile-scroll-hint.is-hidden{opacity:0; visibility:hidden; transform:translate(-50%,8px); pointer-events:none;}
   }
   @media (max-width:480px){
     .wrap{padding:0 20px;}
@@ -440,6 +444,8 @@
     </div>
   </div>
 </section>
+
+<a class="mobile-scroll-hint" id="mobileScrollHint" href="#about"><span aria-hidden="true">&#8595;</span> Scroll to explore</a>
 
 <div class="tools-marquee">
   <div class="tools-line">
@@ -818,6 +824,11 @@ window.addEventListener('scroll', function(){ if(header) header.classList.toggle
 var backBtn = document.getElementById('backToTop');
 window.addEventListener('scroll', function(){ if(backBtn) backBtn.classList.toggle('show', window.scrollY > 500); }, { passive:true });
 if(backBtn) backBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+var mobileScrollHint = document.getElementById('mobileScrollHint');
+function updateMobileScrollHint(){ if(mobileScrollHint) mobileScrollHint.classList.toggle('is-hidden', window.scrollY > 120); }
+window.addEventListener('scroll', updateMobileScrollHint, { passive:true });
+updateMobileScrollHint();
 
 document.querySelectorAll('.filter-btn').forEach(function(btn){
   btn.addEventListener('click', function(){
