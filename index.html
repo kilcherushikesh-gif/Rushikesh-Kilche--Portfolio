@@ -71,12 +71,14 @@
   .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
   .hero{padding:70px 0 0; position:relative; overflow:hidden;}
   .hero-inner{position:relative; z-index:2; display:grid; grid-template-columns:1.4fr 1fr; gap:40px; align-items:center; padding-bottom:20px;}
+  .hero-inner>div{min-width:0;}
   .hero h1{font-size:clamp(2.4rem,5vw,4rem); line-height:1.06; font-weight:800;}
   .hero h1 .last{color:var(--gold);}
   .hero p.role{font-size:1.15rem; color:var(--white); margin-top:20px; max-width:46ch; font-weight:500;}
   .hero p.role b{color:var(--gold); font-weight:600;}
   .hero p.hero-copy{color:var(--white); font-size:1.05rem; font-weight:500; max-width:46ch; margin-top:14px;}
   .hero p.hero-copy b{color:var(--gold); font-weight:600;}
+  .mobile-break{display:none;}
   .hero-photo-wrap{display:flex; justify-content:center; padding:10px; position:relative; z-index:2;}
   .rk-badge{width:min(100%,340px); aspect-ratio:1; border-radius:50%; display:grid; place-items:center; position:relative; animation:badgePulse 4s ease-in-out infinite; background:transparent;}
   .rk-badge img{width:100%; height:100%; object-fit:contain; display:block;}
@@ -297,6 +299,7 @@
     .nav-toggle{display:flex;}
     .nav-right{margin-left:auto;}
     .hero-inner{grid-template-columns:1fr;}
+    .hero p.role,.hero p.hero-copy{width:100%; max-width:100%; overflow-wrap:anywhere;}
     .hero-photo-wrap{order:-1; margin-bottom:20px;}
     .rk-badge{width:240px;}
     .skills-cats{grid-template-columns:1fr;}
@@ -321,6 +324,8 @@
   }
   @media (max-width:480px){
     .wrap{padding:0 20px;}
+    .hero-inner>div:first-child{width:100%; max-width:calc(100vw - 40px);}
+    .mobile-break{display:block;}
     .nav{padding:12px 14px; gap:8px;}
     .nav-mark{font-size:0.92rem;}
     .nav-right{gap:6px; margin-left:8px;}
@@ -412,8 +417,8 @@
     <div>
       <span class="pill">DATA <b>ANALYST</b> PORTFOLIO</span>
       <h1><span class="glitch" data-text="RUSHIKESH">RUSHIKESH</span><br><span class="last">KILCHE</span></h1>
-      <p class="role" id="heroTagline">I help businesses find <b>clarity</b> through <b>data</b>.</p>
-      <p class="hero-copy"><b>Data Analyst &amp; Business Analyst</b> with hands-on project experience across retail, HR and investment datasets.</p>
+      <p class="role" id="heroTagline">I help businesses find <b>clarity</b><br class="mobile-break"> through <b>data</b>.</p>
+      <p class="hero-copy"><b>Data Analyst &amp; Business Analyst</b><br class="mobile-break"> with hands-on project experience<br class="mobile-break"> across retail, HR and investment datasets.</p>
     </div>
     <div class="hero-photo-wrap">
       <div class="rk-badge">
