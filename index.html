@@ -22,6 +22,8 @@
   body{margin:0; background:var(--navy); color:var(--white); font-family:'Inter',sans-serif; line-height:1.65; -webkit-font-smoothing:antialiased; transition:background .4s, color .4s; overflow-x:clip; position:relative;}
   h1,h2,h3,h4{font-family:'Poppins',sans-serif; margin:0; color:var(--white);}
   a{color:inherit;} img{max-width:100%; display:block;}
+  .skip-link{position:fixed; left:18px; top:-56px; z-index:10002; padding:10px 16px; border-radius:8px; background:var(--gold); color:var(--navy); font-weight:700; text-decoration:none; transition:top .2s;}
+  .skip-link:focus{top:14px;}
   ::selection{background:var(--gold); color:var(--navy);}
   a:focus-visible, button:focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
   .wrap{max-width:var(--max); margin:0 auto; padding:0 32px; position:relative; z-index:2;}
@@ -155,6 +157,8 @@
   .filter-btn.active{background:var(--gold); color:var(--navy); border-color:var(--gold);}
   .project-card{margin:0; cursor:pointer; transition:opacity .4s; padding:18px; border-radius:16px;}
   .project-card.hidden{display:none;}
+  .dashboard-preview{display:none;}
+  .hero .desktop-resume-cta,.project-links .case-study-trigger,.project-links .mobile-case-label{display:none;}
   .project-head{display:flex; align-items:baseline; gap:16px; margin-bottom:14px;}
   .project-num{font-family:'Poppins',sans-serif; font-weight:800; font-size:2.4rem; color:var(--gold); line-height:1;}
   .project-head h3{font-size:1.2rem; line-height:1.3; font-weight:700;}
@@ -321,20 +325,47 @@
     .hero-photo-wrap{order:initial; margin:0; padding:0;}
     .rk-badge{width:min(100%,260px);}
   }
+  @media (min-width:601px) and (max-width:960px){.project-links .case-study-trigger{display:inline-flex;}}
   @media (min-width:961px){
+    section{padding:clamp(76px,7vw,96px) 0;}
     .hero-inner{grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr); gap:clamp(44px,6vw,76px); padding-bottom:28px;}
     .hero p.role,.hero p.hero-copy{line-height:1.7;}
+    .about-grid{gap:clamp(60px,7vw,96px);}
+    .about-copy p{max-width:72ch; line-height:1.9;}
     .hero-photo-wrap{padding:18px;}
     .rk-badge{width:min(100%,320px); animation:none;}
+    .hero .desktop-resume-cta{display:inline-flex; margin-top:22px;}
     .nav-links{gap:clamp(14px,1.6vw,24px);}
     .nav-links a[aria-current="location"]{color:var(--gold);}
     .nav-links a[aria-current="location"]::after{content:""; position:absolute; left:0; right:0; bottom:-7px; height:2px; border-radius:2px; background:var(--gold);}
-    #projects{background:radial-gradient(ellipse at 50% 0%,rgba(242,169,0,.045),transparent 70%);}
+    #projects{padding:80px 0; background:radial-gradient(ellipse at 50% 0%,rgba(242,169,0,.045),transparent 70%);}
     .projects-grid{align-items:stretch; gap:20px;}
     .project-card{display:flex; flex-direction:column; min-height:100%; padding:24px; transition:transform .22s,border-color .22s;}
     .project-card.holo{background:linear-gradient(var(--navy-raised),var(--navy-raised)) padding-box,linear-gradient(135deg,rgba(242,169,0,.32),rgba(92,108,255,.16),rgba(242,169,0,.22)) border-box; background-size:100% 100%; animation:none;}
     .project-card:hover{transform:translateY(-3px);}
     .project-card p.desc{flex:1; line-height:1.7;}
+    .dashboard-preview{display:block; margin:4px 0 18px; padding:12px 14px 10px; border:1px solid var(--navy-line); border-radius:12px; background:linear-gradient(145deg,rgba(255,255,255,.025),rgba(255,255,255,.005));}
+    .preview-top{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:7px; color:var(--ink-dim); font:600 .65rem 'JetBrains Mono',monospace; letter-spacing:.08em; text-transform:uppercase;}
+    .preview-top span:last-child{color:var(--gold); font-size:.58rem; white-space:nowrap;}
+    .preview-chart{display:block; width:100%; height:82px;}
+    .preview-gridline{stroke:var(--navy-line); stroke-width:1;}
+    .preview-series{fill:none; stroke:var(--gold); stroke-width:4; stroke-linecap:round; stroke-linejoin:round;}
+    .preview-series-fill{fill:rgba(242,169,0,.12); stroke:none;}
+    .preview-point{fill:var(--gold); stroke:var(--navy-raised); stroke-width:3;}
+    .preview-bar{fill:rgba(242,169,0,.72); rx:4;}
+    .preview-bar:nth-of-type(even){fill:rgba(242,169,0,.38);}
+    .preview-study-label{display:inline-flex; align-items:center; gap:7px; color:var(--ink-dim); font-size:.68rem;}
+    .preview-study-label::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--gold);}
+    .bg-item{display:grid; grid-template-columns:clamp(116px,13vw,150px) minmax(0,1fr); column-gap:18px; padding-left:20px;}
+    .bg-item .dates{grid-column:1; grid-row:1 / span 4; line-height:1.5;}
+    .bg-item h4,.bg-item .org,.bg-item p{grid-column:2;}
+    .bg-item h4{font-size:1.08rem;}
+    .case-study-trigger{display:inline-flex; align-items:center; justify-content:center; font:inherit;}
+    .project-links .case-study-trigger{display:inline-flex;}
+    .modal{max-width:900px; padding:38px 42px;}
+    .modal h3{font-size:1.55rem; margin-bottom:12px;}
+    .modal h4{margin-top:22px; padding-bottom:6px; border-bottom:1px solid var(--navy-line);}
+    .modal p{max-width:78ch; line-height:1.8;}
     .project-links{margin-top:auto; padding-top:8px;}
     .link-pill[href*="streamlit.app"]{background:var(--gold); color:var(--navy);}
     .link-pill[href*="streamlit.app"]::after{content:"↗"; margin-left:7px;}
@@ -343,6 +374,7 @@
     .scroll-cue span,.scroll-cue a{box-shadow:0 4px 14px rgba(0,0,0,.2);}
   }
   @media (max-width:600px){
+    .project-links .mobile-case-label{display:inline-block;}
     html{scroll-padding-top:76px;}
     header{top:max(3px,env(safe-area-inset-top)); backdrop-filter:none; background:rgba(10,14,39,.98);}
     [data-theme="light"] header{background:rgba(245,243,238,.98);}
@@ -513,6 +545,7 @@
 
 <div class="scan-lines"></div>
 <div class="read-progress" id="readProgress"></div>
+<a class="skip-link" href="#home">Skip to content</a>
 
 <div id="vkIntro">
   <img class="vk-photo" src="hero-photo.png" alt="Rushikesh Kilche" onerror="this.style.display='none'">
@@ -562,6 +595,7 @@
       <h1><span class="glitch" data-text="RUSHIKESH">RUSHIKESH</span><br><span class="last">KILCHE</span></h1>
       <p class="role" id="heroTagline">I help businesses find <b>clarity</b><br class="mobile-break"> through <b>data</b>.</p>
       <p class="hero-copy"><b>Data Analyst &amp; Business Analyst</b><br class="mobile-break"> with hands-on project experience<br class="mobile-break"> across retail, HR and investment datasets.</p>
+      <a class="btn btn-gold desktop-resume-cta" href="Rushikesh_Kilche_CV.pdf" download>Download Resume <span aria-hidden="true">↓</span></a>
     </div>
     <div class="hero-photo-wrap">
       <div class="rk-badge">
@@ -671,32 +705,36 @@
     <div class="projects-grid">
     <article class="project-card reveal holo" data-tags="python sql" data-modal="modal-1">
       <div class="project-head"><div class="project-num">01</div><h3>Fitbit Activity &amp; Wellness Analysis</h3></div>
+      <figure class="dashboard-preview"><div class="preview-top"><span>Activity dashboard</span><span>Design preview</span></div><svg class="preview-chart" viewBox="0 0 560 120" role="img" aria-label="Illustrative activity trend chart"><path class="preview-gridline" d="M0 20H560M0 60H560M0 100H560"/><path class="preview-series-fill" d="M8 88 C55 82 66 50 112 64 S178 92 224 56 S296 36 340 51 S402 76 448 32 S514 46 552 15V120H8Z"/><path class="preview-series" d="M8 88 C55 82 66 50 112 64 S178 92 224 56 S296 36 340 51 S402 76 448 32 S514 46 552 15"/><circle class="preview-point" cx="224" cy="56" r="5"/><circle class="preview-point" cx="448" cy="32" r="5"/></svg><figcaption class="preview-study-label">Illustrative layout · no live data</figcaption></figure>
       <p class="desc">Cleaned Fitbit activity, sleep, heart-rate, and weight logs, loaded them into <b>SQLite</b>, and built an interactive dashboard with SQL analysis and data-cleaning views.</p>
       <div class="project-tags"><span class="tag">Python</span><span class="tag">pandas</span><span class="tag">SQLite</span><span class="tag">SQL</span><span class="tag">Streamlit</span></div>
-      <div class="project-links"><a class="link-pill" href="https://github.com/kilcherushikesh-gif/fitbit-project" target="_blank" rel="noopener">View on GitHub</a><a class="link-pill" href="https://fitbit-insight.streamlit.app/" target="_blank" rel="noopener">Live Dashboard</a></div>
+      <div class="project-links"><button class="link-pill case-study-trigger" type="button" aria-haspopup="dialog">Case study</button><a class="link-pill" href="https://github.com/kilcherushikesh-gif/fitbit-project" target="_blank" rel="noopener">View on GitHub</a><a class="link-pill" href="https://fitbit-insight.streamlit.app/" target="_blank" rel="noopener">Live Dashboard</a></div>
     </article>
     <article class="project-card reveal holo" data-tags="sql python" data-modal="modal-2">
       <div class="project-head"><div class="project-num">02</div><h3>Stock Market SQL Analysis</h3></div>
+      <figure class="dashboard-preview"><div class="preview-top"><span>Market explorer</span><span>Design preview</span></div><svg class="preview-chart" viewBox="0 0 560 120" role="img" aria-label="Illustrative market chart"><path class="preview-gridline" d="M0 20H560M0 60H560M0 100H560"/><path class="preview-series" d="M14 94L70 82L126 90L182 56L238 68L294 39L350 51L406 25L462 43L518 16L548 27"/><path class="preview-point" d="M68 76L74 82L68 88L62 82ZM236 62L242 68L236 74L230 68ZM404 19L410 25L404 31L398 25Z"/></svg><figcaption class="preview-study-label">Illustrative layout · no live data</figcaption></figure>
       <p class="desc">Explored stock-market data through <b>17 SQL analysis tasks</b>, a live SQL playground, and a generated insights report covering market trends.</p>
       <div class="project-tags"><span class="tag">SQL</span><span class="tag">SQLite</span><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Data Analysis</span></div>
-      <div class="project-links"><a class="link-pill" href="https://github.com/kilcherushikesh-gif/stock-market-sql-playground" target="_blank" rel="noopener">View on GitHub</a><a class="link-pill" href="https://nse-stock-market-explorer.streamlit.app/" target="_blank" rel="noopener">Live SQL Playground</a></div>
+      <div class="project-links"><button class="link-pill case-study-trigger" type="button" aria-haspopup="dialog">Case study</button><a class="link-pill" href="https://github.com/kilcherushikesh-gif/stock-market-sql-playground" target="_blank" rel="noopener">View on GitHub</a><a class="link-pill" href="https://nse-stock-market-explorer.streamlit.app/" target="_blank" rel="noopener">Live SQL Playground</a></div>
     </article>
     <article class="project-card reveal holo" data-tags="python sql" data-modal="modal-3">
       <div class="project-head"><div class="project-num">03</div><h3>Cricbuzz LiveStats</h3></div>
+      <figure class="dashboard-preview"><div class="preview-top"><span>Match analytics</span><span>Design preview</span></div><svg class="preview-chart" viewBox="0 0 560 120" role="img" aria-label="Illustrative cricket match chart"><path class="preview-gridline" d="M0 20H560M0 60H560M0 100H560"/><rect class="preview-bar" x="28" y="62" width="34" height="42"/><rect class="preview-bar" x="94" y="45" width="34" height="59"/><rect class="preview-bar" x="160" y="70" width="34" height="34"/><rect class="preview-bar" x="226" y="34" width="34" height="70"/><rect class="preview-bar" x="292" y="52" width="34" height="52"/><rect class="preview-bar" x="358" y="24" width="34" height="80"/><rect class="preview-bar" x="424" y="43" width="34" height="61"/><rect class="preview-bar" x="490" y="30" width="34" height="74"/></svg><figcaption class="preview-study-label">Illustrative layout · no live data</figcaption></figure>
       <p class="desc">A multi-page cricket analytics dashboard with <b>25 SQL queries</b>, interactive visualizations, live API exploration, and data-quality checks across match and player data.</p>
       <div class="project-tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">SQLite</span><span class="tag">SQL</span><span class="tag">Plotly</span></div>
-      <div class="project-links"><a class="link-pill" href="https://github.com/kilcherushikesh-gif/cricbuzz-livestats" target="_blank" rel="noopener">View on GitHub</a></div>
+      <div class="project-links"><button class="link-pill case-study-trigger" type="button" aria-haspopup="dialog">Case study</button><a class="link-pill" href="https://github.com/kilcherushikesh-gif/cricbuzz-livestats" target="_blank" rel="noopener">View on GitHub</a></div>
     </article>
     <article class="project-card reveal holo" data-tags="sql python powerbi" data-modal="modal-4">
       <div class="project-head"><div class="project-num">04</div><h3>Retail Sales &amp; Customer Insights</h3></div>
+      <figure class="dashboard-preview"><div class="preview-top"><span>Retail insights</span><span>Design preview</span></div><svg class="preview-chart" viewBox="0 0 560 120" role="img" aria-label="Illustrative retail dashboard chart"><path class="preview-gridline" d="M240 20H560M240 60H560M240 100H560"/><circle cx="100" cy="60" r="40" fill="none" stroke="rgba(242,169,0,.3)" stroke-width="20"/><circle cx="100" cy="60" r="40" fill="none" stroke="var(--gold)" stroke-width="20" stroke-dasharray="106 251" transform="rotate(-90 100 60)"/><rect class="preview-bar" x="260" y="30" width="250" height="12"/><rect class="preview-bar" x="260" y="54" width="190" height="12"/><rect class="preview-bar" x="260" y="78" width="220" height="12"/></svg><figcaption class="preview-study-label">Illustrative layout · no live data</figcaption></figure>
       <p class="desc">Analyzed <b>500K+ retail transactions</b> with SQL and Python, then built a Power BI dashboard to explore product, regional, and customer trends.</p>
       <div class="project-tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">DAX</span></div>
-      <div class="project-links"><span class="link-pill">Case Study</span></div>
+      <div class="project-links"><button class="link-pill case-study-trigger" type="button" aria-haspopup="dialog">Case study</button><span class="link-pill mobile-case-label">Case Study</span></div>
     </article>    <article class="project-card reveal holo" data-tags="android app" data-modal="modal-5">
       <div class="project-head"><div class="project-num">05</div><h3>CrashGuard SOS</h3></div>
       <p class="desc">An Android safety app released on <b>Indus Appstore</b>, with automatic crash detection for bikes and cars, emergency SOS alerts, and nearby hospital lookup.</p>
       <div class="project-tags"><span class="tag">Android App</span><span class="tag">Crash Detection</span><span class="tag">Emergency SOS</span><span class="tag">Indus Appstore</span></div>
-      <div class="project-links"><a class="link-pill" href="https://www.indusappstore.com/apps/auto-and-vehicles/crashguard-sos/com.crashguard.sos.app/?id=com.crashguard.sos.app&amp;page=details" target="_blank" rel="noopener">View on Indus Appstore</a></div>
+      <div class="project-links"><button class="link-pill case-study-trigger" type="button" aria-haspopup="dialog">Case study</button><a class="link-pill" href="https://www.indusappstore.com/apps/auto-and-vehicles/crashguard-sos/com.crashguard.sos.app/?id=com.crashguard.sos.app&amp;page=details" target="_blank" rel="noopener">View on Indus Appstore</a></div>
     </article>
     </div>
   </div>
@@ -1031,22 +1069,56 @@ document.querySelectorAll('.filter-btn').forEach(function(btn){
 
 (function(){
   var overlays = document.querySelectorAll('.modal-overlay');
-  function closeAll(){ overlays.forEach(function(o){ o.classList.remove('open'); }); document.body.style.overflow = ''; }
+  var lastModalOpener = null;
+  function openModal(overlay,opener){
+    if(!overlay) return;
+    lastModalOpener = opener || null;
+    overlays.forEach(function(o){ o.classList.remove('open'); });
+    var dialog = overlay.querySelector('.modal');
+    var title = dialog && dialog.querySelector('h3');
+    if(dialog){
+      dialog.setAttribute('role','dialog');
+      dialog.setAttribute('aria-modal','true');
+      if(title){
+        if(!title.id) title.id = overlay.id + '-title';
+        dialog.setAttribute('aria-labelledby',title.id);
+      }
+    }
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    var closeButton = overlay.querySelector('.modal-close');
+    if(closeButton) closeButton.focus();
+  }
+  function closeAll(){
+    overlays.forEach(function(o){ o.classList.remove('open'); });
+    document.body.style.overflow = '';
+    if(lastModalOpener && document.contains(lastModalOpener)) lastModalOpener.focus();
+    lastModalOpener = null;
+  }
   document.querySelectorAll('.project-card').forEach(function(card){
     card.addEventListener('click', function(e){
       if(e.target.closest('a')) return;
       var id = card.getAttribute('data-modal'); if(!id) return;
       var m = document.getElementById(id);
-      if(m){ m.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      if(m) openModal(m,e.target.closest('.case-study-trigger'));
     });
   });
   overlays.forEach(function(o){
     o.addEventListener('click', function(e){ if(e.target === o) closeAll(); });
     var c = o.querySelector('.modal-close'); if(c) c.addEventListener('click', closeAll);
   });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeAll(); });
+  document.addEventListener('keydown', function(e){
+    var activeOverlay = document.querySelector('.modal-overlay.open');
+    if(!activeOverlay) return;
+    if(e.key === 'Escape'){ closeAll(); return; }
+    if(e.key !== 'Tab') return;
+    var focusable = Array.prototype.slice.call(activeOverlay.querySelectorAll('a[href],button:not([disabled]),iframe,[tabindex]:not([tabindex="-1"])')).filter(function(el){ return el.offsetParent !== null; });
+    if(!focusable.length) return;
+    if(e.shiftKey && document.activeElement === focusable[0]){ e.preventDefault(); focusable[focusable.length - 1].focus(); }
+    else if(!e.shiftKey && document.activeElement === focusable[focusable.length - 1]){ e.preventDefault(); focusable[0].focus(); }
+  });
   var rb2 = document.getElementById('resumeViewBtn2'), rm = document.getElementById('resumeModal');
-  if(rb2 && rm) rb2.addEventListener('click', function(){ rm.classList.add('open'); document.body.style.overflow='hidden'; });
+  if(rb2 && rm) rb2.addEventListener('click', function(){ openModal(rm,rb2); });
 })();
 
 document.querySelectorAll('.faq-q').forEach(function(q){
