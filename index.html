@@ -577,46 +577,6 @@
     .icon-btn:hover,.tools-line span:hover,.icon-circle:hover,.btn:hover,.tag:hover,.cert-card:hover,.testi-card:hover,.form-submit:hover,.siri-fab:hover,.siri-send:hover{transform:none;}
     .tools-line span:hover{text-shadow:none;}
   }
-  /* On phones, keep the desktop composition and scale the full canvas to the screen. */
-  @media (max-width:600px){
-    html{overflow-x:hidden;}
-    body{width:1200px; zoom:calc(100vw / 1200px); overflow-x:hidden;}
-    .wrap{width:100%; max-width:1180px; padding:0 32px;}
-    header{width:1200px; top:3px;}
-    .nav{width:100%; max-width:1180px; padding:16px 32px; gap:16px;}
-    .nav-links{display:flex; position:static; flex-direction:row; gap:22px; background:transparent; border:0; padding:0; max-height:none; overflow:visible;}
-    .nav-links li{width:auto;}
-    .nav-links a{display:inline; min-height:0; padding:0; border:0;}
-    .nav-toggle{display:none;}
-    .nav-right{margin-left:22px; gap:8px;}
-    .hero{padding:36px 0 0;}
-    .hero-inner{grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr); gap:40px; row-gap:0; padding-bottom:20px;}
-    .hero-inner>div:first-child{display:block; width:auto; max-width:none; margin:0; text-align:left;}
-    .hero h1{font-size:clamp(2.4rem,5vw,4rem); text-align:left; line-height:1.06; letter-spacing:normal;}
-    .hero .pill{font-size:1rem; padding:8px 22px; margin:0 0 26px;}
-    .hero p.role,.hero p.hero-copy{width:auto; max-width:46ch; text-align:left; overflow-wrap:normal;}
-    .hero p.role{font-size:1.15rem; margin:20px 0 0; line-height:1.65;}
-    .hero p.hero-copy{font-size:1.05rem; margin:14px 0 0; line-height:1.65;}
-    .hero-photo-wrap{order:initial; margin:0; padding:10px;}
-    .rk-badge{width:min(100%,320px);}
-    .hero-actions{justify-content:flex-start; gap:10px; margin-top:22px;}
-    .hero-actions .btn{min-height:46px; padding:9px 20px; font-size:.85rem;}
-    .mobile-break{display:none;}
-    .tools-marquee,.quote-bar,.scroll-cue,.mobile-scroll-hint{display:none !important;}
-    #about,.hero, #skill, #background{padding-top:36px; padding-bottom:36px;}
-    #about .about-grid{grid-template-columns:minmax(250px,.7fr) minmax(0,1.6fr); gap:48px; align-items:start;}
-    .about-hello{font-size:clamp(2rem,4vw,2.75rem);}
-    .about-copy p{font-size:1rem; line-height:1.8;}
-    .about-actions{gap:10px;}
-    .skills-cats{grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px;}
-    .skill-cat h4{font-size:1.1rem; line-height:1.4;}
-    .tag{min-height:0; display:inline-block; padding:8px 12px;}
-    #background .bg-grid{grid-template-columns:repeat(2,minmax(0,1fr)); gap:50px;}
-    #background .bg-item{display:block; padding-left:18px; margin-bottom:26px;}
-    #background .bg-col h3{font-size:1.15rem; margin-bottom:24px;}
-    .siri-fab,.back-to-top,.mobile-chat-cta{display:none !important;}
-    #vkIntro{display:none !important;}
-  }
 </style>
 <meta name="google-site-verification" content="Rzd8Xxsf7fhqSYIHI0l25ljMdvv-AZ2zjnmNRqw3ixg" />
 <!-- Open Graph / Social Preview Tags -->
