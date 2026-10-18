@@ -122,6 +122,7 @@
   .divider{border:none; border-top:1px solid var(--navy-line); margin:0; position:relative; z-index:2;}
   .divider::after{content:""; position:absolute; left:50%; top:-1px; width:80px; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); transform:translateX(-50%); box-shadow:0 0 12px var(--gold);}
   .about-grid{display:grid; grid-template-columns:0.7fr 1.6fr; gap:60px; align-items:start;}
+  .about-label{grid-column:1/-1; width:max-content; margin:0 0 -22px;}
   .about-hello{font-family:'Poppins',sans-serif; font-weight:800; font-size:clamp(2rem,4vw,2.75rem); line-height:1.15; letter-spacing:-.02em;}
   .about-hello .accent{color:var(--gold);}
   .about-copy p{color:var(--ink-dim); font-size:1rem; margin:0; line-height:1.8;}
@@ -613,6 +614,14 @@
     .bg-grid{grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px;}
     .skills-cats{grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px;}
   }
+  @media (min-width:680px) and (max-width:860px){
+    .skills-cats{grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px;}
+    .skill-cat{min-width:0; padding-right:12px; border-right:1px solid var(--navy-line);}
+    .skill-cat:nth-child(4n){padding-right:0; border-right:0;}
+    .skill-cat h4{font-size:.98rem; line-height:1.35;}
+    .skill-cat .tag-list{gap:6px;}
+    .skill-cat .tag{padding:7px 10px; font-size:.78rem;}
+  }
   @media (max-width:380px){
     .nav{gap:4px;}
     .nav-mark{font-size:.78rem;}
@@ -763,6 +772,7 @@
 
 <section id="about">
   <div class="wrap about-grid reveal">
+    <span class="pill about-label">About <b>Me</b></span>
     <div class="about-hello">Hello,<br>I'm <span class="accent">Rushi</span>!</div>
     <div>
       <div class="about-copy">
